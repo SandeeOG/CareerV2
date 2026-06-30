@@ -1,0 +1,2 @@
+[console_scripts]
+detective-monkey = detective_monkey.interfaces.rest.asgi:run
