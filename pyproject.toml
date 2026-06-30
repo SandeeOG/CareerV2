@@ -18,7 +18,7 @@ dependencies = []
 [project.optional-dependencies]
 dev = ["pytest>=8.0"]
 # REST interface adapter (401_API_ARCHITECTURE.md). The core runs without it.
-api = ["fastapi>=0.110", "uvicorn>=0.27"]
+api = ["fastapi>=0.110", "uvicorn>=0.27" ,  "httpx>=0.27"]
 
 [project.scripts]
 detective-monkey = "detective_monkey.interfaces.rest.asgi:run"
