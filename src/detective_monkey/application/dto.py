@@ -103,3 +103,45 @@ class AgentReplyDTO:
     response: str
     needs_clarification: bool
     actions: tuple[str, ...]
+
+
+# -- Intelligence Layer DTOs -----------------------------------------------
+
+
+@dataclass(frozen=True, slots=True)
+class EvidenceDTO:
+    claim: str
+    source: str
+    detail: str
+    confidence: float
+
+
+@dataclass(frozen=True, slots=True)
+class IntelligenceSummaryDTO:
+    student_id: str
+    confidence: float
+    learning_style: str
+    preferred_work_environment: str
+    top_strengths: tuple[str, ...]
+    top_interests: tuple[str, ...]
+
+
+@dataclass(frozen=True, slots=True)
+class CareerMatchDTO:
+    career_id: str
+    name: str
+    score: float
+    confidence: float
+    reasons: tuple[str, ...]
+    top_strengths: tuple[str, ...]
+    top_interests: tuple[str, ...]
+    matching_skills: tuple[str, ...]
+    evidence: tuple[EvidenceDTO, ...]
+    missing_information: tuple[str, ...]
+
+
+@dataclass(frozen=True, slots=True)
+class IntelligenceRecommendationsDTO:
+    student_id: str
+    summary: IntelligenceSummaryDTO
+    matches: tuple[CareerMatchDTO, ...]

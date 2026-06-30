@@ -15,11 +15,12 @@ from typing import Any
 from ...application.container import Backend
 from ...application.dto import ErrorCode, ServiceResult
 from ...application import seed
-from ...domain.common.identifiers import RecommendationId, StudentId
+from ...domain.common.identifiers import StudentId
 from ...engines.agent.types import AgentInput
 from ...engines.assessment.definitions import AssessmentDefinition
 from ...engines.assessment.engine import AssessmentInput
 from ...engines.assessment.responses import AssessmentSubmission, ItemResponse
+from ...engines.intelligence import ConversationContext, StudentPreferences
 from ...engines.retrieval.engine import RetrievalInput
 from .envelope import http_status, to_envelope
 
@@ -63,9 +64,6 @@ def create_app(backend: Backend | None = None) -> Any:
 
     backend = backend or seed.build_demo_backend()
     definition = seed.default_assessment_definition()
-    feature_defs = seed.default_feature_definitions()
-    reasoning = seed.default_reasoning_config()
-    weights = seed.default_weights()
     knowledge_nodes = seed.demo_knowledge_nodes()
 
     app = FastAPI(title="Detective Monkey", version="2.0.0")
@@ -110,59 +108,88 @@ def create_app(backend: Backend | None = None) -> Any:
 
         sid = StudentId(student_id)
         submission = AssessmentSubmission(sid, definition.id, definition.version, responses)
-        submit_result = backend.submit_assessment.execute(
-            AssessmentInput(definition, submission))
-        if not submit_result.success:
-            return _respond(submit_result)
-        # Analysis step: build the profile immediately (Assessment Flow §7).
-        return _respond(backend.generate_profile.execute(sid, feature_defs, reasoning))
 
-    # -- profile / recommendations / explanation ---------------------------
+        # Optional conversation + preferences enrich the Intelligence Engine.
+        conv_text = (body or {}).get("conversation")
+        conversation = ConversationContext((conv_text,)) if conv_text else None
+        prefs_in = (body or {}).get("preferences") or {}
+        preferences = StudentPreferences(
+            dream_careers=tuple(prefs_in.get("dream_careers", [])),
+            preferred_countries=tuple(prefs_in.get("preferred_countries", [])),
+            work_preferences=tuple(prefs_in.get("work_preferences", [])),
+            max_study_years=prefs_in.get("max_study_years"),
+            remote_only=bool(prefs_in.get("remote_only", False)),
+        ) if prefs_in else None
+
+        # The Intelligence Engine is the single reasoning component (Analysis step).
+        return _respond(backend.intelligence.build_from_assessment(
+            AssessmentInput(definition, submission), conversation, preferences))
+
+    # -- intelligence: dashboard / summary ---------------------------------
+
+    @app.get("/api/v1/students/{student_id}/dashboard")
+    def get_dashboard(student_id: str):
+        return _respond(backend.intelligence.dashboard(StudentId(student_id)))
+
+    @app.get("/api/v1/students/{student_id}/intelligence")
+    def get_intelligence(student_id: str):
+        return _respond(backend.intelligence.get_summary(StudentId(student_id)))
 
     @app.get("/api/v1/students/{student_id}/profile")
     def get_profile(student_id: str):
-        profile = backend.profiles.get_active(StudentId(student_id))
-        if profile is None:
-            return _respond(ServiceResult.fail(ErrorCode.NOT_FOUND, "No active profile."))
-        from ...application.services import _profile_dto
-        return _respond(ServiceResult.ok(_profile_dto(profile)))
+        return _respond(backend.intelligence.get_summary(StudentId(student_id)))
+
+    # -- recommendations (premium cards) -----------------------------------
 
     @app.post("/api/v1/students/{student_id}/recommendations")
     def generate_recommendations(student_id: str):
-        return _respond(backend.generate_recommendations.execute(
-            StudentId(student_id), weights))
+        return _respond(backend.intelligence.recommend(StudentId(student_id)))
 
     @app.get("/api/v1/students/{student_id}/recommendations")
     def list_recommendations(student_id: str):
-        from ...application.dto import RecommendationDTO, RecommendationListDTO
-        recs = backend.recommendations.list_for_student(StudentId(student_id))
-        dto = RecommendationListDTO(
-            student_id=student_id,
-            recommendations=tuple(
-                RecommendationDTO(r.id.value, r.career_id.value, r.overall_score.value,
-                                  r.confidence.value.value, len(r.skill_gaps))
-                for r in recs
-            ),
-        )
-        return _respond(ServiceResult.ok(dto))
+        return _respond(backend.intelligence.recommend(StudentId(student_id)))
 
-    @app.get("/api/v1/recommendations/{recommendation_id}/explanation")
-    def explain(recommendation_id: str):
-        return _respond(backend.explain_recommendation.execute(
-            RecommendationId(recommendation_id)))
+    # -- career detail / roadmap / skill gap / comparison ------------------
 
-    # -- AI coach ----------------------------------------------------------
+    @app.get("/api/v1/students/{student_id}/careers/{career_id}")
+    def career_detail(student_id: str, career_id: str):
+        return _respond(backend.intelligence.career_detail(StudentId(student_id), career_id))
+
+    @app.get("/api/v1/students/{student_id}/careers/{career_id}/roadmap")
+    def career_roadmap(student_id: str, career_id: str):
+        return _respond(backend.intelligence.roadmap(StudentId(student_id), career_id))
+
+    @app.get("/api/v1/students/{student_id}/careers/{career_id}/skill-gap")
+    def career_skill_gap(student_id: str, career_id: str):
+        return _respond(backend.intelligence.skill_gap(StudentId(student_id), career_id))
+
+    @app.get("/api/v1/students/{student_id}/compare")
+    def compare_careers(student_id: str, a: str, b: str):
+        return _respond(backend.intelligence.compare(StudentId(student_id), a, b))
+
+    # -- downloadable AI report --------------------------------------------
+
+    @app.get("/api/v1/students/{student_id}/report")
+    def report(student_id: str):
+        from fastapi.responses import HTMLResponse, JSONResponse as _JSON
+        result = backend.intelligence.report_html(StudentId(student_id))
+        if not result.success:
+            return _JSON(content=to_envelope(result), status_code=http_status(result))
+        return HTMLResponse(content=result.data)
+
+    # -- AI coach (context-aware, Epic 4) ----------------------------------
 
     @app.post("/api/v1/conversations")
     def converse(body: dict):
         message = (body or {}).get("message", "")
+        student_id = (body or {}).get("student_id")
         retrieval = RetrievalInput(
-            query=message,
-            knowledge_nodes=knowledge_nodes,
-            vector_index=backend.vector_index,
-        )
-        return _respond(backend.ask_agent.execute(
-            AgentInput(message=message, retrieval_input=retrieval)))
+            query=message, knowledge_nodes=knowledge_nodes, vector_index=backend.vector_index)
+        agent = backend.ask_agent.execute(AgentInput(message=message, retrieval_input=retrieval))
+        grounded = agent.data.response if agent.success and agent.data else ""
+        if student_id:
+            return _respond(backend.intelligence.coach(StudentId(student_id), message, grounded))
+        return _respond(agent)
 
     # -- static SPA (mounted last so /api routes win) ----------------------
 

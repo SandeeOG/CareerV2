@@ -197,9 +197,97 @@ def demo_knowledge_nodes() -> tuple[Node, ...]:
     return tuple(nodes)
 
 
+def demo_career_insights() -> dict:
+    """Premium per-career metadata (data, not architecture) for cards, detail,
+    roadmaps and comparison. Keyed by career id."""
+    from ..engines.intelligence import CareerInsight, RoadmapSkill
+
+    def rs(name, weeks, diff, gain):
+        return RoadmapSkill(name, weeks, diff, gain)
+
+    return {
+        "c_ds": CareerInsight(
+            "c_ds",
+            "Data Scientists turn data into decisions using statistics, programming and machine learning.",
+            daily_work=("Explore and clean datasets", "Build and evaluate models",
+                        "Communicate insights to stakeholders"),
+            responsibilities=("Statistical analysis", "Model development", "Data storytelling"),
+            progression=(("Junior Data Scientist", "0-2 yrs"), ("Data Scientist", "2-5 yrs"),
+                         ("Senior / Lead", "5-8 yrs"), ("Head of Data", "8+ yrs")),
+            salary_entry=70000, salary_senior=160000, currency="$",
+            demand=0.9, growth=0.85, automation_risk=0.25, remote_compatibility=0.9,
+            required_education=("Bachelor's in a quantitative field", "Bootcamp + portfolio (alt.)"),
+            certifications=("AWS ML Specialty", "TensorFlow Developer"),
+            related_careers=("c_swe", "c_rs"),
+            roadmap=(rs("Python", 8, "moderate", 6), rs("SQL", 4, "easy", 4),
+                     rs("Statistics", 6, "moderate", 5), rs("Machine Learning", 10, "hard", 7)),
+        ),
+        "c_swe": CareerInsight(
+            "c_swe",
+            "Software Engineers design, build and maintain the systems that power modern products.",
+            daily_work=("Write and review code", "Design systems", "Debug and ship features"),
+            responsibilities=("Feature development", "Code review", "System design"),
+            progression=(("Junior Engineer", "0-2 yrs"), ("Engineer", "2-5 yrs"),
+                         ("Senior Engineer", "5-8 yrs"), ("Staff / Lead", "8+ yrs")),
+            salary_entry=75000, salary_senior=180000, currency="$",
+            demand=0.95, growth=0.8, automation_risk=0.3, remote_compatibility=0.95,
+            required_education=("Bachelor's in CS", "Bootcamp + portfolio (alt.)"),
+            certifications=("AWS Developer", "Kubernetes (CKA)"),
+            related_careers=("c_ds", "c_pm"),
+            roadmap=(rs("Python", 8, "moderate", 6), rs("Data Structures", 8, "hard", 6),
+                     rs("Web Development", 8, "moderate", 5), rs("System Design", 10, "hard", 6)),
+        ),
+        "c_ux": CareerInsight(
+            "c_ux",
+            "UX Designers craft intuitive, human-centred product experiences.",
+            daily_work=("Interview users", "Design wireframes & prototypes", "Run usability tests"),
+            responsibilities=("User research", "Interaction design", "Design systems"),
+            progression=(("Junior Designer", "0-2 yrs"), ("UX Designer", "2-5 yrs"),
+                         ("Senior Designer", "5-8 yrs"), ("Design Lead", "8+ yrs")),
+            salary_entry=60000, salary_senior=140000, currency="$",
+            demand=0.75, growth=0.7, automation_risk=0.35, remote_compatibility=0.85,
+            required_education=("Bachelor's in design/HCI", "Portfolio (alt.)"),
+            certifications=("Google UX Design", "NN/g UX Certification"),
+            related_careers=("c_pm", "c_swe"),
+            roadmap=(rs("Design Fundamentals", 6, "easy", 5), rs("Figma", 4, "easy", 4),
+                     rs("User Research", 6, "moderate", 5), rs("Prototyping", 6, "moderate", 5)),
+        ),
+        "c_pm": CareerInsight(
+            "c_pm",
+            "Product Managers lead product strategy and coordinate teams to deliver value.",
+            daily_work=("Prioritize the roadmap", "Talk to users & stakeholders", "Coordinate delivery"),
+            responsibilities=("Product strategy", "Stakeholder alignment", "Delivery coordination"),
+            progression=(("Associate PM", "0-2 yrs"), ("Product Manager", "2-5 yrs"),
+                         ("Senior PM", "5-8 yrs"), ("Director of Product", "8+ yrs")),
+            salary_entry=80000, salary_senior=190000, currency="$",
+            demand=0.8, growth=0.75, automation_risk=0.2, remote_compatibility=0.8,
+            required_education=("Bachelor's degree", "MBA (optional)"),
+            certifications=("Pragmatic Institute", "Scrum Product Owner"),
+            related_careers=("c_ux", "c_ds"),
+            roadmap=(rs("Product Strategy", 6, "moderate", 5), rs("Analytics", 6, "moderate", 5),
+                     rs("Communication", 4, "easy", 4), rs("Roadmapping", 4, "moderate", 4)),
+        ),
+        "c_rs": CareerInsight(
+            "c_rs",
+            "Research Scientists investigate open questions through rigorous experimentation.",
+            daily_work=("Design experiments", "Analyze results", "Publish findings"),
+            responsibilities=("Research design", "Experimentation", "Scientific writing"),
+            progression=(("PhD Researcher", "0-4 yrs"), ("Research Scientist", "4-8 yrs"),
+                         ("Senior Scientist", "8-12 yrs"), ("Principal Scientist", "12+ yrs")),
+            salary_entry=75000, salary_senior=200000, currency="$",
+            demand=0.7, growth=0.8, automation_risk=0.15, remote_compatibility=0.7,
+            required_education=("Master's or PhD", "Strong publication record"),
+            certifications=("Domain-specific research credentials",),
+            related_careers=("c_ds", "c_swe"),
+            roadmap=(rs("Research Methods", 8, "hard", 6), rs("Statistics", 6, "moderate", 5),
+                     rs("Python", 8, "moderate", 5), rs("Scientific Writing", 6, "moderate", 5)),
+        ),
+    }
+
+
 def build_demo_backend() -> Backend:
     """A fully-seeded, in-memory backend ready to serve the complete journey."""
-    backend = Backend(careers=demo_careers())
+    backend = Backend(careers=demo_careers(), insights=demo_career_insights())
     for node in demo_knowledge_nodes():
         backend.knowledge_graph.add_node(node)
         backend.vector_index.add(node.canonical_name, node.description, node.node_type.value)

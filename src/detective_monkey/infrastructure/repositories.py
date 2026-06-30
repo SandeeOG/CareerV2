@@ -131,6 +131,55 @@ class InMemoryCareerCatalogRepository:
         )
 
 
+class InMemoryIntelligenceProfileRepository:
+    """Stores the interpretation-rich Intelligence Profile per student.
+
+    A separate store from the low-level SIP profiles (different aggregate). Latest
+    profile per student wins.
+    """
+
+    def __init__(self) -> None:
+        self._by_student: dict[str, object] = {}
+
+    def save(self, student_id: StudentId, profile: object) -> None:
+        self._by_student[student_id.value] = profile
+
+    def get(self, student_id: StudentId) -> object | None:
+        return self._by_student.get(student_id.value)
+
+
+class InMemoryMentorMemory:
+    """Persistent mentor memory (Epic 10): readiness history, goal, saved careers.
+
+    Lets the AI mentor proactively continue with a returning student.
+    """
+
+    def __init__(self) -> None:
+        self._readiness: dict[str, list[int]] = {}
+        self._goal: dict[str, str] = {}
+        self._saved: dict[str, list[str]] = {}
+
+    def record_readiness(self, student_id: StudentId, score: int) -> None:
+        self._readiness.setdefault(student_id.value, []).append(score)
+
+    def readiness_history(self, student_id: StudentId) -> tuple[int, ...]:
+        return tuple(self._readiness.get(student_id.value, []))
+
+    def set_goal(self, student_id: StudentId, goal: str) -> None:
+        self._goal[student_id.value] = goal
+
+    def goal(self, student_id: StudentId) -> str | None:
+        return self._goal.get(student_id.value)
+
+    def save_career(self, student_id: StudentId, career_id: str) -> None:
+        saved = self._saved.setdefault(student_id.value, [])
+        if career_id not in saved:
+            saved.append(career_id)
+
+    def saved_careers(self, student_id: StudentId) -> tuple[str, ...]:
+        return tuple(self._saved.get(student_id.value, []))
+
+
 class InMemoryKnowledgeGraphRepository:
     def __init__(self) -> None:
         self._nodes: dict[str, Node] = {}

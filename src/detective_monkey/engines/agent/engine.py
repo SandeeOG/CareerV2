@@ -152,12 +152,14 @@ class CareerIntelligenceAgent(BaseEngine[AgentInput, CareerAgentResponse]):
             EngineRequest(request.context, payload.retrieval_input)
         )
         context: ContextPackage | None = ctx_resp.result if ctx_resp.ok else None
-        text = self._answer_from_context(payload.message, context)
+        actions = ["knowledge_retrieval_engine"]
+        text = self._generate_answer(payload.message, context)
+        if context is not None and context.prompt is not None and self._deps.llm is not None:
+            actions.append("llm")
         plan = ConversationPlan(intent, "retrieve_and_answer", required,
-                                platform_actions=("knowledge_retrieval_engine",),
+                                platform_actions=tuple(actions),
                                 response_strategy="retrieve_then_answer")
-        return self._respond(intent, plan, text, ("knowledge_retrieval_engine",),
-                             context=context)
+        return self._respond(intent, plan, text, tuple(actions), context=context)
 
     # -- helpers -----------------------------------------------------------
 
@@ -198,6 +200,24 @@ class CareerIntelligenceAgent(BaseEngine[AgentInput, CareerAgentResponse]):
             metrics={"intent": intent.value, "capability": plan.capability,
                      "actions": ",".join(actions)},
         )
+
+    def _generate_answer(self, message: str, context: ContextPackage | None) -> str:
+        """"Think with the platform. Speak with the LLM" (28 §2).
+
+        Retrieval is always deterministic; if an LLM is configured it turns the
+        already-assembled, grounded prompt into natural language. A missing
+        provider, network failure, or empty response degrades gracefully to the
+        deterministic summary (18 §15) — the agent never crashes or stalls on a
+        provider outage (409 INV-04).
+        """
+        if context is not None and context.prompt is not None and self._deps.llm is not None:
+            try:
+                generated = self._deps.llm.generate(context.prompt)
+            except Exception:
+                generated = ""
+            if generated and generated.strip():
+                return generated.strip()
+        return self._answer_from_context(message, context)
 
     @staticmethod
     def _answer_from_context(message: str, context: ContextPackage | None) -> str:

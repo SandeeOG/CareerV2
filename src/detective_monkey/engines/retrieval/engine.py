@@ -219,8 +219,11 @@ class KnowledgeRetrievalEngine(BaseEngine[RetrievalInput, ContextPackage]):
                     )
                 )
         system = (
-            "Answer using ONLY the retrieved context below. The Knowledge Graph and "
-            "Decision Graph are authoritative; never contradict them or invent facts."
+            "You are Detective Monkey, an expert AI Career Mentor (educational advisor, "
+            "labour-market analyst, learning coach, decision-support system). Answer "
+            "using ONLY the retrieved context below; the Knowledge Graph and Decision "
+            "Graph are authoritative — never contradict them or invent facts. Guide the "
+            "student with concrete, encouraging next steps rather than just answering."
         )
         return RetrievalPromptPackage(
             system_prompt=system,

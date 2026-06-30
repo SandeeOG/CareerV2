@@ -16,21 +16,25 @@ from ..engines.assessment.engine import AssessmentEngine
 from ..engines.evidence.engine import EvidenceEngine
 from ..engines.explanation.engine import ExplanationEngine
 from ..engines.feature_engineering.engine import FeatureEngineeringEngine
+from ..engines.intelligence import IntelligenceEngine
 from ..engines.recommendation.engine import RecommendationEngine
 from ..engines.retrieval.engine import KnowledgeRetrievalEngine
 from ..engines.student_intelligence.engine import StudentIntelligenceEngine
 from ..infrastructure.event_bus import InMemoryEventBus
-from ..infrastructure.platform import InMemoryConfiguration, SystemClock, UuidGenerator
-from ..infrastructure.providers import InMemoryVectorIndex, TemplateLLMProvider
+from ..infrastructure.platform import EnvConfiguration, SystemClock, UuidGenerator
+from ..infrastructure.providers import GeminiProvider, InMemoryVectorIndex, TemplateLLMProvider
 from ..infrastructure.repositories import (
     InMemoryCareerCatalogRepository,
     InMemoryEvidenceGraphRepository,
+    InMemoryIntelligenceProfileRepository,
     InMemoryKnowledgeGraphRepository,
     InMemoryMemoryRepository,
+    InMemoryMentorMemory,
     InMemoryProfileRepository,
     InMemoryRecommendationRepository,
     InMemoryStudentRepository,
 )
+from .intelligence_service import IntelligenceApplicationService
 from .services import (
     AskAgentService,
     ExplainRecommendationService,
@@ -43,11 +47,12 @@ from .services import (
 class Backend:
     """In-memory composition of the full Detective Monkey backend."""
 
-    def __init__(self, careers: tuple[Career, ...] = (), *, use_llm: bool = True) -> None:
+    def __init__(self, careers: tuple[Career, ...] = (), *, use_llm: bool = True,
+                 insights: dict | None = None, llm: object | None = None) -> None:
         # Platform services
         self.clock = SystemClock()
         self.ids = UuidGenerator()
-        self.config = InMemoryConfiguration()
+        self.config = EnvConfiguration()
 
         # Infrastructure adapters
         self.event_bus = InMemoryEventBus()
@@ -59,15 +64,32 @@ class Backend:
         self.careers = InMemoryCareerCatalogRepository(careers)
         self.knowledge_graph = InMemoryKnowledgeGraphRepository()
         self.vector_index = InMemoryVectorIndex()
+        self.intelligence_profiles = InMemoryIntelligenceProfileRepository()
+        self.mentor_memory = InMemoryMentorMemory()
+        self.career_insights = insights or {}
 
-        # Providers
-        llm = TemplateLLMProvider() if use_llm else None
+        # Providers — explicit `llm` wins; otherwise auto-detect a configured
+        # provider from the environment (409 §16 "providers are selected through
+        # configuration"); fall back to the deterministic template so the app
+        # always runs without any external dependency.
+        if llm is not None:
+            pass  # explicit injection (e.g. tests, or a future Anthropic/OpenAI provider)
+        elif not use_llm:
+            llm = None
+        else:
+            gemini_key = self.config.get("GEMINI_API_KEY")
+            if gemini_key:
+                gemini_model = self.config.get("GEMINI_MODEL", "gemini-2.0-flash")
+                llm = GeminiProvider(gemini_key, model=gemini_model)
+            else:
+                llm = TemplateLLMProvider()
 
         # Engines
         self.assessment_engine = AssessmentEngine()
         self.evidence_engine = EvidenceEngine()
         self.feature_engine = FeatureEngineeringEngine()
         self.intelligence_engine = StudentIntelligenceEngine()
+        self.reasoning_engine = IntelligenceEngine()  # the single reasoning component
         self.recommendation_engine = RecommendationEngine()
         self.explanation_engine = ExplanationEngine(llm=llm)
         self.retrieval_engine = KnowledgeRetrievalEngine()
@@ -91,3 +113,9 @@ class Backend:
         self.explain_recommendation = ExplainRecommendationService(
             self.recommendations, self.explanation_engine, self.careers)
         self.ask_agent = AskAgentService(self.agent)
+
+        # Intelligence Layer — the single reasoning component for the live app.
+        self.intelligence = IntelligenceApplicationService(
+            self.assessment_engine, self.reasoning_engine, self.careers,
+            self.students, self.intelligence_profiles, self.event_bus,
+            insights=self.career_insights, memory=self.mentor_memory)

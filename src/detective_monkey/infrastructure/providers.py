@@ -10,9 +10,30 @@ from __future__ import annotations
 
 import hashlib
 import re
+from typing import Protocol, runtime_checkable
 
 from ..engines.explanation.explanation_object import PromptPackage
 from ..engines.retrieval.packages import VectorHit
+
+
+@runtime_checkable
+class _PromptLike(Protocol):
+    """Structural shape shared by every deterministically-assembled prompt
+    package in the platform (``explanation.PromptPackage``,
+    ``retrieval.RetrievalPromptPackage``). Providers depend on this shape, not
+    on a specific engine's type, so one provider serves every AI engine."""
+
+    system_prompt: str
+    sections: tuple
+    user_question: str
+
+
+def _render_prompt_text(prompt: _PromptLike) -> str:
+    parts = [prompt.system_prompt, ""]
+    for section in prompt.sections:
+        parts.append(f"## {section.title}\n{section.content}")
+    parts.append(f"\nStudent question: {prompt.user_question}")
+    return "\n".join(parts)
 
 
 class TemplateLLMProvider:
@@ -31,6 +52,65 @@ class TemplateLLMProvider:
             lines.append(section.content)
             lines.append("")
         return "\n".join(lines).strip()
+
+
+class GeminiProvider:
+    """Google Gemini `LLMPort` adapter (409_PROVIDER_ARCHITECTURE.md §6 AI Providers).
+
+    Provider-specific code lives only here; the rest of the platform depends on
+    the `LLMPort`/duck-typed `_PromptLike` contracts, never on Gemini directly
+    (409 INV-01/02). Uses the Gemini REST API via ``httpx`` (lazy import — the
+    core stays dependency-free; install the ``api`` extra to use this).
+
+    Failures never raise: a structured-error/timeout/network problem returns an
+    empty string so the calling engine falls back to its deterministic template
+    (18 §15 graceful degradation, 409 INV-04 "provider failures remain isolated").
+    """
+
+    _ENDPOINT = "https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
+
+    def __init__(
+        self,
+        api_key: str,
+        model: str = "gemini-2.0-flash",
+        timeout: float = 20.0,
+    ) -> None:
+        if not api_key:
+            raise ValueError("GeminiProvider requires a non-empty api_key")
+        self._api_key = api_key
+        self._model = model
+        self._timeout = timeout
+
+    def generate(self, prompt: _PromptLike) -> str:
+        try:
+            import httpx
+        except ImportError:
+            return ""  # optional dependency not installed; caller falls back
+
+        try:
+            response = httpx.post(
+                self._ENDPOINT.format(model=self._model),
+                params={"key": self._api_key},
+                json={
+                    "contents": [
+                        {"role": "user", "parts": [{"text": _render_prompt_text(prompt)}]}
+                    ],
+                    "generationConfig": {"temperature": 0.4, "maxOutputTokens": 700},
+                },
+                timeout=self._timeout,
+            )
+            response.raise_for_status()
+            data = response.json()
+            candidates = data.get("candidates") or []
+            if not candidates:
+                return ""
+            parts = candidates[0].get("content", {}).get("parts") or []
+            text = "".join(p.get("text", "") for p in parts)
+            return text.strip()
+        except Exception:
+            # Network error, bad key, rate limit, malformed response, ... — never
+            # crash the engine. The caller treats an empty string as "unavailable".
+            return ""
 
 
 class HashingEmbeddingProvider:

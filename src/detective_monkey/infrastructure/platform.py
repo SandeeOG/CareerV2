@@ -8,6 +8,7 @@ variables directly (400 §19) — it goes through ``ConfigurationService``.
 from __future__ import annotations
 
 import logging
+import os
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from uuid import uuid4
@@ -59,6 +60,24 @@ class InMemoryConfiguration:
 
     def set(self, key: str, value: str) -> None:
         self._values[key] = value
+
+
+class EnvConfiguration:
+    """Configuration sourced from process environment variables (410).
+
+    Deployment injects configuration; application code never changes between
+    environments (60 §12). This is the one adapter allowed to read ``os.environ``
+    — business logic only ever goes through the ``ConfigurationService`` port.
+    Explicit ``overrides`` take precedence (useful for tests).
+    """
+
+    def __init__(self, overrides: dict[str, str] | None = None) -> None:
+        self._overrides = dict(overrides or {})
+
+    def get(self, key: str, default: str | None = None) -> str | None:
+        if key in self._overrides:
+            return self._overrides[key]
+        return os.environ.get(key, default)
 
 
 def get_logger(name: str) -> logging.Logger:

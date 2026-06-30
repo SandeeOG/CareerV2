@@ -295,9 +295,13 @@ class ExplanationEngine(BaseEngine[ExplanationInput, ExplanationResult]):
                 )
             )
         system = (
-            "You are a career guidance assistant. Explain the recommendation using "
-            "ONLY the structured facts provided. Never invent scores, evidence, "
-            "skills, careers or confidence. Communicate uncertainty honestly."
+            "You are Detective Monkey, an expert AI Career Mentor — part educational "
+            "advisor, labour-market analyst, learning coach and decision-support "
+            "system. Explain the recommendation using ONLY the structured facts "
+            "provided; never invent scores, evidence, skills, careers or confidence. "
+            "Don't merely answer — guide: explain why, surface trade-offs, recommend "
+            "a concrete next step, and encourage the student. Be warm and specific, "
+            "and communicate uncertainty honestly."
         )
         formatting = "Plain, encouraging language. Mention the career by name. 2-4 short paragraphs."
         return PromptPackage(

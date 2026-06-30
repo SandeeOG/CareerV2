@@ -14,6 +14,23 @@ This folder holds the code; the design documents live in
   (`interfaces/rest/static/`) covering the full journey.
 - **P6** — **production**: Dockerfile + compose, health checks, GitHub Actions
   CI, stateless/config-external runtime.
+- **Intelligence Engine v1** — a single deterministic reasoning component
+  (`engines/intelligence/`) between assessment and ranking. It builds an
+  interpretation-rich `StudentIntelligenceProfile` (strengths, interests,
+  personality, learning style, vectors, evidence, confidence); ranking consumes
+  it and no longer reasons. See `engines/intelligence/README.md`.
+- **Phase 2 — AI Career Mentor experience** — `engines/intelligence/mentor.py`
+  adds deterministic, profile-driven reasoning (no new layer, no LLM required):
+  an **AI dashboard** (personalized summary, career-readiness ring, top
+  strengths, learning style, biggest opportunity, today's action),
+  **premium recommendation cards** (why · evidence · salary · demand ·
+  automation risk · skill gaps · next actions), **career detail pages**,
+  **roadmaps**, **skill-gap analysis**, **career comparison**, a downloadable
+  **AI report**, a **context-aware mentor coach** with dynamic suggested
+  questions, and a **persistent mentor** that greets returning students with
+  their readiness progress. All surfaced through the existing service/API and a
+  redesigned SPA — the existing Intelligence/Recommendation engines are reused,
+  not duplicated.
 
 The core (domain + engines + application + in-memory infrastructure) still has
 **zero runtime dependencies**; databases, AI providers and FastAPI are optional
@@ -158,6 +175,33 @@ journey works immediately: **enter your name → take the assessment → see you
 evidence-based profile → get explainable recommendations → chat with the AI
 coach.** The SPA is served at `/`; the REST API lives under `/api/v1`
 (`/api/v1/health` for liveness).
+
+### Enable the real AI coach (Gemini)
+
+By default the coach and explanations run on a **deterministic, offline
+template** (`TemplateLLMProvider`) — zero dependencies, fully reproducible. To
+have the AI coach speak with real Gemini-generated language instead:
+
+1. Get a free API key at <https://aistudio.google.com/app/apikey>.
+2. Set `GEMINI_API_KEY` (and optionally `GEMINI_MODEL`, default
+   `gemini-2.0-flash`):
+
+   ```bash
+   export GEMINI_API_KEY=your-key-here        # macOS/Linux
+   $env:GEMINI_API_KEY = "your-key-here"       # Windows PowerShell
+   ```
+
+   Or for Docker: `cp .env.example .env` and fill in `GEMINI_API_KEY` —
+   `docker compose up` picks it up automatically.
+
+3. Run the app as usual. `Backend` auto-detects the key (composition root,
+   `application/container.py`) and wires a `GeminiProvider` behind the existing
+   `LLMPort` — no other code changes. If the key is missing, invalid, or the
+   network/API call fails, every engine **falls back to the deterministic
+   template automatically** (never crashes the app; 409 INV-04).
+
+No key, no API package installed, or a bad key → the app still runs perfectly,
+just with the offline mentor instead of Gemini's generated language.
 
 ## Develop / test
 
