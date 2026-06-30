@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="system">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Detective Monkey — Career Intelligence</title>
+  <meta name="description" content="Evidence-based, explainable career guidance." />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="app-header">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">🐵</span>
+      <span class="brand-name">Detective Monkey</span>
+    </div>
+    <nav class="main-nav" aria-label="Primary">
+      <button class="nav-btn" data-route="dashboard">Dashboard</button>
+      <button class="nav-btn" data-route="assessment">Assessment</button>
+      <button class="nav-btn" data-route="recommendations">Recommendations</button>
+      <button class="nav-btn" data-route="coach">AI Coach</button>
+    </nav>
+    <button id="theme-toggle" class="icon-btn" aria-label="Toggle colour theme" title="Toggle theme">◐</button>
+  </header>
+
+  <main id="main" class="app-main" tabindex="-1">
+    <!-- Views are rendered here by app.js -->
+    <section id="view" aria-live="polite"></section>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+
+  <footer class="app-footer">
+    <span>Detective Monkey v2 — guidance, not prediction. Every recommendation is explainable.</span>
+  </footer>
+
+  <script src="/app.js" type="module"></script>
+</body>
+</html>

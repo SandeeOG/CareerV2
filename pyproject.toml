@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "detective-monkey"
+version = "2.0.0"
+description = "Detective Monkey v2 — framework-independent domain model (P0/P1 foundation)"
+readme = "README.md"
+requires-python = ">=3.11"
+# Intentionally ZERO runtime dependencies for the core (domain + engines +
+# application + in-memory infrastructure). Per 00_ARCHITECTURE_PRINCIPLES.md (§13)
+# and 400_BACKEND_ARCHITECTURE.md (§9, INV-08), the domain/application layers must
+# remain framework-independent. Web frameworks, ORMs and AI provider SDKs are
+# OPTIONAL adapters, declared below — never core dependencies.
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+# REST interface adapter (401_API_ARCHITECTURE.md). The core runs without it.
+api = ["fastapi>=0.110", "uvicorn>=0.27"]
+
+[project.scripts]
+detective-monkey = "detective_monkey.interfaces.rest.asgi:run"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"detective_monkey.interfaces.rest" = ["static/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

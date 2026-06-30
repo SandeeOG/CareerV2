@@ -1,0 +1,12 @@
+# 60_DEPLOYMENT.md §26 — Docker Compose for local development.
+# The MVP runs entirely in-memory; Postgres/Neo4j/Redis/vector services would be
+# added here as the in-memory adapters are swapped for real ones (no app changes).
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      DM_HOST: 0.0.0.0
+      DM_PORT: "8000"
+    restart: unless-stopped
