@@ -80,6 +80,7 @@ class IntelligenceApplicationService:
         publisher,
         insights: dict | None = None,
         memory=None,
+        affinities: dict | None = None,
     ) -> None:
         self._assessment = assessment_engine
         self._intelligence = intelligence_engine
@@ -89,6 +90,10 @@ class IntelligenceApplicationService:
         self._publisher = publisher
         self._insights = insights or {}
         self._memory = memory
+        # Evidence-derived per-student career affinities (student id →
+        # {career id: bonus}); feeds the ranker's additive-bonus hook so
+        # ranking reflects the full Student Evidence Profile.
+        self._affinities = affinities if affinities is not None else {}
 
     # -- helpers -----------------------------------------------------------
 
@@ -97,8 +102,10 @@ class IntelligenceApplicationService:
         c = self._careers.get(CareerId(career_id))
         return c.identity.canonical_name if c else career_id
 
-    def _matches(self, profile: StudentIntelligenceProfile) -> tuple[CareerRecommendation, ...]:
-        return rank_careers(profile, self._careers.list_all())
+    def _matches(self, profile: StudentIntelligenceProfile,
+                 student_id: StudentId | None = None) -> tuple[CareerRecommendation, ...]:
+        bonus = self._affinities.get(student_id.value) if student_id else None
+        return rank_careers(profile, self._careers.list_all(), labour_bonus=bonus)
 
     def _profile_or_none(self, student_id: StudentId):
         return self._profiles.get(student_id)
@@ -133,6 +140,30 @@ class IntelligenceApplicationService:
             aggregate_type="StudentIntelligenceProfile", correlation_id=ctx.correlation_id))
         return ServiceResult.ok(_summary_dto(student_id.value, profile))
 
+    def build_from_evidence(
+        self,
+        student_id: StudentId,
+        evidence_result,
+        conversation: ConversationContext | None = None,
+        preferences: StudentPreferences | None = None,
+    ) -> ServiceResult[IntelligenceSummaryDTO]:
+        """Build the intelligence profile from a Student Evidence Profile's
+        construct-observation package (the Evidence Engine bridge). The
+        Intelligence Engine consumes only structured evidence — never raw
+        survey responses."""
+        ctx = IntelligenceContext(student_id=student_id.value)
+        if not self._students.exists(student_id):
+            self._students.add(Student(id=student_id))
+        student = self._students.get(student_id) or Student(id=student_id)
+        profile = self._intelligence.build(evidence_result, student, conversation, preferences)
+        self._profiles.save(student_id, profile)
+        if self._memory is not None:
+            self._memory.record_readiness(student_id, mentor.career_readiness(profile).score)
+        self._publisher.publish(DomainEvent(
+            EventName.STUDENT_PROFILE_GENERATED, student_id.value,
+            aggregate_type="StudentIntelligenceProfile", correlation_id=ctx.correlation_id))
+        return ServiceResult.ok(_summary_dto(student_id.value, profile))
+
     def get_summary(self, student_id: StudentId) -> ServiceResult[IntelligenceSummaryDTO]:
         profile = self._profile_or_none(student_id)
         if profile is None:
@@ -143,7 +174,7 @@ class IntelligenceApplicationService:
         profile = self._profile_or_none(student_id)
         if profile is None:
             return ServiceResult.fail(ErrorCode.NOT_FOUND, "No intelligence profile yet.")
-        matches = self._matches(profile)
+        matches = self._matches(profile, student_id)
         opportunity = mentor.biggest_opportunity(matches, self._insights)
         action = mentor.todays_recommendation(profile, opportunity)
         readiness = mentor.career_readiness(profile)
@@ -169,7 +200,7 @@ class IntelligenceApplicationService:
         profile = self._profile_or_none(student_id)
         if profile is None:
             return ServiceResult.fail(ErrorCode.NOT_FOUND, "No intelligence profile yet.")
-        matches = self._matches(profile)
+        matches = self._matches(profile, student_id)
         cards = tuple(self._card(profile, m) for m in matches)
         return ServiceResult.ok(RecommendationsDTO(student_id.value, cards))
 
@@ -179,7 +210,7 @@ class IntelligenceApplicationService:
         if profile is None:
             return ServiceResult.fail(ErrorCode.NOT_FOUND, "No intelligence profile yet.")
         insight = self._insights.get(career_id)
-        match = next((m for m in self._matches(profile) if m.career_id == career_id), None)
+        match = next((m for m in self._matches(profile, student_id) if m.career_id == career_id), None)
         if insight is None or match is None:
             return ServiceResult.fail(ErrorCode.NOT_FOUND, "Career not found.")
         if self._memory is not None:
@@ -224,7 +255,7 @@ class IntelligenceApplicationService:
         profile = self._profile_or_none(student_id)
         if profile is None:
             return ServiceResult.fail(ErrorCode.NOT_FOUND, "No intelligence profile yet.")
-        match = next((m for m in self._matches(profile) if m.career_id == career_id), None)
+        match = next((m for m in self._matches(profile, student_id) if m.career_id == career_id), None)
         if match is None:
             return ServiceResult.fail(ErrorCode.NOT_FOUND, "Career not found.")
         gap = mentor.skill_gap(profile, match, self._insights.get(career_id))
@@ -244,7 +275,7 @@ class IntelligenceApplicationService:
         if profile is None:
             return ServiceResult.fail(ErrorCode.NOT_FOUND, "No intelligence profile yet.")
         ia, ib = self._insights.get(career_a), self._insights.get(career_b)
-        matches = self._matches(profile)
+        matches = self._matches(profile, student_id)
         ma = next((m for m in matches if m.career_id == career_a), None)
         mb = next((m for m in matches if m.career_id == career_b), None)
         if not (ia and ib and ma and mb):
@@ -265,7 +296,7 @@ class IntelligenceApplicationService:
         if profile is None:
             return ServiceResult.ok(CoachReplyDTO(
                 grounded or "Tell me about your interests and I'll guide you.", ()))
-        matches = self._matches(profile)
+        matches = self._matches(profile, student_id)
         reply = mentor.coach_reply(profile, matches, message, grounded)
         return ServiceResult.ok(CoachReplyDTO(
             reply, mentor.suggested_questions(profile, matches)))

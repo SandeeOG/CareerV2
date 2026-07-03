@@ -124,54 +124,119 @@ def create_app(backend: Backend | None = None) -> Any:
         return _respond(backend.intelligence.build_from_assessment(
             AssessmentInput(definition, submission), conversation, preferences))
 
+    # -- Student Evidence Engine (STUDENT_EVIDENCE_ENGINE_V1) ----------------
+    # The primary source of student information: expanded assessment, evidence
+    # profile, human validation and the six-monthly Career Pulse.
+
+    @app.get("/api/v1/evidence/assessment")
+    def evidence_assessment():
+        return _respond(backend.evidence.definition())
+
+    @app.post("/api/v1/students/{student_id}/evidence")
+    def submit_evidence(student_id: str, body: dict):
+        return _respond(backend.evidence.submit(StudentId(student_id), body or {}))
+
+    @app.get("/api/v1/students/{student_id}/evidence")
+    def get_evidence(student_id: str):
+        return _respond(backend.evidence.evidence(StudentId(student_id)))
+
+    @app.post("/api/v1/students/{student_id}/evidence/validation")
+    def validate_evidence(student_id: str, body: dict):
+        verdict = str((body or {}).get("verdict", "partially"))
+        inaccurate = tuple(str(f) for f in (body or {}).get("inaccurate", []))
+        return _respond(backend.evidence.validate(StudentId(student_id), verdict, inaccurate))
+
+    @app.get("/api/v1/students/{student_id}/pulse")
+    def pulse_status(student_id: str):
+        return _respond(backend.evidence.pulse_status(StudentId(student_id)))
+
+    @app.post("/api/v1/students/{student_id}/pulse")
+    def submit_pulse(student_id: str, body: dict):
+        return _respond(backend.evidence.submit_pulse(StudentId(student_id), body or {}))
+
+    @app.get("/api/v1/students/{student_id}/home")
+    def student_home(student_id: str):
+        return _respond(backend.evidence.home(StudentId(student_id)))
+
+    # -- Discovery loop: hypotheses → experiments → reflection → recalibration
+
+    @app.get("/api/v1/students/{student_id}/experiments")
+    def list_experiments(student_id: str):
+        return _respond(backend.discovery.overview(StudentId(student_id)))
+
+    @app.get("/api/v1/students/{student_id}/hypotheses")
+    def list_hypotheses(student_id: str):
+        return _respond(backend.discovery.hypotheses(StudentId(student_id)))
+
+    @app.post("/api/v1/students/{student_id}/experiments/{experiment_id}/accept")
+    def accept_experiment(student_id: str, experiment_id: str):
+        return _respond(backend.discovery.accept(StudentId(student_id), experiment_id))
+
+    @app.post("/api/v1/students/{student_id}/experiments/{experiment_id}/skip")
+    def skip_experiment(student_id: str, experiment_id: str):
+        return _respond(backend.discovery.skip(StudentId(student_id), experiment_id))
+
+    @app.post("/api/v1/students/{student_id}/experiments/{experiment_id}/complete")
+    def complete_experiment(student_id: str, experiment_id: str, body: dict):
+        return _respond(backend.discovery.complete(
+            StudentId(student_id), experiment_id, body or {}))
+
     # -- intelligence: dashboard / summary ---------------------------------
+    # Derived state (intelligence profile, affinities) lives in memory and is
+    # rebuilt deterministically from the persisted evidence profile on first
+    # touch after a restart.
+
+    def _ready(student_id: str) -> StudentId:
+        sid = StudentId(student_id)
+        backend.evidence.ensure_ready(sid)
+        return sid
 
     @app.get("/api/v1/students/{student_id}/dashboard")
     def get_dashboard(student_id: str):
-        return _respond(backend.intelligence.dashboard(StudentId(student_id)))
+        return _respond(backend.intelligence.dashboard(_ready(student_id)))
 
     @app.get("/api/v1/students/{student_id}/intelligence")
     def get_intelligence(student_id: str):
-        return _respond(backend.intelligence.get_summary(StudentId(student_id)))
+        return _respond(backend.intelligence.get_summary(_ready(student_id)))
 
     @app.get("/api/v1/students/{student_id}/profile")
     def get_profile(student_id: str):
-        return _respond(backend.intelligence.get_summary(StudentId(student_id)))
+        return _respond(backend.intelligence.get_summary(_ready(student_id)))
 
     # -- recommendations (premium cards) -----------------------------------
 
     @app.post("/api/v1/students/{student_id}/recommendations")
     def generate_recommendations(student_id: str):
-        return _respond(backend.intelligence.recommend(StudentId(student_id)))
+        return _respond(backend.intelligence.recommend(_ready(student_id)))
 
     @app.get("/api/v1/students/{student_id}/recommendations")
     def list_recommendations(student_id: str):
-        return _respond(backend.intelligence.recommend(StudentId(student_id)))
+        return _respond(backend.intelligence.recommend(_ready(student_id)))
 
     # -- career detail / roadmap / skill gap / comparison ------------------
 
     @app.get("/api/v1/students/{student_id}/careers/{career_id}")
     def career_detail(student_id: str, career_id: str):
-        return _respond(backend.intelligence.career_detail(StudentId(student_id), career_id))
+        return _respond(backend.intelligence.career_detail(_ready(student_id), career_id))
 
     @app.get("/api/v1/students/{student_id}/careers/{career_id}/roadmap")
     def career_roadmap(student_id: str, career_id: str):
-        return _respond(backend.intelligence.roadmap(StudentId(student_id), career_id))
+        return _respond(backend.intelligence.roadmap(_ready(student_id), career_id))
 
     @app.get("/api/v1/students/{student_id}/careers/{career_id}/skill-gap")
     def career_skill_gap(student_id: str, career_id: str):
-        return _respond(backend.intelligence.skill_gap(StudentId(student_id), career_id))
+        return _respond(backend.intelligence.skill_gap(_ready(student_id), career_id))
 
     @app.get("/api/v1/students/{student_id}/compare")
     def compare_careers(student_id: str, a: str, b: str):
-        return _respond(backend.intelligence.compare(StudentId(student_id), a, b))
+        return _respond(backend.intelligence.compare(_ready(student_id), a, b))
 
     # -- downloadable AI report --------------------------------------------
 
     @app.get("/api/v1/students/{student_id}/report")
     def report(student_id: str):
         from fastapi.responses import HTMLResponse, JSONResponse as _JSON
-        result = backend.intelligence.report_html(StudentId(student_id))
+        result = backend.intelligence.report_html(_ready(student_id))
         if not result.success:
             return _JSON(content=to_envelope(result), status_code=http_status(result))
         return HTMLResponse(content=result.data)

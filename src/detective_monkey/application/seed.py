@@ -269,7 +269,7 @@ def demo_career_insights() -> dict:
     }
 
 
-def build_demo_backend() -> Backend:
+def build_demo_backend(db_path: str | None = None) -> Backend:
     """The live composition: a backend powered entirely by the generated
     Career Knowledge Base (38/39 — one source of truth).
 
@@ -285,12 +285,14 @@ def build_demo_backend() -> Backend:
     loader = CareerKnowledgeLoader()
     repo = loader.build_repository()
     if repo.count() == 0:  # pragma: no cover - stripped-install fallback
-        return Backend(careers=demo_careers(), insights=demo_career_insights())
+        return Backend(careers=demo_careers(), insights=demo_career_insights(),
+                       db_path=db_path)
 
     backend = Backend(
         careers=repo.career_aggregates(),
         insights=repo.insights(),
         career_knowledge=repo,
+        db_path=db_path,
     )
     loader.ingest_into(backend.knowledge_platform)
     for node in backend.knowledge_graph.list_nodes():

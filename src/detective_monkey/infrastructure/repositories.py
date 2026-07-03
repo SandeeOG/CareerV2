@@ -74,6 +74,45 @@ class InMemoryEvidenceGraphRepository:
         return self._graphs.get(student_id.value)
 
 
+class InMemoryEvidenceProfileRepository:
+    """Stores the Student Evidence Profile — one canonical profile per student
+    (latest wins; history kept for auditability)."""
+
+    def __init__(self) -> None:
+        self._latest: dict[str, object] = {}
+        self._history: dict[str, list[object]] = {}
+
+    def save(self, student_id: StudentId, profile: object) -> None:
+        self._latest[student_id.value] = profile
+        self._history.setdefault(student_id.value, []).append(profile)
+
+    def get(self, student_id: StudentId) -> object | None:
+        return self._latest.get(student_id.value)
+
+    def history(self, student_id: StudentId) -> tuple[object, ...]:
+        return tuple(self._history.get(student_id.value, []))
+
+
+class InMemoryExperimentRepository:
+    """Stores discovery-loop experiments (the student's experiment journal)."""
+
+    def __init__(self) -> None:
+        self._by_id: dict[str, object] = {}
+        self._by_student: dict[str, list[str]] = {}
+
+    def save(self, experiment) -> None:
+        if experiment.id not in self._by_id:
+            self._by_student.setdefault(experiment.student_id, []).append(experiment.id)
+        self._by_id[experiment.id] = experiment
+
+    def get(self, experiment_id: str):
+        return self._by_id.get(experiment_id)
+
+    def list_for_student(self, student_id: StudentId):
+        ids = self._by_student.get(student_id.value, [])
+        return tuple(self._by_id[i] for i in ids)
+
+
 class InMemoryRecommendationRepository:
     def __init__(self) -> None:
         self._by_id: dict[str, Recommendation] = {}

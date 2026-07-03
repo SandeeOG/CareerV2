@@ -75,6 +75,25 @@ class EvidenceGraphRepository(Protocol):
 
 
 @runtime_checkable
+class EvidenceProfileRepository(Protocol):
+    """Persists the Student Evidence Profile (STUDENT_EVIDENCE_ENGINE_V1) —
+    one canonical profile per student, the single source of student truth."""
+
+    def save(self, student_id: StudentId, profile: object) -> None: ...
+    def get(self, student_id: StudentId) -> object | None: ...
+
+
+@runtime_checkable
+class ExperimentRepository(Protocol):
+    """Persists the discovery-loop experiment journal — the longitudinal
+    record of hypotheses tested and evidence generated."""
+
+    def save(self, experiment: object) -> None: ...
+    def get(self, experiment_id: str) -> object | None: ...
+    def list_for_student(self, student_id: StudentId) -> tuple[object, ...]: ...
+
+
+@runtime_checkable
 class RecommendationRepository(Protocol):
     """Persists immutable Recommendation aggregates (31C §10)."""
 

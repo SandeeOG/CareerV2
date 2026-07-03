@@ -18,7 +18,9 @@ from ..engines.explanation.engine import ExplanationEngine
 from ..engines.feature_engineering.engine import FeatureEngineeringEngine
 from ..engines.intelligence import IntelligenceEngine
 from ..engines.recommendation.engine import RecommendationEngine
+from ..engines.discovery import DiscoveryEngine
 from ..engines.retrieval.engine import KnowledgeRetrievalEngine
+from ..engines.student_evidence import StudentEvidenceEngine
 from ..engines.student_intelligence.engine import StudentIntelligenceEngine
 from ..infrastructure.event_bus import InMemoryEventBus
 from ..infrastructure.platform import EnvConfiguration, SystemClock, UuidGenerator
@@ -27,6 +29,8 @@ from ..knowledge import KnowledgePlatform
 from ..infrastructure.repositories import (
     InMemoryCareerCatalogRepository,
     InMemoryEvidenceGraphRepository,
+    InMemoryEvidenceProfileRepository,
+    InMemoryExperimentRepository,
     InMemoryIntelligenceProfileRepository,
     InMemoryKnowledgeGraphRepository,
     InMemoryMemoryRepository,
@@ -35,6 +39,8 @@ from ..infrastructure.repositories import (
     InMemoryRecommendationRepository,
     InMemoryStudentRepository,
 )
+from .discovery_service import DiscoveryApplicationService
+from .evidence_service import EvidenceApplicationService
 from .intelligence_service import IntelligenceApplicationService
 from .services import (
     AskAgentService,
@@ -50,7 +56,8 @@ class Backend:
 
     def __init__(self, careers: tuple[Career, ...] = (), *, use_llm: bool = True,
                  insights: dict | None = None, llm: object | None = None,
-                 career_knowledge: object | None = None) -> None:
+                 career_knowledge: object | None = None,
+                 db_path: str | None = None) -> None:
         # Platform services
         self.clock = SystemClock()
         self.ids = UuidGenerator()
@@ -67,6 +74,19 @@ class Backend:
         self.knowledge_graph = InMemoryKnowledgeGraphRepository()
         self.vector_index = InMemoryVectorIndex()
         self.intelligence_profiles = InMemoryIntelligenceProfileRepository()
+        # The two aggregates whose history *is* the product persist to SQLite
+        # when a db_path is configured; derived state stays in memory and is
+        # rebuilt deterministically on first touch (evidence.ensure_ready).
+        if db_path:
+            from ..infrastructure.sqlite_store import (
+                SqliteEvidenceProfileRepository,
+                SqliteExperimentRepository,
+            )
+            self.evidence_profiles = SqliteEvidenceProfileRepository(db_path)
+            self.experiments = SqliteExperimentRepository(db_path)
+        else:
+            self.evidence_profiles = InMemoryEvidenceProfileRepository()
+            self.experiments = InMemoryExperimentRepository()
         self.mentor_memory = InMemoryMentorMemory()
         self.career_insights = insights or {}
         # The Career Knowledge Repository — when provided (the normal case,
@@ -121,11 +141,35 @@ class Backend:
             self.recommendations, self.explanation_engine, self.careers)
         self.ask_agent = AskAgentService(self.agent)
 
+        # Evidence-derived career affinities shared between the Evidence and
+        # Intelligence services (student id → {career id: ranking bonus}).
+        self.career_affinities: dict = {}
+
         # Intelligence Layer — the single reasoning component for the live app.
         self.intelligence = IntelligenceApplicationService(
             self.assessment_engine, self.reasoning_engine, self.careers,
             self.students, self.intelligence_profiles, self.event_bus,
-            insights=self.career_insights, memory=self.mentor_memory)
+            insights=self.career_insights, memory=self.mentor_memory,
+            affinities=self.career_affinities)
+
+        # Student Evidence Engine — the primary source of student information.
+        # AI (whatever provider is configured) is used only for feature
+        # extraction from open-ended answers; everything else is deterministic.
+        self.student_evidence_engine = StudentEvidenceEngine()
+        self.evidence = EvidenceApplicationService(
+            self.student_evidence_engine, self.evidence_profiles,
+            self.intelligence, career_knowledge=self.career_knowledge, llm=llm,
+            affinities=self.career_affinities)
+
+        # Discovery loop — hypotheses → calibrated experiments → reflection →
+        # experience evidence → recalibration. Deterministic design; the LLM
+        # only polishes wording and extracts reflection features.
+        self.discovery_engine = DiscoveryEngine(llm=llm)
+        self.discovery = DiscoveryApplicationService(
+            self.discovery_engine, self.experiments,
+            self.student_evidence_engine, self.evidence_profiles,
+            self.evidence, self.intelligence, self.career_knowledge, self.ids)
+        self.evidence.attach_discovery(self.discovery)
 
         # Knowledge Generation Platform — the single source of truth for career
         # knowledge. Shares the canonical Knowledge Graph repository, event bus,

@@ -32,6 +32,50 @@ This folder holds the code; the design documents live in
   redesigned SPA — the existing Intelligence/Recommendation engines are reused,
   not duplicated.
 
+- **Student Evidence Engine V1** (`engines/student_evidence/`) — the primary
+  source of student information. Four evidence sources (an expanded 44-question
+  conversational assessment with 34 structured + 10 open-ended questions,
+  academic records, student goals, student profile) are transformed into a
+  canonical **Student Evidence Profile**: 22 features, each carrying a score,
+  a confidence and human-readable evidence. AI (any provider behind the LLM
+  port — Gemini, Claude, OpenAI, Ollama, …) is used **only** for structured
+  feature extraction from open-ended answers, with strict JSON validation,
+  automatic retry and a deterministic keyword fallback so the pipeline always
+  completes offline. Recommendations consume only the structured profile
+  (never raw responses) via a construct bridge plus an evidence→career
+  affinity bonus. Includes **human-in-the-loop validation** ("Does this
+  accurately describe you?") and the six-monthly **Career Pulse** check-in.
+- **Discovery Loop v3** (`engines/discovery/`) — recommendations become
+  **hypotheses**; actions generate evidence. Each top hypothesis gets a
+  smallest-next-action **experiment** built from the career's own knowledge
+  (projects, videos, books, courses, communities, talking to professionals)
+  and **deterministically calibrated to the student**: grade/age sets the
+  effort band (explorer ≤8 · builder 9-10 · specialist 11-12), academic
+  record + relevant feature scores set the challenge tier, and the student's
+  own working-style evidence picks the format — every choice carries a
+  visible "why this task, for you". After the experiment, a 2-minute
+  reflection (3 scales + open text) becomes high-weight **experience
+  evidence** (clamped to ±20 points per cycle — beliefs move, they don't
+  teleport), the profile recalibrates, and the student sees a **"here's what
+  changed"** diff. Experiment design is a decision, so it is deterministic;
+  the LLM may only polish the briefing wording (validation-gated) and
+  extract reflection features. The dashboard leads with the next experiment
+  and **discovery momentum** (cycles, careers tested, beliefs updated)
+  instead of a "% complete" checklist, and every hypothesis shows *fit score
+  × evidence strength* ("self-report only" until tested).
+- **Durable persistence** — the two aggregates whose history is the product
+  (Student Evidence Profile + experiment journal) persist to SQLite
+  (`DM_DB_PATH`, default `detective_monkey.db`; stdlib only, pure adapter
+  swap behind the existing ports). Derived state (intelligence profile,
+  affinities, rankings) is deterministic and lazily rebuilt on first touch
+  after a restart.
+- **Career-companion UI** — the SPA is a personalized dashboard hub
+  (🏠 Dashboard · 🧭 Explore Careers · 📊 My Assessment · 🎯 My Career Matches ·
+  🤖 AI Coach · 👤 My Profile): welcome card, career snapshot, top matches,
+  student growth, daily career insight, recommended learning, industry grid,
+  continue-exploring history, explore-by-interest, sectioned assessment wizard
+  and empty states everywhere.
+
 The core (domain + engines + application + in-memory infrastructure) still has
 **zero runtime dependencies**; databases, AI providers and FastAPI are optional
 adapters that plug in behind ports — the domain never depends on them.
