@@ -16,8 +16,6 @@ from ..domain.career.layers import KnowledgeAreaRequirement, PersonalityRequirem
 from ..domain.common.identifiers import CareerId, SkillId
 from ..domain.common.scores import Importance, ProficiencyLevel, Score, ScoreRange
 from ..domain.common.versioning import Version
-from ..domain.knowledge_graph.node import Node, NodeId
-from ..domain.knowledge_graph.ontology import NodeType
 from ..domain.recommendation.dimensions import Dimension
 from ..domain.recommendation.weights import WeightConfiguration
 from ..domain.skills.career_skill import CareerSkill
@@ -130,6 +128,15 @@ def default_weights() -> WeightConfiguration:
     ))
 
 
+# ---------------------------------------------------------------------------
+# Engine-test fixtures ONLY (38/39: the application itself never uses these).
+# The live application's careers, insights and knowledge nodes all come from
+# the generated Career Knowledge Base via `build_demo_backend` below. These
+# five tiny careers remain solely as deterministic fixtures for the engine
+# unit tests (tests/test_intelligence.py, tests/test_mentor.py).
+# ---------------------------------------------------------------------------
+
+
 def _career(cid: str, name: str, slug: str, personality, knowledge=(), skills=()) -> Career:
     return Career(
         identity=CareerIdentity(CareerId(cid), name, slug),
@@ -174,32 +181,9 @@ def demo_careers() -> tuple[Career, ...]:
     )
 
 
-def demo_knowledge_nodes() -> tuple[Node, ...]:
-    careers = [
-        ("n_ds", "Data Scientist", "Analyzes data using statistics and machine learning to drive decisions.", ("data", "analytics", "ml")),
-        ("n_swe", "Software Engineer", "Designs and builds software systems and applications.", ("programming", "engineering")),
-        ("n_ux", "UX Designer", "Designs intuitive, human-centred product experiences.", ("design", "creativity")),
-        ("n_pm", "Product Manager", "Leads product strategy and coordinates teams to ship value.", ("leadership", "strategy")),
-        ("n_rs", "Research Scientist", "Investigates open questions through rigorous research.", ("research", "science")),
-    ]
-    skills = [
-        ("n_py", "Python", "A versatile programming language used across data and software.", ("programming",)),
-        ("n_stats", "Statistics", "The science of learning from data.", ("analytics",)),
-    ]
-    nodes = [
-        Node(NodeId(i), NodeType.CAREER, name, _V1, description=desc, semantic_tags=tags)
-        for i, name, desc, tags in careers
-    ]
-    nodes += [
-        Node(NodeId(i), NodeType.SKILL, name, _V1, description=desc, semantic_tags=tags)
-        for i, name, desc, tags in skills
-    ]
-    return tuple(nodes)
-
-
 def demo_career_insights() -> dict:
-    """Premium per-career metadata (data, not architecture) for cards, detail,
-    roadmaps and comparison. Keyed by career id."""
+    """Engine-test fixture insights matching `demo_careers` (see note above).
+    The live application's insights come from the Career Knowledge Base."""
     from ..engines.intelligence import CareerInsight, RoadmapSkill
 
     def rs(name, weeks, diff, gain):
@@ -286,9 +270,30 @@ def demo_career_insights() -> dict:
 
 
 def build_demo_backend() -> Backend:
-    """A fully-seeded, in-memory backend ready to serve the complete journey."""
-    backend = Backend(careers=demo_careers(), insights=demo_career_insights())
-    for node in demo_knowledge_nodes():
-        backend.knowledge_graph.add_node(node)
-        backend.vector_index.add(node.canonical_name, node.description, node.node_type.value)
+    """The live composition: a backend powered entirely by the generated
+    Career Knowledge Base (38/39 — one source of truth).
+
+    The knowledge loader validates and loads every career JSON, the repository
+    adapts them into ranker aggregates + mentor insights, and the whole set is
+    ingested into the Knowledge Platform graph so discovery, the AI coach and
+    decision intelligence retrieve from the same layer. The tiny engine
+    fixtures above are used only if the knowledge data is absent (stripped
+    installs), so the app always boots.
+    """
+    from ..knowledge.careers import CareerKnowledgeLoader
+
+    loader = CareerKnowledgeLoader()
+    repo = loader.build_repository()
+    if repo.count() == 0:  # pragma: no cover - stripped-install fallback
+        return Backend(careers=demo_careers(), insights=demo_career_insights())
+
+    backend = Backend(
+        careers=repo.career_aggregates(),
+        insights=repo.insights(),
+        career_knowledge=repo,
+    )
+    loader.ingest_into(backend.knowledge_platform)
+    for node in backend.knowledge_graph.list_nodes():
+        backend.vector_index.add(
+            node.canonical_name, node.description, node.node_type.value)
     return backend

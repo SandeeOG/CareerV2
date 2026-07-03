@@ -1,0 +1,231 @@
+{
+ "id": "petroleum-energy-engineering",
+ "name": "Petroleum & Energy Engineering",
+ "industry": "engineering-manufacturing",
+ "career_family": "Resources & Energy",
+ "tags": [
+  "energy",
+  "resources",
+  "analytical",
+  "field",
+  "ambitious"
+ ],
+ "student_summary": "Find and produce oil, gas and the fuels in transition.",
+ "overview": "Find and produce oil, gas and the fuels in transition. Petroleum & Energy Engineering sits in the Resources & Energy family of Engineering & Manufacturing. It is a broad career direction — you can enter it through several routes and specialize later without restarting.",
+ "who_is_this_for": [
+  "You enjoy breaking problems into parts and reasoning them through"
+ ],
+ "who_should_avoid": [
+  "You want a short, easy study path — this one demands years of serious preparation",
+  "You want a laptop-anywhere lifestyle — this work happens in person"
+ ],
+ "daily_responsibilities": [
+  "Apply reservoir engineering to real problems",
+  "Collaborate with your team using drilling",
+  "Keep improving at production optimization — the field keeps moving",
+  "Communicate progress, results and decisions to the people who depend on them"
+ ],
+ "work_environment": "Field-first: outdoors, on sites and in communities more than at a desk",
+ "problem_solving_style": "Analytical — decompose, measure, model, verify",
+ "school_subjects": [
+  "Physics",
+  "Chemistry",
+  "Mathematics"
+ ],
+ "college_degrees": [
+  "B.Tech Petroleum"
+ ],
+ "alternative_paths": [
+  "Diploma + lateral entry to B.Tech",
+  "ITI + apprenticeship + B.Voc ladder"
+ ],
+ "core_skills": [
+  "Reservoir engineering",
+  "Drilling",
+  "Production optimization",
+  "HSE"
+ ],
+ "soft_skills": [
+  "Critical thinking",
+  "Enthusiasm"
+ ],
+ "technical_skills": [
+  "Simulation",
+  "Field equipment"
+ ],
+ "future_skills": [
+  "Industry 4.0 & smart manufacturing",
+  "Sustainability engineering",
+  "Simulation-driven design"
+ ],
+ "tools": [
+  "Simulation",
+  "Field equipment"
+ ],
+ "technologies": [
+  "Simulation",
+  "Field equipment"
+ ],
+ "personality_traits": [
+  "Analytical",
+  "High-energy"
+ ],
+ "learning_style": "analytical",
+ "difficulty": 4,
+ "competition_level": 3,
+ "career_progression": [
+  [
+   "Student / trainee",
+   "years 0-2"
+  ],
+  [
+   "Working professional in resources & energy",
+   "years 2-5"
+  ],
+  [
+   "Senior professional / specialist",
+   "years 5-10"
+  ],
+  [
+   "Leader, expert or independent practice",
+   "years 10+"
+  ]
+ ],
+ "typical_employers": [
+  "PSUs (BHEL, NTPC, ISRO, DRDO)",
+  "Automotive & manufacturing majors (Tata, Mahindra, L&T)",
+  "Core engineering consultancies",
+  "Global R&D centres"
+ ],
+ "entrepreneurship": 0.45,
+ "government_opportunities": 0.4,
+ "remote_work": 0.1,
+ "freelancing": 0.12,
+ "salary_currency": "₹",
+ "salary_entry_lpa": 7,
+ "salary_senior_lpa": 30,
+ "scope": "Demand outlook in India is strong; see FAQs for how the platform keeps this current.",
+ "future_demand": 0.6,
+ "growth": 0.59,
+ "ai_impact": "low — AI assists rather than replaces",
+ "automation_risk": 0.25,
+ "advantages": [
+  "A broad Resources & Energy foundation that opens multiple specializations later"
+ ],
+ "challenges": [
+  "A long, demanding preparation and learning curve",
+  "Location-bound work; postings and relocation are part of the deal",
+  "Early years demand patience before the rewards compound"
+ ],
+ "misconceptions": [
+  "“You must pick your exact job title now.” Petroleum & Energy Engineering is a direction — specialization comes later.",
+  "“Only toppers make it.” Consistent skill-building beats one exam rank in the long run."
+ ],
+ "portfolio_ideas": [
+  "A project demonstrating reservoir engineering",
+  "A documented case study of drilling"
+ ],
+ "projects": [
+  "Beginner: explore reservoir engineering with a small self-chosen project",
+  "Intermediate: build or run something real using Simulation"
+ ],
+ "internships": [
+  "PSU summer internships",
+  "Plant/shop-floor internships",
+  "R&D centre internships"
+ ],
+ "certifications": [
+  "GATE (gateway to PSUs/M.Tech)",
+  "Six Sigma / Lean certifications",
+  "Software tools certifications (CAD/CAE)"
+ ],
+ "scholarships": [
+  "AICTE Pragati & Saksham",
+  "State technical education scholarships",
+  "Institute merit awards"
+ ],
+ "universities": [
+  "IITs & NITs",
+  "BITS Pilani",
+  "State engineering colleges",
+  "IIITs (for electronics)"
+ ],
+ "books": [
+  "Engineering fundamentals texts",
+  "The Goal (operations thinking)"
+ ],
+ "courses": [
+  "NPTEL engineering courses",
+  "GATE preparation",
+  "Tool-specific courses (CAD/CAE/PLC)"
+ ],
+ "youtube": [
+  "NPTEL official",
+  "Learn Engineering",
+  "Real Engineering"
+ ],
+ "communities": [
+  "SAE/IEEE/ASME student chapters",
+  "Maker spaces & robotics clubs",
+  "GATE prep communities"
+ ],
+ "major_hiring_cities": [
+  "Mumbai",
+  "Vadodara",
+  "Assam",
+  "Offshore"
+ ],
+ "relocation_cities": [
+  "Mumbai",
+  "Vadodara",
+  "Assam"
+ ],
+ "smaller_city_scope": "Concentrated in bigger hubs today; smaller-city presence is growing slowly.",
+ "rural_scope": "Limited rural presence; expect to base yourself in a town or city.",
+ "home_state_note": "Ask the AI coach about your state — regional demand, cities and relocation advice are generated live from retrieved data, never hardcoded.",
+ "top_countries": [
+  "Germany",
+  "Japan",
+  "United States",
+  "South Korea"
+ ],
+ "language_requirements": [
+  "English"
+ ],
+ "visa_difficulty": "moderate",
+ "transition_paths": [
+  "Toward Chemical Engineering: build the shared skills and take a bridging project or course",
+  "Toward Renewable Energy Engineering: build the shared skills and take a bridging project or course",
+  "Toward Geology & Earth Sciences: build the shared skills and take a bridging project or course"
+ ],
+ "related_careers": [
+  "Chemical Engineering",
+  "Renewable Energy Engineering",
+  "Geology & Earth Sciences"
+ ],
+ "faqs": [
+  [
+   "What does Petroleum & Energy Engineering pay in India?",
+   "Entry roles typically start around ₹7 LPA and senior professionals reach ₹30 LPA or more. Live, region-specific salary data is retrieved by the platform when you ask."
+  ],
+  [
+   "What should I study after Class 12?",
+   "Focus on Physics, Chemistry. Typical degrees: B.Tech Petroleum. Alternatives exist: diploma + lateral entry to b.tech."
+  ],
+  [
+   "Will AI take over this career?",
+   "AI impact is low — AI assists rather than replaces. Broad paths like Petroleum & Energy Engineering evolve rather than disappear — the students who pair domain skill with AI tools benefit most."
+  ],
+  [
+   "Is this a broad path or a specific job?",
+   "Petroleum & Energy Engineering is a career direction. Once inside it you can specialize further — the platform will map specializations in future versions."
+  ]
+ ],
+ "confidence": 0.75,
+ "sources": [
+  "detective-monkey:career-catalog:v1",
+  "detective-monkey:generator:v1"
+ ],
+ "schema_version": 1,
+ "version": 1
+}

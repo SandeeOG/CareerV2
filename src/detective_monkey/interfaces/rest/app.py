@@ -64,7 +64,6 @@ def create_app(backend: Backend | None = None) -> Any:
 
     backend = backend or seed.build_demo_backend()
     definition = seed.default_assessment_definition()
-    knowledge_nodes = seed.demo_knowledge_nodes()
 
     app = FastAPI(title="Detective Monkey", version="2.0.0")
 
@@ -183,13 +182,110 @@ def create_app(backend: Backend | None = None) -> Any:
     def converse(body: dict):
         message = (body or {}).get("message", "")
         student_id = (body or {}).get("student_id")
+        # The coach retrieves from the Knowledge Platform graph — career
+        # profiles are first-class knowledge entities there (38/39); no
+        # hardcoded career descriptions exist anywhere in this path.
         retrieval = RetrievalInput(
-            query=message, knowledge_nodes=knowledge_nodes, vector_index=backend.vector_index)
+            query=message,
+            knowledge_nodes=backend.knowledge_graph.list_nodes(),
+            vector_index=backend.vector_index)
         agent = backend.ask_agent.execute(AgentInput(message=message, retrieval_input=retrieval))
         grounded = agent.data.response if agent.success and agent.data else ""
         if student_id:
             return _respond(backend.intelligence.coach(StudentId(student_id), message, grounded))
         return _respond(agent)
+
+    # -- Explore Careers: the Career Knowledge Base (38/39) ------------------
+    # Independent from recommendations: students freely browse 16 industries
+    # and ~300 broad career paths, all served from the single knowledge layer.
+
+    def _ok(data) -> dict:
+        return {"success": True, "data": data, "errors": [], "warnings": [],
+                "metadata": {}}
+
+    def _err(message: str, status: int = 404) -> "JSONResponse":
+        return JSONResponse(status_code=status, content={
+            "success": False, "data": None, "warnings": [], "metadata": {},
+            "errors": [{"code": "NOT_FOUND", "message": message}]})
+
+    def _career_card(p) -> dict:
+        return {
+            "id": p.id, "name": p.name, "industry": p.industry,
+            "career_family": p.career_family, "student_summary": p.student_summary,
+            "tags": list(p.tags[:4]), "difficulty": p.difficulty,
+            "salary_entry_lpa": p.salary_entry_lpa,
+            "salary_senior_lpa": p.salary_senior_lpa,
+            "future_demand": p.future_demand, "remote_work": p.remote_work,
+            "automation_risk": p.automation_risk,
+        }
+
+    @app.get("/api/v1/careers/industries")
+    def list_industries():
+        repo = backend.career_knowledge
+        if repo is None:
+            return _err("Career knowledge base not loaded.", 503)
+        return _ok([{
+            "id": i.id, "name": i.name, "icon": i.icon,
+            "description": i.description,
+            "career_count": len(repo.careers_in(i.id)),
+            "featured_careers": list(i.featured_careers),
+            "trending_careers": list(i.trending_careers),
+            "future_note": i.future_note,
+        } for i in repo.industries()])
+
+    @app.get("/api/v1/careers/industries/{industry_id}")
+    def industry_careers(industry_id: str):
+        repo = backend.career_knowledge
+        if repo is None:
+            return _err("Career knowledge base not loaded.", 503)
+        industry = repo.industry(industry_id)
+        if industry is None:
+            return _err("Industry not found.")
+        return _ok({
+            "id": industry.id, "name": industry.name, "icon": industry.icon,
+            "description": industry.description, "future_note": industry.future_note,
+            "careers": [_career_card(p) for p in repo.careers_in(industry_id)],
+        })
+
+    @app.get("/api/v1/careers/search")
+    def search_careers(q: str = "", industry: str = "", remote: bool = False,
+                       ai_safe: bool = False, government: bool = False,
+                       freelancing: bool = False, entrepreneurship: bool = False,
+                       creativity: bool = False, leadership: bool = False,
+                       outdoor: bool = False, people: bool = False,
+                       no_programming: bool = False, mathematics: bool = False,
+                       max_difficulty: int = 0, min_salary: int = 0,
+                       education: str = "", country: str = ""):
+        repo = backend.career_knowledge
+        if repo is None:
+            return _err("Career knowledge base not loaded.", 503)
+        from ...knowledge.careers import CareerSearchFilters
+        filters = CareerSearchFilters(
+            industry=industry, max_difficulty=max_difficulty,
+            min_salary_lpa=min_salary, remote=remote, ai_safe=ai_safe,
+            government=government, freelancing=freelancing,
+            entrepreneurship=entrepreneurship, creativity=creativity,
+            leadership=leadership, travel_or_outdoor=outdoor,
+            people_facing=people, education_keyword=education, country=country,
+            requires_programming=False if no_programming else None,
+            requires_mathematics=True if mathematics else None,
+        )
+        return _ok([_career_card(p) for p in repo.search(q, filters)])
+
+    @app.get("/api/v1/careers/{career_id}")
+    def career_profile(career_id: str):
+        repo = backend.career_knowledge
+        if repo is None:
+            return _err("Career knowledge base not loaded.", 503)
+        profile = repo.get(career_id)
+        if profile is None:
+            return _err("Career not found.")
+        from ...knowledge.careers.schema import profile_to_json
+        data = profile_to_json(profile)
+        data["related_profiles"] = [_career_card(p) for p in repo.related(career_id)]
+        industry = repo.industry(profile.industry)
+        data["industry_name"] = industry.name if industry else profile.industry
+        return _ok(data)
 
     # -- static SPA (mounted last so /api routes win) ----------------------
 

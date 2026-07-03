@@ -23,6 +23,7 @@ from ..engines.student_intelligence.engine import StudentIntelligenceEngine
 from ..infrastructure.event_bus import InMemoryEventBus
 from ..infrastructure.platform import EnvConfiguration, SystemClock, UuidGenerator
 from ..infrastructure.providers import GeminiProvider, InMemoryVectorIndex, TemplateLLMProvider
+from ..knowledge import KnowledgePlatform
 from ..infrastructure.repositories import (
     InMemoryCareerCatalogRepository,
     InMemoryEvidenceGraphRepository,
@@ -48,7 +49,8 @@ class Backend:
     """In-memory composition of the full Detective Monkey backend."""
 
     def __init__(self, careers: tuple[Career, ...] = (), *, use_llm: bool = True,
-                 insights: dict | None = None, llm: object | None = None) -> None:
+                 insights: dict | None = None, llm: object | None = None,
+                 career_knowledge: object | None = None) -> None:
         # Platform services
         self.clock = SystemClock()
         self.ids = UuidGenerator()
@@ -67,6 +69,11 @@ class Backend:
         self.intelligence_profiles = InMemoryIntelligenceProfileRepository()
         self.mentor_memory = InMemoryMentorMemory()
         self.career_insights = insights or {}
+        # The Career Knowledge Repository — when provided (the normal case,
+        # wired by `seed.build_demo_backend`), it is the application's single
+        # source of career truth (38/39): `careers` and `insights` above are
+        # its adapter views, and the Explore Careers API reads it directly.
+        self.career_knowledge = career_knowledge
 
         # Providers — explicit `llm` wins; otherwise auto-detect a configured
         # provider from the environment (409 §16 "providers are selected through
@@ -119,3 +126,14 @@ class Backend:
             self.assessment_engine, self.reasoning_engine, self.careers,
             self.students, self.intelligence_profiles, self.event_bus,
             insights=self.career_insights, memory=self.mentor_memory)
+
+        # Knowledge Generation Platform — the single source of truth for career
+        # knowledge. Shares the canonical Knowledge Graph repository, event bus,
+        # clock and (optional) LLM; knowledge sources and dynamic providers are
+        # registered on it by seeds/deployment code.
+        self.knowledge_platform = KnowledgePlatform(
+            self.knowledge_graph,
+            clock=self.clock,
+            llm=llm,
+            publisher=self.event_bus,
+        )

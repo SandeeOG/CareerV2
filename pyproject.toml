@@ -28,6 +28,9 @@ where = ["src"]
 
 [tool.setuptools.package-data]
 "detective_monkey.interfaces.rest" = ["static/*"]
+# The generated Career Knowledge Base — the application's single source of
+# career truth (prompts 38/39) — ships with the package.
+"detective_monkey.knowledge.careers" = ["data/*.json"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

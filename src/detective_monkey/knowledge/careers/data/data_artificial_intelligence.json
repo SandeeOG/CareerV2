@@ -1,0 +1,246 @@
+{
+ "id": "data-artificial-intelligence",
+ "name": "Data & Artificial Intelligence",
+ "industry": "technology-computing",
+ "career_family": "Data & AI",
+ "tags": [
+  "data",
+  "analytical",
+  "mathematics",
+  "curious",
+  "research",
+  "programming"
+ ],
+ "student_summary": "Turn data into decisions and build AI systems that learn from it.",
+ "overview": "Turn data into decisions and build AI systems that learn from it. Data & Artificial Intelligence sits in the Data & AI family of Technology & Computing. It is a broad career direction — you can enter it through several routes and specialize later without restarting.",
+ "who_is_this_for": [
+  "You enjoy breaking problems into parts and reasoning them through",
+  "Numbers and patterns make sense to you",
+  "You keep asking why until you reach the bottom of things"
+ ],
+ "who_should_avoid": [
+  "You want a short, easy study path — this one demands years of serious preparation",
+  "Intense competition drains you — entry here is a contest"
+ ],
+ "daily_responsibilities": [
+  "Apply statistics to real problems",
+  "Collaborate with your team using machine learning",
+  "Keep improving at programming — the field keeps moving",
+  "Communicate progress, results and decisions to the people who depend on them"
+ ],
+ "work_environment": "Laboratories and research facilities with focused desk analysis",
+ "problem_solving_style": "Analytical — decompose, measure, model, verify",
+ "school_subjects": [
+  "Mathematics",
+  "Computer Science",
+  "Statistics"
+ ],
+ "college_degrees": [
+  "B.Tech CSE/AI",
+  "B.Sc Statistics/Data Science",
+  "B.Sc Mathematics"
+ ],
+ "alternative_paths": [
+  "Bootcamps + a strong project portfolio",
+  "Open-source contributions as your CV"
+ ],
+ "core_skills": [
+  "Statistics",
+  "Machine learning",
+  "Programming",
+  "Data storytelling"
+ ],
+ "soft_skills": [
+  "Critical thinking"
+ ],
+ "technical_skills": [
+  "Python",
+  "SQL",
+  "TensorFlow",
+  "Pandas"
+ ],
+ "future_skills": [
+  "AI-assisted development",
+  "Prompt engineering",
+  "Cloud-native architecture"
+ ],
+ "tools": [
+  "Python",
+  "SQL",
+  "TensorFlow"
+ ],
+ "technologies": [
+  "Python",
+  "SQL",
+  "TensorFlow",
+  "Pandas"
+ ],
+ "personality_traits": [
+  "Analytical",
+  "Mathematically minded",
+  "Curious",
+  "Inquisitive"
+ ],
+ "learning_style": "analytical",
+ "difficulty": 4,
+ "competition_level": 4,
+ "career_progression": [
+  [
+   "Student / trainee",
+   "years 0-2"
+  ],
+  [
+   "Working professional in data & ai",
+   "years 2-5"
+  ],
+  [
+   "Senior professional / specialist",
+   "years 5-10"
+  ],
+  [
+   "Leader, expert or independent practice",
+   "years 10+"
+  ]
+ ],
+ "typical_employers": [
+  "Product companies (Google, Microsoft, Zoho)",
+  "IT services (TCS, Infosys, Wipro)",
+  "Startups",
+  "Global capability centres"
+ ],
+ "entrepreneurship": 0.7,
+ "government_opportunities": 0.4,
+ "remote_work": 0.9,
+ "freelancing": 0.68,
+ "salary_currency": "₹",
+ "salary_entry_lpa": 6,
+ "salary_senior_lpa": 70,
+ "scope": "Demand outlook in India is booming; see FAQs for how the platform keeps this current.",
+ "future_demand": 0.95,
+ "growth": 0.91,
+ "ai_impact": "low — AI assists rather than replaces",
+ "automation_risk": 0.25,
+ "advantages": [
+  "Demand is booming: opportunities across India and beyond",
+  "High remote and location flexibility",
+  "Strong earning ceiling (₹70 LPA+ at senior levels)",
+  "A broad Data & AI foundation that opens multiple specializations later"
+ ],
+ "challenges": [
+  "Fierce competition for the best seats and roles",
+  "A long, demanding preparation and learning curve",
+  "Early years demand patience before the rewards compound"
+ ],
+ "misconceptions": [
+  "“You must pick your exact job title now.” Data & Artificial Intelligence is a direction — specialization comes later.",
+  "“Only toppers make it.” Consistent skill-building beats one exam rank in the long run."
+ ],
+ "portfolio_ideas": [
+  "A project demonstrating statistics",
+  "A documented case study of machine learning"
+ ],
+ "projects": [
+  "Beginner: explore statistics with a small self-chosen project",
+  "Intermediate: build or run something real using Python"
+ ],
+ "internships": [
+  "Summer internships at tech companies",
+  "Google Summer of Code",
+  "Startup internships via Internshala"
+ ],
+ "certifications": [
+  "Cloud certifications (AWS/Azure/GCP)",
+  "Vendor certifications in your stack"
+ ],
+ "scholarships": [
+  "Reliance Foundation Scholarships",
+  "Google generation scholarships",
+  "State merit scholarships"
+ ],
+ "universities": [
+  "IITs & NITs",
+  "IIITs",
+  "BITS Pilani",
+  "State technical universities"
+ ],
+ "books": [
+  "Clean Code",
+  "The Pragmatic Programmer",
+  "Grokking Algorithms"
+ ],
+ "courses": [
+  "NPTEL computer science courses",
+  "CS50 (Harvard, free)",
+  "Coursera specializations in your stack"
+ ],
+ "youtube": [
+  "freeCodeCamp",
+  "Fireship",
+  "NPTEL official"
+ ],
+ "communities": [
+  "Stack Overflow",
+  "GitHub open source",
+  "Local tech meetups & hackathons"
+ ],
+ "major_hiring_cities": [
+  "Bengaluru",
+  "Hyderabad",
+  "Gurugram",
+  "Pune"
+ ],
+ "relocation_cities": [
+  "Bengaluru",
+  "Hyderabad",
+  "Gurugram"
+ ],
+ "smaller_city_scope": "Remote-friendly: smaller-city living with metro-level work is realistic.",
+ "rural_scope": "Limited rural presence; expect to base yourself in a town or city.",
+ "home_state_note": "Ask the AI coach about your state — regional demand, cities and relocation advice are generated live from retrieved data, never hardcoded.",
+ "top_countries": [
+  "United States",
+  "Germany",
+  "Canada",
+  "Singapore",
+  "Netherlands"
+ ],
+ "language_requirements": [
+  "English"
+ ],
+ "visa_difficulty": "moderate",
+ "transition_paths": [
+  "Toward Software Engineering: build the shared skills and take a bridging project or course",
+  "Toward Data & Analytics Research: build the shared skills and take a bridging project or course",
+  "Toward Business Analytics: build the shared skills and take a bridging project or course"
+ ],
+ "related_careers": [
+  "Software Engineering",
+  "Data & Analytics Research",
+  "Business Analytics"
+ ],
+ "faqs": [
+  [
+   "What does Data & Artificial Intelligence pay in India?",
+   "Entry roles typically start around ₹6 LPA and senior professionals reach ₹70 LPA or more. Live, region-specific salary data is retrieved by the platform when you ask."
+  ],
+  [
+   "What should I study after Class 12?",
+   "Focus on Mathematics, Computer Science. Typical degrees: B.Tech CSE/AI, B.Sc Statistics/Data Science. Alternatives exist: bootcamps + a strong project portfolio."
+  ],
+  [
+   "Will AI take over this career?",
+   "AI impact is low — AI assists rather than replaces. Broad paths like Data & Artificial Intelligence evolve rather than disappear — the students who pair domain skill with AI tools benefit most."
+  ],
+  [
+   "Is this a broad path or a specific job?",
+   "Data & Artificial Intelligence is a career direction. Once inside it you can specialize further — the platform will map specializations in future versions."
+  ]
+ ],
+ "confidence": 0.75,
+ "sources": [
+  "detective-monkey:career-catalog:v1",
+  "detective-monkey:generator:v1"
+ ],
+ "schema_version": 1,
+ "version": 1
+}

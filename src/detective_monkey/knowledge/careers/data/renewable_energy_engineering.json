@@ -1,0 +1,233 @@
+{
+ "id": "renewable-energy-engineering",
+ "name": "Renewable Energy Engineering",
+ "industry": "engineering-manufacturing",
+ "career_family": "Resources & Energy",
+ "tags": [
+  "sustainability",
+  "energy",
+  "innovation",
+  "outdoors",
+  "mission"
+ ],
+ "student_summary": "Build India's solar, wind and green-hydrogen future.",
+ "overview": "Build India's solar, wind and green-hydrogen future. Renewable Energy Engineering sits in the Resources & Energy family of Engineering & Manufacturing. It is a broad career direction — you can enter it through several routes and specialize later without restarting.",
+ "who_is_this_for": [
+  "You would rather be in the field than at a desk all day"
+ ],
+ "who_should_avoid": [
+  "You want a short, easy study path — this one demands years of serious preparation"
+ ],
+ "daily_responsibilities": [
+  "Apply solar/wind system design to real problems",
+  "Collaborate with your team using energy storage",
+  "Keep improving at grid integration — the field keeps moving",
+  "Communicate progress, results and decisions to the people who depend on them"
+ ],
+ "work_environment": "Field-first: outdoors, on sites and in communities more than at a desk",
+ "problem_solving_style": "Adaptive — mix analysis, action and people skills as the situation demands",
+ "school_subjects": [
+  "Physics",
+  "Mathematics",
+  "Chemistry"
+ ],
+ "college_degrees": [
+  "B.Tech EE/Mechanical + renewable specialization"
+ ],
+ "alternative_paths": [
+  "Diploma + lateral entry to B.Tech",
+  "ITI + apprenticeship + B.Voc ladder"
+ ],
+ "core_skills": [
+  "Solar/wind system design",
+  "Energy storage",
+  "Grid integration",
+  "Project execution"
+ ],
+ "soft_skills": [
+  "Enthusiasm"
+ ],
+ "technical_skills": [
+  "PVsyst",
+  "MATLAB",
+  "SCADA"
+ ],
+ "future_skills": [
+  "Industry 4.0 & smart manufacturing",
+  "Sustainability engineering",
+  "Simulation-driven design"
+ ],
+ "tools": [
+  "PVsyst",
+  "MATLAB",
+  "SCADA"
+ ],
+ "technologies": [
+  "PVsyst",
+  "MATLAB",
+  "SCADA"
+ ],
+ "personality_traits": [
+  "Loves the outdoors",
+  "High-energy"
+ ],
+ "learning_style": "reflective",
+ "difficulty": 4,
+ "competition_level": 3,
+ "career_progression": [
+  [
+   "Student / trainee",
+   "years 0-2"
+  ],
+  [
+   "Working professional in resources & energy",
+   "years 2-5"
+  ],
+  [
+   "Senior professional / specialist",
+   "years 5-10"
+  ],
+  [
+   "Leader, expert or independent practice",
+   "years 10+"
+  ]
+ ],
+ "typical_employers": [
+  "PSUs (BHEL, NTPC, ISRO, DRDO)",
+  "Automotive & manufacturing majors (Tata, Mahindra, L&T)",
+  "Core engineering consultancies",
+  "Global R&D centres"
+ ],
+ "entrepreneurship": 0.45,
+ "government_opportunities": 0.4,
+ "remote_work": 0.3,
+ "freelancing": 0.26,
+ "salary_currency": "₹",
+ "salary_entry_lpa": 5,
+ "salary_senior_lpa": 25,
+ "scope": "Demand outlook in India is booming; see FAQs for how the platform keeps this current.",
+ "future_demand": 0.9,
+ "growth": 0.86,
+ "ai_impact": "minimal — deeply human/physical work",
+ "automation_risk": 0.2,
+ "advantages": [
+  "Demand is booming: opportunities across India and beyond",
+  "Highly resilient to AI automation",
+  "A broad Resources & Energy foundation that opens multiple specializations later"
+ ],
+ "challenges": [
+  "A long, demanding preparation and learning curve",
+  "Early years demand patience before the rewards compound"
+ ],
+ "misconceptions": [
+  "“You must pick your exact job title now.” Renewable Energy Engineering is a direction — specialization comes later.",
+  "“Only toppers make it.” Consistent skill-building beats one exam rank in the long run."
+ ],
+ "portfolio_ideas": [
+  "A project demonstrating solar/wind system design",
+  "A documented case study of energy storage"
+ ],
+ "projects": [
+  "Beginner: explore solar/wind system design with a small self-chosen project",
+  "Intermediate: build or run something real using PVsyst"
+ ],
+ "internships": [
+  "PSU summer internships",
+  "Plant/shop-floor internships",
+  "R&D centre internships"
+ ],
+ "certifications": [
+  "GATE (gateway to PSUs/M.Tech)",
+  "Six Sigma / Lean certifications",
+  "Software tools certifications (CAD/CAE)"
+ ],
+ "scholarships": [
+  "AICTE Pragati & Saksham",
+  "State technical education scholarships",
+  "Institute merit awards"
+ ],
+ "universities": [
+  "IITs & NITs",
+  "BITS Pilani",
+  "State engineering colleges",
+  "IIITs (for electronics)"
+ ],
+ "books": [
+  "Engineering fundamentals texts",
+  "The Goal (operations thinking)"
+ ],
+ "courses": [
+  "NPTEL engineering courses",
+  "GATE preparation",
+  "Tool-specific courses (CAD/CAE/PLC)"
+ ],
+ "youtube": [
+  "NPTEL official",
+  "Learn Engineering",
+  "Real Engineering"
+ ],
+ "communities": [
+  "SAE/IEEE/ASME student chapters",
+  "Maker spaces & robotics clubs",
+  "GATE prep communities"
+ ],
+ "major_hiring_cities": [
+  "Gujarat",
+  "Rajasthan",
+  "Tamil Nadu",
+  "Bengaluru"
+ ],
+ "relocation_cities": [
+  "Gujarat",
+  "Rajasthan",
+  "Tamil Nadu"
+ ],
+ "smaller_city_scope": "Viable in smaller cities — demand exists well beyond the metros.",
+ "rural_scope": "Limited rural presence; expect to base yourself in a town or city.",
+ "home_state_note": "Ask the AI coach about your state — regional demand, cities and relocation advice are generated live from retrieved data, never hardcoded.",
+ "top_countries": [
+  "Germany",
+  "Japan",
+  "United States",
+  "South Korea"
+ ],
+ "language_requirements": [
+  "English"
+ ],
+ "visa_difficulty": "moderate",
+ "transition_paths": [
+  "Toward Electrical & Electronics Engineering: build the shared skills and take a bridging project or course",
+  "Toward Environmental Management & Sustainability: build the shared skills and take a bridging project or course",
+  "Toward Climate & ESG Careers: build the shared skills and take a bridging project or course"
+ ],
+ "related_careers": [
+  "Electrical & Electronics Engineering",
+  "Environmental Management & Sustainability",
+  "Climate & ESG Careers"
+ ],
+ "faqs": [
+  [
+   "What does Renewable Energy Engineering pay in India?",
+   "Entry roles typically start around ₹5 LPA and senior professionals reach ₹25 LPA or more. Live, region-specific salary data is retrieved by the platform when you ask."
+  ],
+  [
+   "What should I study after Class 12?",
+   "Focus on Physics, Mathematics. Typical degrees: B.Tech EE/Mechanical + renewable specialization. Alternatives exist: diploma + lateral entry to b.tech."
+  ],
+  [
+   "Will AI take over this career?",
+   "AI impact is minimal — deeply human/physical work. Broad paths like Renewable Energy Engineering evolve rather than disappear — the students who pair domain skill with AI tools benefit most."
+  ],
+  [
+   "Is this a broad path or a specific job?",
+   "Renewable Energy Engineering is a career direction. Once inside it you can specialize further — the platform will map specializations in future versions."
+  ]
+ ],
+ "confidence": 0.75,
+ "sources": [
+  "detective-monkey:career-catalog:v1",
+  "detective-monkey:generator:v1"
+ ],
+ "schema_version": 1,
+ "version": 1
+}

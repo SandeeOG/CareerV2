@@ -1,0 +1,236 @@
+{
+ "id": "industrial-production-engineering",
+ "name": "Industrial & Production Engineering",
+ "industry": "engineering-manufacturing",
+ "career_family": "Manufacturing",
+ "tags": [
+  "efficiency",
+  "systems",
+  "organization",
+  "analytical",
+  "practical"
+ ],
+ "student_summary": "Make factories faster, safer and less wasteful.",
+ "overview": "Make factories faster, safer and less wasteful. Industrial & Production Engineering sits in the Manufacturing family of Engineering & Manufacturing. It is a broad career direction — you can enter it through several routes and specialize later without restarting.",
+ "who_is_this_for": [
+  "You enjoy breaking problems into parts and reasoning them through"
+ ],
+ "who_should_avoid": [
+  "You want a laptop-anywhere lifestyle — this work happens in person"
+ ],
+ "daily_responsibilities": [
+  "Apply process optimization to real problems",
+  "Collaborate with your team using lean manufacturing",
+  "Keep improving at quality systems — the field keeps moving",
+  "Communicate progress, results and decisions to the people who depend on them"
+ ],
+ "work_environment": "Primarily on-site — offices, facilities or the field depending on the role",
+ "problem_solving_style": "Analytical — decompose, measure, model, verify",
+ "school_subjects": [
+  "Physics",
+  "Mathematics"
+ ],
+ "college_degrees": [
+  "B.Tech Industrial/Production"
+ ],
+ "alternative_paths": [
+  "Diploma + lateral entry to B.Tech",
+  "ITI + apprenticeship + B.Voc ladder"
+ ],
+ "core_skills": [
+  "Process optimization",
+  "Lean manufacturing",
+  "Quality systems",
+  "Plant layout"
+ ],
+ "soft_skills": [
+  "Organization",
+  "Critical thinking"
+ ],
+ "technical_skills": [
+  "Excel",
+  "Simulation",
+  "ERP",
+  "Six Sigma"
+ ],
+ "future_skills": [
+  "Industry 4.0 & smart manufacturing",
+  "Sustainability engineering",
+  "Simulation-driven design"
+ ],
+ "tools": [
+  "Excel",
+  "Simulation",
+  "ERP"
+ ],
+ "technologies": [
+  "Excel",
+  "Simulation",
+  "ERP",
+  "Six Sigma"
+ ],
+ "personality_traits": [
+  "Analytical",
+  "Organized",
+  "Practical"
+ ],
+ "learning_style": "analytical",
+ "difficulty": 3,
+ "competition_level": 3,
+ "career_progression": [
+  [
+   "Student / trainee",
+   "years 0-2"
+  ],
+  [
+   "Working professional in manufacturing",
+   "years 2-5"
+  ],
+  [
+   "Senior professional / specialist",
+   "years 5-10"
+  ],
+  [
+   "Leader, expert or independent practice",
+   "years 10+"
+  ]
+ ],
+ "typical_employers": [
+  "PSUs (BHEL, NTPC, ISRO, DRDO)",
+  "Automotive & manufacturing majors (Tata, Mahindra, L&T)",
+  "Core engineering consultancies",
+  "Global R&D centres"
+ ],
+ "entrepreneurship": 0.45,
+ "government_opportunities": 0.4,
+ "remote_work": 0.2,
+ "freelancing": 0.19,
+ "salary_currency": "₹",
+ "salary_entry_lpa": 4,
+ "salary_senior_lpa": 20,
+ "scope": "Demand outlook in India is booming; see FAQs for how the platform keeps this current.",
+ "future_demand": 0.8,
+ "growth": 0.77,
+ "ai_impact": "low — AI assists rather than replaces",
+ "automation_risk": 0.4,
+ "advantages": [
+  "Demand is booming: opportunities across India and beyond",
+  "A broad Manufacturing foundation that opens multiple specializations later"
+ ],
+ "challenges": [
+  "Routine tasks are being automated — you must keep moving up the value chain",
+  "Location-bound work; postings and relocation are part of the deal",
+  "Early years demand patience before the rewards compound"
+ ],
+ "misconceptions": [
+  "“You must pick your exact job title now.” Industrial & Production Engineering is a direction — specialization comes later.",
+  "“Only toppers make it.” Consistent skill-building beats one exam rank in the long run."
+ ],
+ "portfolio_ideas": [
+  "A project demonstrating process optimization",
+  "A documented case study of lean manufacturing"
+ ],
+ "projects": [
+  "Beginner: explore process optimization with a small self-chosen project",
+  "Intermediate: build or run something real using Excel"
+ ],
+ "internships": [
+  "PSU summer internships",
+  "Plant/shop-floor internships",
+  "R&D centre internships"
+ ],
+ "certifications": [
+  "GATE (gateway to PSUs/M.Tech)",
+  "Six Sigma / Lean certifications",
+  "Software tools certifications (CAD/CAE)"
+ ],
+ "scholarships": [
+  "AICTE Pragati & Saksham",
+  "State technical education scholarships",
+  "Institute merit awards"
+ ],
+ "universities": [
+  "IITs & NITs",
+  "BITS Pilani",
+  "State engineering colleges",
+  "IIITs (for electronics)"
+ ],
+ "books": [
+  "Engineering fundamentals texts",
+  "The Goal (operations thinking)"
+ ],
+ "courses": [
+  "NPTEL engineering courses",
+  "GATE preparation",
+  "Tool-specific courses (CAD/CAE/PLC)"
+ ],
+ "youtube": [
+  "NPTEL official",
+  "Learn Engineering",
+  "Real Engineering"
+ ],
+ "communities": [
+  "SAE/IEEE/ASME student chapters",
+  "Maker spaces & robotics clubs",
+  "GATE prep communities"
+ ],
+ "major_hiring_cities": [
+  "Pune",
+  "Chennai",
+  "NCR",
+  "Ahmedabad"
+ ],
+ "relocation_cities": [
+  "Pune",
+  "Chennai",
+  "NCR"
+ ],
+ "smaller_city_scope": "Viable in smaller cities — demand exists well beyond the metros.",
+ "rural_scope": "Limited rural presence; expect to base yourself in a town or city.",
+ "home_state_note": "Ask the AI coach about your state — regional demand, cities and relocation advice are generated live from retrieved data, never hardcoded.",
+ "top_countries": [
+  "Germany",
+  "Japan",
+  "United States",
+  "South Korea"
+ ],
+ "language_requirements": [
+  "English"
+ ],
+ "visa_difficulty": "moderate",
+ "transition_paths": [
+  "Toward Operations Management: build the shared skills and take a bridging project or course",
+  "Toward Manufacturing & Quality Engineering: build the shared skills and take a bridging project or course",
+  "Toward Mechanical Engineering: build the shared skills and take a bridging project or course"
+ ],
+ "related_careers": [
+  "Operations Management",
+  "Manufacturing & Quality Engineering",
+  "Mechanical Engineering"
+ ],
+ "faqs": [
+  [
+   "What does Industrial & Production Engineering pay in India?",
+   "Entry roles typically start around ₹4 LPA and senior professionals reach ₹20 LPA or more. Live, region-specific salary data is retrieved by the platform when you ask."
+  ],
+  [
+   "What should I study after Class 12?",
+   "Focus on Physics, Mathematics. Typical degrees: B.Tech Industrial/Production. Alternatives exist: diploma + lateral entry to b.tech."
+  ],
+  [
+   "Will AI take over this career?",
+   "AI impact is low — AI assists rather than replaces. Broad paths like Industrial & Production Engineering evolve rather than disappear — the students who pair domain skill with AI tools benefit most."
+  ],
+  [
+   "Is this a broad path or a specific job?",
+   "Industrial & Production Engineering is a career direction. Once inside it you can specialize further — the platform will map specializations in future versions."
+  ]
+ ],
+ "confidence": 0.75,
+ "sources": [
+  "detective-monkey:career-catalog:v1",
+  "detective-monkey:generator:v1"
+ ],
+ "schema_version": 1,
+ "version": 1
+}

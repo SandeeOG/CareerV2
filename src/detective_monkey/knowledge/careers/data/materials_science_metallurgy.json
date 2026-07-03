@@ -1,0 +1,234 @@
+{
+ "id": "materials-science-metallurgy",
+ "name": "Materials Science & Metallurgy",
+ "industry": "engineering-manufacturing",
+ "career_family": "Manufacturing",
+ "tags": [
+  "materials",
+  "chemistry",
+  "research",
+  "analytical",
+  "lab"
+ ],
+ "student_summary": "Invent and improve the materials everything else is made from.",
+ "overview": "Invent and improve the materials everything else is made from. Materials Science & Metallurgy sits in the Manufacturing family of Engineering & Manufacturing. It is a broad career direction — you can enter it through several routes and specialize later without restarting.",
+ "who_is_this_for": [
+  "You enjoy breaking problems into parts and reasoning them through",
+  "You keep asking why until you reach the bottom of things"
+ ],
+ "who_should_avoid": [
+  "You want a short, easy study path — this one demands years of serious preparation",
+  "You want a laptop-anywhere lifestyle — this work happens in person"
+ ],
+ "daily_responsibilities": [
+  "Apply material characterization to real problems",
+  "Collaborate with your team using heat treatment",
+  "Keep improving at failure analysis — the field keeps moving",
+  "Communicate progress, results and decisions to the people who depend on them"
+ ],
+ "work_environment": "Laboratories and research facilities with focused desk analysis",
+ "problem_solving_style": "Analytical — decompose, measure, model, verify",
+ "school_subjects": [
+  "Chemistry",
+  "Physics",
+  "Mathematics"
+ ],
+ "college_degrees": [
+  "B.Tech Metallurgy/Materials"
+ ],
+ "alternative_paths": [
+  "Diploma + lateral entry to B.Tech",
+  "ITI + apprenticeship + B.Voc ladder"
+ ],
+ "core_skills": [
+  "Material characterization",
+  "Heat treatment",
+  "Failure analysis",
+  "Research methods"
+ ],
+ "soft_skills": [
+  "Critical thinking"
+ ],
+ "technical_skills": [
+  "SEM/XRD",
+  "Simulation",
+  "Lab equipment"
+ ],
+ "future_skills": [
+  "Industry 4.0 & smart manufacturing",
+  "Sustainability engineering",
+  "Simulation-driven design"
+ ],
+ "tools": [
+  "SEM/XRD",
+  "Simulation",
+  "Lab equipment"
+ ],
+ "technologies": [
+  "SEM/XRD",
+  "Simulation",
+  "Lab equipment"
+ ],
+ "personality_traits": [
+  "Analytical",
+  "Inquisitive"
+ ],
+ "learning_style": "analytical",
+ "difficulty": 4,
+ "competition_level": 2,
+ "career_progression": [
+  [
+   "Student / trainee",
+   "years 0-2"
+  ],
+  [
+   "Working professional in manufacturing",
+   "years 2-5"
+  ],
+  [
+   "Senior professional / specialist",
+   "years 5-10"
+  ],
+  [
+   "Leader, expert or independent practice",
+   "years 10+"
+  ]
+ ],
+ "typical_employers": [
+  "PSUs (BHEL, NTPC, ISRO, DRDO)",
+  "Automotive & manufacturing majors (Tata, Mahindra, L&T)",
+  "Core engineering consultancies",
+  "Global R&D centres"
+ ],
+ "entrepreneurship": 0.45,
+ "government_opportunities": 0.4,
+ "remote_work": 0.2,
+ "freelancing": 0.19,
+ "salary_currency": "₹",
+ "salary_entry_lpa": 5,
+ "salary_senior_lpa": 18,
+ "scope": "Demand outlook in India is strong; see FAQs for how the platform keeps this current.",
+ "future_demand": 0.7,
+ "growth": 0.68,
+ "ai_impact": "low — AI assists rather than replaces",
+ "automation_risk": 0.25,
+ "advantages": [
+  "A broad Manufacturing foundation that opens multiple specializations later"
+ ],
+ "challenges": [
+  "A long, demanding preparation and learning curve",
+  "Location-bound work; postings and relocation are part of the deal",
+  "Early years demand patience before the rewards compound"
+ ],
+ "misconceptions": [
+  "“You must pick your exact job title now.” Materials Science & Metallurgy is a direction — specialization comes later.",
+  "“Only toppers make it.” Consistent skill-building beats one exam rank in the long run."
+ ],
+ "portfolio_ideas": [
+  "A project demonstrating material characterization",
+  "A documented case study of heat treatment"
+ ],
+ "projects": [
+  "Beginner: explore material characterization with a small self-chosen project",
+  "Intermediate: build or run something real using SEM/XRD"
+ ],
+ "internships": [
+  "PSU summer internships",
+  "Plant/shop-floor internships",
+  "R&D centre internships"
+ ],
+ "certifications": [
+  "GATE (gateway to PSUs/M.Tech)",
+  "Six Sigma / Lean certifications",
+  "Software tools certifications (CAD/CAE)"
+ ],
+ "scholarships": [
+  "AICTE Pragati & Saksham",
+  "State technical education scholarships",
+  "Institute merit awards"
+ ],
+ "universities": [
+  "IITs & NITs",
+  "BITS Pilani",
+  "State engineering colleges",
+  "IIITs (for electronics)"
+ ],
+ "books": [
+  "Engineering fundamentals texts",
+  "The Goal (operations thinking)"
+ ],
+ "courses": [
+  "NPTEL engineering courses",
+  "GATE preparation",
+  "Tool-specific courses (CAD/CAE/PLC)"
+ ],
+ "youtube": [
+  "NPTEL official",
+  "Learn Engineering",
+  "Real Engineering"
+ ],
+ "communities": [
+  "SAE/IEEE/ASME student chapters",
+  "Maker spaces & robotics clubs",
+  "GATE prep communities"
+ ],
+ "major_hiring_cities": [
+  "Jamshedpur",
+  "Pune",
+  "Hyderabad",
+  "Steel belts"
+ ],
+ "relocation_cities": [
+  "Jamshedpur",
+  "Pune",
+  "Hyderabad"
+ ],
+ "smaller_city_scope": "Concentrated in bigger hubs today; smaller-city presence is growing slowly.",
+ "rural_scope": "Limited rural presence; expect to base yourself in a town or city.",
+ "home_state_note": "Ask the AI coach about your state — regional demand, cities and relocation advice are generated live from retrieved data, never hardcoded.",
+ "top_countries": [
+  "Germany",
+  "Japan",
+  "United States",
+  "South Korea"
+ ],
+ "language_requirements": [
+  "English"
+ ],
+ "visa_difficulty": "moderate",
+ "transition_paths": [
+  "Toward Chemical Engineering: build the shared skills and take a bridging project or course",
+  "Toward Physics Research: build the shared skills and take a bridging project or course",
+  "Toward Mining Engineering: build the shared skills and take a bridging project or course"
+ ],
+ "related_careers": [
+  "Chemical Engineering",
+  "Physics Research",
+  "Mining Engineering"
+ ],
+ "faqs": [
+  [
+   "What does Materials Science & Metallurgy pay in India?",
+   "Entry roles typically start around ₹5 LPA and senior professionals reach ₹18 LPA or more. Live, region-specific salary data is retrieved by the platform when you ask."
+  ],
+  [
+   "What should I study after Class 12?",
+   "Focus on Chemistry, Physics. Typical degrees: B.Tech Metallurgy/Materials. Alternatives exist: diploma + lateral entry to b.tech."
+  ],
+  [
+   "Will AI take over this career?",
+   "AI impact is low — AI assists rather than replaces. Broad paths like Materials Science & Metallurgy evolve rather than disappear — the students who pair domain skill with AI tools benefit most."
+  ],
+  [
+   "Is this a broad path or a specific job?",
+   "Materials Science & Metallurgy is a career direction. Once inside it you can specialize further — the platform will map specializations in future versions."
+  ]
+ ],
+ "confidence": 0.75,
+ "sources": [
+  "detective-monkey:career-catalog:v1",
+  "detective-monkey:generator:v1"
+ ],
+ "schema_version": 1,
+ "version": 1
+}

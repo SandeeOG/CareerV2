@@ -1,0 +1,236 @@
+{
+ "id": "cloud-infrastructure",
+ "name": "Cloud & Infrastructure",
+ "industry": "technology-computing",
+ "career_family": "Security & Infrastructure",
+ "tags": [
+  "systems",
+  "analytical",
+  "automation",
+  "infrastructure"
+ ],
+ "student_summary": "Run the cloud platforms and servers that keep the internet's services alive.",
+ "overview": "Run the cloud platforms and servers that keep the internet's services alive. Cloud & Infrastructure sits in the Security & Infrastructure family of Technology & Computing. It is a broad career direction — you can enter it through several routes and specialize later without restarting.",
+ "who_is_this_for": [
+  "You enjoy breaking problems into parts and reasoning them through"
+ ],
+ "who_should_avoid": [
+  "You strongly prefer solitary desk work over this field's day-to-day reality"
+ ],
+ "daily_responsibilities": [
+  "Apply cloud architecture to real problems",
+  "Collaborate with your team using networking",
+  "Keep improving at automation — the field keeps moving",
+  "Communicate progress, results and decisions to the people who depend on them"
+ ],
+ "work_environment": "Project sites and offices — boots and drawings in the same week",
+ "problem_solving_style": "Analytical — decompose, measure, model, verify",
+ "school_subjects": [
+  "Computer Science",
+  "Mathematics"
+ ],
+ "college_degrees": [
+  "B.Tech CSE/IT",
+  "BCA + cloud certifications"
+ ],
+ "alternative_paths": [
+  "Bootcamps + a strong project portfolio",
+  "Open-source contributions as your CV"
+ ],
+ "core_skills": [
+  "Cloud architecture",
+  "Networking",
+  "Automation",
+  "Monitoring"
+ ],
+ "soft_skills": [
+  "Critical thinking"
+ ],
+ "technical_skills": [
+  "AWS",
+  "Azure",
+  "Linux",
+  "Kubernetes",
+  "Terraform"
+ ],
+ "future_skills": [
+  "AI-assisted development",
+  "Prompt engineering",
+  "Cloud-native architecture"
+ ],
+ "tools": [
+  "AWS",
+  "Azure",
+  "Linux"
+ ],
+ "technologies": [
+  "AWS",
+  "Azure",
+  "Linux",
+  "Kubernetes",
+  "Terraform"
+ ],
+ "personality_traits": [
+  "Analytical"
+ ],
+ "learning_style": "analytical",
+ "difficulty": 3,
+ "competition_level": 3,
+ "career_progression": [
+  [
+   "Student / trainee",
+   "years 0-2"
+  ],
+  [
+   "Working professional in security & infrastructure",
+   "years 2-5"
+  ],
+  [
+   "Senior professional / specialist",
+   "years 5-10"
+  ],
+  [
+   "Leader, expert or independent practice",
+   "years 10+"
+  ]
+ ],
+ "typical_employers": [
+  "Product companies (Google, Microsoft, Zoho)",
+  "IT services (TCS, Infosys, Wipro)",
+  "Startups",
+  "Global capability centres"
+ ],
+ "entrepreneurship": 0.7,
+ "government_opportunities": 0.4,
+ "remote_work": 0.9,
+ "freelancing": 0.68,
+ "salary_currency": "₹",
+ "salary_entry_lpa": 5,
+ "salary_senior_lpa": 55,
+ "scope": "Demand outlook in India is booming; see FAQs for how the platform keeps this current.",
+ "future_demand": 0.9,
+ "growth": 0.86,
+ "ai_impact": "low — AI assists rather than replaces",
+ "automation_risk": 0.35,
+ "advantages": [
+  "Demand is booming: opportunities across India and beyond",
+  "High remote and location flexibility",
+  "Strong earning ceiling (₹55 LPA+ at senior levels)",
+  "A broad Security & Infrastructure foundation that opens multiple specializations later"
+ ],
+ "challenges": [
+  "Early years demand patience before the rewards compound"
+ ],
+ "misconceptions": [
+  "“You must pick your exact job title now.” Cloud & Infrastructure is a direction — specialization comes later.",
+  "“Only toppers make it.” Consistent skill-building beats one exam rank in the long run."
+ ],
+ "portfolio_ideas": [
+  "A project demonstrating cloud architecture",
+  "A documented case study of networking"
+ ],
+ "projects": [
+  "Beginner: explore cloud architecture with a small self-chosen project",
+  "Intermediate: build or run something real using AWS"
+ ],
+ "internships": [
+  "Summer internships at tech companies",
+  "Google Summer of Code",
+  "Startup internships via Internshala"
+ ],
+ "certifications": [
+  "Cloud certifications (AWS/Azure/GCP)",
+  "Vendor certifications in your stack"
+ ],
+ "scholarships": [
+  "Reliance Foundation Scholarships",
+  "Google generation scholarships",
+  "State merit scholarships"
+ ],
+ "universities": [
+  "IITs & NITs",
+  "IIITs",
+  "BITS Pilani",
+  "State technical universities"
+ ],
+ "books": [
+  "Clean Code",
+  "The Pragmatic Programmer",
+  "Grokking Algorithms"
+ ],
+ "courses": [
+  "NPTEL computer science courses",
+  "CS50 (Harvard, free)",
+  "Coursera specializations in your stack"
+ ],
+ "youtube": [
+  "freeCodeCamp",
+  "Fireship",
+  "NPTEL official"
+ ],
+ "communities": [
+  "Stack Overflow",
+  "GitHub open source",
+  "Local tech meetups & hackathons"
+ ],
+ "major_hiring_cities": [
+  "Bengaluru",
+  "Hyderabad",
+  "Pune",
+  "Chennai"
+ ],
+ "relocation_cities": [
+  "Bengaluru",
+  "Hyderabad",
+  "Pune"
+ ],
+ "smaller_city_scope": "Remote-friendly: smaller-city living with metro-level work is realistic.",
+ "rural_scope": "Limited rural presence; expect to base yourself in a town or city.",
+ "home_state_note": "Ask the AI coach about your state — regional demand, cities and relocation advice are generated live from retrieved data, never hardcoded.",
+ "top_countries": [
+  "United States",
+  "Germany",
+  "Canada",
+  "Singapore",
+  "Netherlands"
+ ],
+ "language_requirements": [
+  "English"
+ ],
+ "visa_difficulty": "moderate",
+ "transition_paths": [
+  "Toward DevOps & Automation: build the shared skills and take a bridging project or course",
+  "Toward Cybersecurity: build the shared skills and take a bridging project or course",
+  "Toward Software Engineering: build the shared skills and take a bridging project or course"
+ ],
+ "related_careers": [
+  "DevOps & Automation",
+  "Cybersecurity",
+  "Software Engineering"
+ ],
+ "faqs": [
+  [
+   "What does Cloud & Infrastructure pay in India?",
+   "Entry roles typically start around ₹5 LPA and senior professionals reach ₹55 LPA or more. Live, region-specific salary data is retrieved by the platform when you ask."
+  ],
+  [
+   "What should I study after Class 12?",
+   "Focus on Computer Science, Mathematics. Typical degrees: B.Tech CSE/IT, BCA + cloud certifications. Alternatives exist: bootcamps + a strong project portfolio."
+  ],
+  [
+   "Will AI take over this career?",
+   "AI impact is low — AI assists rather than replaces. Broad paths like Cloud & Infrastructure evolve rather than disappear — the students who pair domain skill with AI tools benefit most."
+  ],
+  [
+   "Is this a broad path or a specific job?",
+   "Cloud & Infrastructure is a career direction. Once inside it you can specialize further — the platform will map specializations in future versions."
+  ]
+ ],
+ "confidence": 0.75,
+ "sources": [
+  "detective-monkey:career-catalog:v1",
+  "detective-monkey:generator:v1"
+ ],
+ "schema_version": 1,
+ "version": 1
+}

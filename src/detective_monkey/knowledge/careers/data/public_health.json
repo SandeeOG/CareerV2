@@ -1,0 +1,238 @@
+{
+ "id": "public-health",
+ "name": "Public Health",
+ "industry": "healthcare-medicine",
+ "career_family": "Health Systems",
+ "tags": [
+  "community",
+  "research",
+  "policy",
+  "service",
+  "analytical"
+ ],
+ "student_summary": "Improve health at population scale — prevention, policy and programmes.",
+ "overview": "Improve health at population scale — prevention, policy and programmes. Public Health sits in the Health Systems family of Healthcare & Medicine. It is a broad career direction — you can enter it through several routes and specialize later without restarting.",
+ "who_is_this_for": [
+  "You enjoy breaking problems into parts and reasoning them through",
+  "You want work that serves your community or country",
+  "You keep asking why until you reach the bottom of things"
+ ],
+ "who_should_avoid": [
+  "You strongly prefer solitary desk work over this field's day-to-day reality"
+ ],
+ "daily_responsibilities": [
+  "Apply epidemiology to real problems",
+  "Collaborate with your team using programme management",
+  "Keep improving at health data analysis — the field keeps moving",
+  "Communicate progress, results and decisions to the people who depend on them"
+ ],
+ "work_environment": "Laboratories and research facilities with focused desk analysis",
+ "problem_solving_style": "Analytical — decompose, measure, model, verify",
+ "school_subjects": [
+  "Biology",
+  "Social Science",
+  "Statistics"
+ ],
+ "college_degrees": [
+  "MPH after any health/science degree",
+  "B.Sc Public Health"
+ ],
+ "alternative_paths": [
+  "Allied-health diplomas with lateral growth",
+  "Public-health masters after any life-science degree"
+ ],
+ "core_skills": [
+  "Epidemiology",
+  "Programme management",
+  "Health data analysis",
+  "Community engagement"
+ ],
+ "soft_skills": [
+  "Critical thinking",
+  "Service orientation"
+ ],
+ "technical_skills": [
+  "Excel",
+  "R",
+  "Survey tools",
+  "GIS"
+ ],
+ "future_skills": [
+  "Digital health & telemedicine",
+  "AI-assisted diagnostics literacy",
+  "Genomic medicine awareness"
+ ],
+ "tools": [
+  "Excel",
+  "R",
+  "Survey tools"
+ ],
+ "technologies": [
+  "Excel",
+  "R",
+  "Survey tools",
+  "GIS"
+ ],
+ "personality_traits": [
+  "Analytical",
+  "Inquisitive",
+  "Service-minded"
+ ],
+ "learning_style": "analytical",
+ "difficulty": 3,
+ "competition_level": 3,
+ "career_progression": [
+  [
+   "Student / trainee",
+   "years 0-2"
+  ],
+  [
+   "Working professional in health systems",
+   "years 2-5"
+  ],
+  [
+   "Senior professional / specialist",
+   "years 5-10"
+  ],
+  [
+   "Leader, expert or independent practice",
+   "years 10+"
+  ]
+ ],
+ "typical_employers": [
+  "Government & private hospitals",
+  "Diagnostics chains (Dr Lal, Metropolis)",
+  "Pharma companies",
+  "Public health programmes"
+ ],
+ "entrepreneurship": 0.45,
+ "government_opportunities": 0.9,
+ "remote_work": 0.5,
+ "freelancing": 0.4,
+ "salary_currency": "₹",
+ "salary_entry_lpa": 5,
+ "salary_senior_lpa": 25,
+ "scope": "Demand outlook in India is booming; see FAQs for how the platform keeps this current.",
+ "future_demand": 0.8,
+ "growth": 0.77,
+ "ai_impact": "minimal — deeply human/physical work",
+ "automation_risk": 0.15,
+ "advantages": [
+  "Demand is booming: opportunities across India and beyond",
+  "Highly resilient to AI automation",
+  "A broad Health Systems foundation that opens multiple specializations later"
+ ],
+ "challenges": [
+  "Early years demand patience before the rewards compound"
+ ],
+ "misconceptions": [
+  "“You must pick your exact job title now.” Public Health is a direction — specialization comes later.",
+  "“Only toppers make it.” Consistent skill-building beats one exam rank in the long run."
+ ],
+ "portfolio_ideas": [
+  "A project demonstrating epidemiology",
+  "A documented case study of programme management"
+ ],
+ "projects": [
+  "Beginner: explore epidemiology with a small self-chosen project",
+  "Intermediate: build or run something real using Excel"
+ ],
+ "internships": [
+  "Hospital internships/rotations",
+  "NGO health programme internships",
+  "Pharma & CRO internships"
+ ],
+ "certifications": [
+  "BLS/ACLS certifications",
+  "Specialty certifications in your field"
+ ],
+ "scholarships": [
+  "Central Sector Scheme scholarships",
+  "State medical education scholarships",
+  "AIIMS/JIPMER fee structures (low)"
+ ],
+ "universities": [
+  "AIIMS",
+  "CMC Vellore",
+  "JIPMER",
+  "State medical & nursing colleges"
+ ],
+ "books": [
+  "Anatomy & physiology foundations",
+  "Where There Is No Doctor (community health)"
+ ],
+ "courses": [
+  "NEET preparation",
+  "SWAYAM health sciences courses",
+  "WHO OpenLearn modules"
+ ],
+ "youtube": [
+  "Osmosis",
+  "Ninja Nerd",
+  "Lecturio"
+ ],
+ "communities": [
+  "Medical student associations",
+  "IMA student wings",
+  "Public health networks"
+ ],
+ "major_hiring_cities": [
+  "Delhi",
+  "State capitals",
+  "NGO hubs"
+ ],
+ "relocation_cities": [
+  "Delhi",
+  "State capitals",
+  "NGO hubs"
+ ],
+ "smaller_city_scope": "Viable in smaller cities — demand exists well beyond the metros.",
+ "rural_scope": "Real rural relevance — this field serves or operates in rural India directly.",
+ "home_state_note": "Ask the AI coach about your state — regional demand, cities and relocation advice are generated live from retrieved data, never hardcoded.",
+ "top_countries": [
+  "United Kingdom (NHS)",
+  "United Arab Emirates",
+  "Australia",
+  "Germany"
+ ],
+ "language_requirements": [
+  "English",
+  "Local language for client/patient-facing roles"
+ ],
+ "visa_difficulty": "moderate",
+ "transition_paths": [
+  "Toward Community Health Work: build the shared skills and take a bridging project or course",
+  "Toward Epidemiology & Medical Research: build the shared skills and take a bridging project or course",
+  "Toward Public Policy & Governance: build the shared skills and take a bridging project or course"
+ ],
+ "related_careers": [
+  "Community Health Work",
+  "Epidemiology & Medical Research",
+  "Public Policy & Governance"
+ ],
+ "faqs": [
+  [
+   "What does Public Health pay in India?",
+   "Entry roles typically start around ₹5 LPA and senior professionals reach ₹25 LPA or more. Live, region-specific salary data is retrieved by the platform when you ask."
+  ],
+  [
+   "What should I study after Class 12?",
+   "Focus on Biology, Social Science. Typical degrees: MPH after any health/science degree, B.Sc Public Health. Alternatives exist: allied-health diplomas with lateral growth."
+  ],
+  [
+   "Will AI take over this career?",
+   "AI impact is minimal — deeply human/physical work. Broad paths like Public Health evolve rather than disappear — the students who pair domain skill with AI tools benefit most."
+  ],
+  [
+   "Is this a broad path or a specific job?",
+   "Public Health is a career direction. Once inside it you can specialize further — the platform will map specializations in future versions."
+  ]
+ ],
+ "confidence": 0.75,
+ "sources": [
+  "detective-monkey:career-catalog:v1",
+  "detective-monkey:generator:v1"
+ ],
+ "schema_version": 1,
+ "version": 1
+}

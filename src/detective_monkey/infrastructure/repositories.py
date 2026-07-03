@@ -183,20 +183,32 @@ class InMemoryMentorMemory:
 class InMemoryKnowledgeGraphRepository:
     def __init__(self) -> None:
         self._nodes: dict[str, Node] = {}
-        self._edges: list[Edge] = []
+        self._edges: dict[str, Edge] = {}
 
     def add_node(self, node: Node) -> None:
         self._nodes[node.id.value] = node
 
     def add_edge(self, edge: Edge) -> None:
-        self._edges.append(edge)
+        self._edges[edge.id.value] = edge
+
+    def get_node(self, node_id: str) -> Node | None:
+        return self._nodes.get(node_id)
 
     def list_nodes(self) -> tuple[Node, ...]:
         return tuple(self._nodes.values())
 
+    def list_edges(self) -> tuple[Edge, ...]:
+        return tuple(self._edges.values())
+
+    def edges_of(self, node_id: str) -> tuple[Edge, ...]:
+        return tuple(
+            e for e in self._edges.values()
+            if e.source.value == node_id or e.target.value == node_id
+        )
+
     def neighbours(self, node_id: str) -> tuple[Node, ...]:
         ids: set[str] = set()
-        for e in self._edges:
+        for e in self._edges.values():
             if e.source.value == node_id:
                 ids.add(e.target.value)
             elif e.target.value == node_id:

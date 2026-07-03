@@ -1,0 +1,290 @@
+[
+ {
+  "id": "technology-computing",
+  "name": "Technology & Computing",
+  "icon": "💻",
+  "description": "Build the digital world — software, data, intelligent systems and the infrastructure behind them.",
+  "career_count": 19,
+  "featured_careers": [
+   "software-engineering",
+   "data-artificial-intelligence",
+   "cybersecurity"
+  ],
+  "trending_careers": [
+   "software-engineering",
+   "data-artificial-intelligence",
+   "cybersecurity"
+  ],
+  "future_note": "New specializations will appear inside these career paths in future versions."
+ },
+ {
+  "id": "business-finance",
+  "name": "Business, Finance & Economics",
+  "icon": "📈",
+  "description": "Run, fund and grow organizations — from startups to global markets.",
+  "career_count": 18,
+  "featured_careers": [
+   "chartered-accountancy",
+   "financial-analysis",
+   "investment-banking"
+  ],
+  "trending_careers": [
+   "business-analytics",
+   "chartered-accountancy",
+   "financial-analysis"
+  ],
+  "future_note": "New specializations will appear inside these career paths in future versions."
+ },
+ {
+  "id": "healthcare-medicine",
+  "name": "Healthcare & Medicine",
+  "icon": "🩺",
+  "description": "Care for human health — from the clinic and lab to public health systems.",
+  "career_count": 18,
+  "featured_careers": [
+   "medicine-doctor",
+   "nursing",
+   "dentistry"
+  ],
+  "trending_careers": [
+   "medicine-doctor",
+   "nursing",
+   "mental-health-psychiatry"
+  ],
+  "future_note": "New specializations will appear inside these career paths in future versions."
+ },
+ {
+  "id": "engineering-manufacturing",
+  "name": "Engineering & Manufacturing",
+  "icon": "⚙️",
+  "description": "Design and build the physical world — machines, structures, energy and production lines.",
+  "career_count": 19,
+  "featured_careers": [
+   "mechanical-engineering",
+   "electrical-electronics-engineering",
+   "electronics-communication-engineering"
+  ],
+  "trending_careers": [
+   "renewable-energy-engineering",
+   "semiconductor-vlsi",
+   "electrical-electronics-engineering"
+  ],
+  "future_note": "New specializations will appear inside these career paths in future versions."
+ },
+ {
+  "id": "science-research",
+  "name": "Science & Research",
+  "icon": "🔬",
+  "description": "Ask nature the hard questions — research careers across the physical, life and earth sciences.",
+  "career_count": 16,
+  "featured_careers": [
+   "physics-research",
+   "chemistry-materials-research",
+   "mathematics-statistics"
+  ],
+  "trending_careers": [
+   "pharmaceutical-research",
+   "data-analytics-research",
+   "biotechnology-genetics"
+  ],
+  "future_note": "New specializations will appear inside these career paths in future versions."
+ },
+ {
+  "id": "education-training",
+  "name": "Education & Training",
+  "icon": "🎓",
+  "description": "Teach, coach and design how people learn — the profession that creates all others.",
+  "career_count": 18,
+  "featured_careers": [
+   "teaching-school",
+   "higher-education-professorship",
+   "early-childhood-education"
+  ],
+  "trending_careers": [
+   "teaching-school",
+   "special-education",
+   "early-childhood-education"
+  ],
+  "future_note": "New specializations will appear inside these career paths in future versions."
+ },
+ {
+  "id": "law-government",
+  "name": "Law, Government & Public Policy",
+  "icon": "⚖️",
+  "description": "Write the rules, argue the cases and run the state — careers in law, governance and policy.",
+  "career_count": 17,
+  "featured_careers": [
+   "civil-services-ias-ips-ifs",
+   "litigation-advocacy",
+   "corporate-law"
+  ],
+  "trending_careers": [
+   "technology-law-cyber-law",
+   "legal-compliance-governance",
+   "civil-services-ias-ips-ifs"
+  ],
+  "future_note": "New specializations will appear inside these career paths in future versions."
+ },
+ {
+  "id": "arts-design-media",
+  "name": "Arts, Design & Creative Media",
+  "icon": "🎨",
+  "description": "Make things people feel — visual design, film, music, fashion and storytelling.",
+  "career_count": 19,
+  "featured_careers": [
+   "graphic-design-visual-communication",
+   "animation-vfx",
+   "film-making-direction"
+  ],
+  "trending_careers": [
+   "video-editing-post-production",
+   "animation-vfx",
+   "graphic-design-visual-communication"
+  ],
+  "future_note": "New specializations will appear inside these career paths in future versions."
+ },
+ {
+  "id": "communication-marketing",
+  "name": "Communication, Marketing & Sales",
+  "icon": "📣",
+  "description": "Move minds and markets — media, marketing, sales and the attention economy.",
+  "career_count": 18,
+  "featured_careers": [
+   "digital-marketing",
+   "journalism",
+   "public-relations-corporate-communications"
+  ],
+  "trending_careers": [
+   "digital-marketing",
+   "sales-business-development",
+   "social-media-community"
+  ],
+  "future_note": "New specializations will appear inside these career paths in future versions."
+ },
+ {
+  "id": "agriculture-environment",
+  "name": "Agriculture, Food & Environment",
+  "icon": "🌾",
+  "description": "Feed the country and protect the planet — agri-science, food systems and climate work.",
+  "career_count": 18,
+  "featured_careers": [
+   "agricultural-science-agronomy",
+   "horticulture-floriculture",
+   "food-technology"
+  ],
+  "trending_careers": [
+   "climate-esg-careers",
+   "agricultural-science-agronomy",
+   "food-technology"
+  ],
+  "future_note": "New specializations will appear inside these career paths in future versions."
+ },
+ {
+  "id": "construction-urban",
+  "name": "Construction, Architecture & Urban Development",
+  "icon": "🏗️",
+  "description": "Shape skylines and cities — design, build and manage the built environment.",
+  "career_count": 17,
+  "featured_careers": [
+   "architecture",
+   "urban-regional-planning",
+   "construction-management"
+  ],
+  "trending_careers": [
+   "construction-management",
+   "green-building-sustainable-design",
+   "infrastructure-planning-development"
+  ],
+  "future_note": "New specializations will appear inside these career paths in future versions."
+ },
+ {
+  "id": "hospitality-tourism",
+  "name": "Hospitality, Tourism & Event Management",
+  "icon": "🏨",
+  "description": "Create experiences — hotels, food, travel and events that people remember.",
+  "career_count": 16,
+  "featured_careers": [
+   "hospitality-operations-hotel-management",
+   "culinary-arts-chef-careers",
+   "bakery-p-tisserie"
+  ],
+  "trending_careers": [
+   "hospitality-operations-hotel-management",
+   "culinary-arts-chef-careers",
+   "event-management"
+  ],
+  "future_note": "New specializations will appear inside these career paths in future versions."
+ },
+ {
+  "id": "transport-logistics",
+  "name": "Transportation, Logistics & Supply Chain",
+  "icon": "🚚",
+  "description": "Move everything — people, cargo and the supply chains behind every shelf.",
+  "career_count": 16,
+  "featured_careers": [
+   "supply-chain-management",
+   "logistics-warehouse-operations",
+   "merchant-navy"
+  ],
+  "trending_careers": [
+   "supply-chain-management",
+   "logistics-warehouse-operations",
+   "last-mile-quick-commerce"
+  ],
+  "future_note": "New specializations will appear inside these career paths in future versions."
+ },
+ {
+  "id": "sports-wellness",
+  "name": "Sports, Fitness & Wellness",
+  "icon": "🏅",
+  "description": "Play, coach and heal — careers in performance, fitness and wellbeing.",
+  "career_count": 16,
+  "featured_careers": [
+   "professional-athletics",
+   "sports-coaching",
+   "fitness-training"
+  ],
+  "trending_careers": [
+   "fitness-training",
+   "yoga-mindfulness-instruction",
+   "sports-physiotherapy-rehabilitation"
+  ],
+  "future_note": "New specializations will appear inside these career paths in future versions."
+ },
+ {
+  "id": "social-impact",
+  "name": "Social Impact, Psychology & Community Services",
+  "icon": "🤝",
+  "description": "Heal minds and strengthen communities — psychology, social work and the development sector.",
+  "career_count": 18,
+  "featured_careers": [
+   "clinical-psychology",
+   "counselling-psychology",
+   "social-work"
+  ],
+  "trending_careers": [
+   "clinical-psychology",
+   "counselling-psychology",
+   "community-health-work"
+  ],
+  "future_note": "New specializations will appear inside these career paths in future versions."
+ },
+ {
+  "id": "defence-security",
+  "name": "Defence, Security & Emergency Services",
+  "icon": "🛡️",
+  "description": "Protect the nation and its people — armed forces, police, intelligence and emergency response.",
+  "career_count": 16,
+  "featured_careers": [
+   "army-officer",
+   "navy-officer",
+   "air-force-officer"
+  ],
+  "trending_careers": [
+   "defence-cyber-operations",
+   "army-officer",
+   "paramilitary-central-armed-police"
+  ],
+  "future_note": "New specializations will appear inside these career paths in future versions."
+ }
+]

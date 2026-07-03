@@ -1,0 +1,225 @@
+{
+ "id": "building-services-mep",
+ "name": "Building Services (MEP)",
+ "industry": "construction-urban",
+ "career_family": "Construction Delivery",
+ "tags": [
+  "systems",
+  "electrical",
+  "mechanical",
+  "detail",
+  "practical"
+ ],
+ "student_summary": "Design a building's lungs and nerves — HVAC, electrical, plumbing, fire.",
+ "overview": "Design a building's lungs and nerves — HVAC, electrical, plumbing, fire. Building Services (MEP) sits in the Construction Delivery family of Construction, Architecture & Urban Development. It is a broad career direction — you can enter it through several routes and specialize later without restarting.",
+ "who_is_this_for": [
+  "You notice the small things others miss"
+ ],
+ "who_should_avoid": [
+  "You strongly prefer solitary desk work over this field's day-to-day reality"
+ ],
+ "daily_responsibilities": [
+  "Apply hvac design to real problems",
+  "Collaborate with your team using electrical layouts",
+  "Keep improving at plumbing & fire systems — the field keeps moving",
+  "Communicate progress, results and decisions to the people who depend on them"
+ ],
+ "work_environment": "Primarily on-site — offices, facilities or the field depending on the role",
+ "problem_solving_style": "Practical — diagnose, build, fix and improve on the ground",
+ "school_subjects": [
+  "Physics",
+  "Mathematics"
+ ],
+ "college_degrees": [
+  "B.Tech Mechanical/Electrical + MEP specialization"
+ ],
+ "alternative_paths": [
+  "Diploma + site experience ladder",
+  "Draftsperson → BIM modeller ladder"
+ ],
+ "core_skills": [
+  "HVAC design",
+  "Electrical layouts",
+  "Plumbing & fire systems",
+  "Coordination"
+ ],
+ "soft_skills": [
+  "Attention to detail"
+ ],
+ "technical_skills": [
+  "Revit MEP",
+  "HAP",
+  "Dialux"
+ ],
+ "future_skills": [
+  "BIM & digital construction",
+  "Green building",
+  "Modular & prefab methods"
+ ],
+ "tools": [
+  "Revit MEP",
+  "HAP",
+  "Dialux"
+ ],
+ "technologies": [
+  "Revit MEP",
+  "HAP",
+  "Dialux"
+ ],
+ "personality_traits": [
+  "Detail-oriented",
+  "Practical"
+ ],
+ "learning_style": "practical",
+ "difficulty": 3,
+ "competition_level": 2,
+ "career_progression": [
+  [
+   "Student / trainee",
+   "years 0-2"
+  ],
+  [
+   "Working professional in construction delivery",
+   "years 2-5"
+  ],
+  [
+   "Senior professional / specialist",
+   "years 5-10"
+  ],
+  [
+   "Leader, expert or independent practice",
+   "years 10+"
+  ]
+ ],
+ "typical_employers": [
+  "Construction majors (L&T, Tata Projects)",
+  "Architecture & design consultancies",
+  "Real-estate developers",
+  "Smart-city SPVs & ULBs"
+ ],
+ "entrepreneurship": 0.45,
+ "government_opportunities": 0.4,
+ "remote_work": 0.3,
+ "freelancing": 0.26,
+ "salary_currency": "₹",
+ "salary_entry_lpa": 5,
+ "salary_senior_lpa": 15,
+ "scope": "Demand outlook in India is booming; see FAQs for how the platform keeps this current.",
+ "future_demand": 0.8,
+ "growth": 0.77,
+ "ai_impact": "low — AI assists rather than replaces",
+ "automation_risk": 0.3,
+ "advantages": [
+  "Demand is booming: opportunities across India and beyond",
+  "A broad Construction Delivery foundation that opens multiple specializations later"
+ ],
+ "challenges": [
+  "Early years demand patience before the rewards compound"
+ ],
+ "misconceptions": [
+  "“You must pick your exact job title now.” Building Services (MEP) is a direction — specialization comes later.",
+  "“Only toppers make it.” Consistent skill-building beats one exam rank in the long run."
+ ],
+ "portfolio_ideas": [
+  "A project demonstrating hvac design",
+  "A documented case study of electrical layouts"
+ ],
+ "projects": [
+  "Beginner: explore hvac design with a small self-chosen project",
+  "Intermediate: build or run something real using Revit MEP"
+ ],
+ "internships": [
+  "Site internships",
+  "Architecture firm internships",
+  "Urban local body internships"
+ ],
+ "certifications": [
+  "RICS pathways",
+  "LEED/IGBC green building",
+  "Primavera/MS Project"
+ ],
+ "scholarships": [
+  "AICTE scholarships",
+  "CoA/ITPI merit awards"
+ ],
+ "universities": [
+  "SPA Delhi",
+  "IITs (Civil/Planning)",
+  "CEPT Ahmedabad",
+  "NICMAR (construction management)"
+ ],
+ "books": [
+  "101 Things I Learned in Architecture School",
+  "The Death and Life of Great American Cities"
+ ],
+ "courses": [
+  "NPTEL civil & planning courses",
+  "BIM tool courses",
+  "NATA/JEE B.Arch prep"
+ ],
+ "youtube": [
+  "The B1M",
+  "Dami Lee (architecture)",
+  "NPTEL"
+ ],
+ "communities": [
+  "Student chapters (ASCE, NASA India - architecture)",
+  "Urbanist forums"
+ ],
+ "major_hiring_cities": [
+  "All metros",
+  "Gulf demand"
+ ],
+ "relocation_cities": [
+  "All metros",
+  "Gulf demand"
+ ],
+ "smaller_city_scope": "Viable in smaller cities — demand exists well beyond the metros.",
+ "rural_scope": "Limited rural presence; expect to base yourself in a town or city.",
+ "home_state_note": "Ask the AI coach about your state — regional demand, cities and relocation advice are generated live from retrieved data, never hardcoded.",
+ "top_countries": [
+  "United Arab Emirates",
+  "Saudi Arabia",
+  "Singapore",
+  "Australia"
+ ],
+ "language_requirements": [
+  "English"
+ ],
+ "visa_difficulty": "low",
+ "transition_paths": [
+  "Toward Electrical & Electronics Engineering: build the shared skills and take a bridging project or course",
+  "Toward Mechanical Engineering: build the shared skills and take a bridging project or course",
+  "Toward Green Building & Sustainable Design: build the shared skills and take a bridging project or course"
+ ],
+ "related_careers": [
+  "Electrical & Electronics Engineering",
+  "Mechanical Engineering",
+  "Green Building & Sustainable Design"
+ ],
+ "faqs": [
+  [
+   "What does Building Services (MEP) pay in India?",
+   "Entry roles typically start around ₹5 LPA and senior professionals reach ₹15 LPA or more. Live, region-specific salary data is retrieved by the platform when you ask."
+  ],
+  [
+   "What should I study after Class 12?",
+   "Focus on Physics, Mathematics. Typical degrees: B.Tech Mechanical/Electrical + MEP specialization. Alternatives exist: diploma + site experience ladder."
+  ],
+  [
+   "Will AI take over this career?",
+   "AI impact is low — AI assists rather than replaces. Broad paths like Building Services (MEP) evolve rather than disappear — the students who pair domain skill with AI tools benefit most."
+  ],
+  [
+   "Is this a broad path or a specific job?",
+   "Building Services (MEP) is a career direction. Once inside it you can specialize further — the platform will map specializations in future versions."
+  ]
+ ],
+ "confidence": 0.75,
+ "sources": [
+  "detective-monkey:career-catalog:v1",
+  "detective-monkey:generator:v1"
+ ],
+ "schema_version": 1,
+ "version": 1
+}

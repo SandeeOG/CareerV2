@@ -1,0 +1,232 @@
+{
+ "id": "veterinary-science",
+ "name": "Veterinary Science",
+ "industry": "healthcare-medicine",
+ "career_family": "Clinical Care",
+ "tags": [
+  "animals",
+  "care",
+  "science",
+  "hands-on",
+  "outdoors"
+ ],
+ "student_summary": "Be a doctor for animals — pets, livestock and wildlife.",
+ "overview": "Be a doctor for animals — pets, livestock and wildlife. Veterinary Science sits in the Clinical Care family of Healthcare & Medicine. It is a broad career direction — you can enter it through several routes and specialize later without restarting.",
+ "who_is_this_for": [
+  "You would rather be in the field than at a desk all day",
+  "You like building and fixing things with your hands",
+  "You feel fulfilled when your work directly helps someone"
+ ],
+ "who_should_avoid": [
+  "You want a short, easy study path — this one demands years of serious preparation",
+  "You want a laptop-anywhere lifestyle — this work happens in person"
+ ],
+ "daily_responsibilities": [
+  "Apply animal diagnosis & treatment to real problems",
+  "Collaborate with your team using surgery",
+  "Keep improving at preventive care — the field keeps moving",
+  "Communicate progress, results and decisions to the people who depend on them"
+ ],
+ "work_environment": "Field-first: outdoors, on sites and in communities more than at a desk",
+ "problem_solving_style": "People-centred — listen, mediate, guide and align humans",
+ "school_subjects": [
+  "Biology",
+  "Chemistry",
+  "Physics"
+ ],
+ "college_degrees": [
+  "B.V.Sc & AH (via NEET)"
+ ],
+ "alternative_paths": [
+  "Allied-health diplomas with lateral growth",
+  "Public-health masters after any life-science degree"
+ ],
+ "core_skills": [
+  "Animal diagnosis & treatment",
+  "Surgery",
+  "Preventive care",
+  "Client communication"
+ ],
+ "soft_skills": [
+  "Communication",
+  "Teamwork"
+ ],
+ "technical_skills": [
+  "Veterinary equipment",
+  "Diagnostics"
+ ],
+ "future_skills": [
+  "Digital health & telemedicine",
+  "AI-assisted diagnostics literacy",
+  "Genomic medicine awareness"
+ ],
+ "tools": [
+  "Veterinary equipment",
+  "Diagnostics"
+ ],
+ "technologies": [
+  "Veterinary equipment",
+  "Diagnostics"
+ ],
+ "personality_traits": [
+  "Caring",
+  "Hands-on",
+  "Loves the outdoors"
+ ],
+ "learning_style": "practical",
+ "difficulty": 4,
+ "competition_level": 3,
+ "career_progression": [
+  [
+   "Student / trainee",
+   "years 0-2"
+  ],
+  [
+   "Working professional in clinical care",
+   "years 2-5"
+  ],
+  [
+   "Senior professional / specialist",
+   "years 5-10"
+  ],
+  [
+   "Leader, expert or independent practice",
+   "years 10+"
+  ]
+ ],
+ "typical_employers": [
+  "Government & private hospitals",
+  "Diagnostics chains (Dr Lal, Metropolis)",
+  "Pharma companies",
+  "Public health programmes"
+ ],
+ "entrepreneurship": 0.45,
+ "government_opportunities": 0.7,
+ "remote_work": 0.1,
+ "freelancing": 0.12,
+ "salary_currency": "₹",
+ "salary_entry_lpa": 4,
+ "salary_senior_lpa": 20,
+ "scope": "Demand outlook in India is booming; see FAQs for how the platform keeps this current.",
+ "future_demand": 0.75,
+ "growth": 0.73,
+ "ai_impact": "minimal — deeply human/physical work",
+ "automation_risk": 0.05,
+ "advantages": [
+  "Highly resilient to AI automation",
+  "A broad Clinical Care foundation that opens multiple specializations later"
+ ],
+ "challenges": [
+  "A long, demanding preparation and learning curve",
+  "Location-bound work; postings and relocation are part of the deal",
+  "Early years demand patience before the rewards compound"
+ ],
+ "misconceptions": [
+  "“You must pick your exact job title now.” Veterinary Science is a direction — specialization comes later.",
+  "“Only toppers make it.” Consistent skill-building beats one exam rank in the long run."
+ ],
+ "portfolio_ideas": [
+  "A project demonstrating animal diagnosis & treatment",
+  "A documented case study of surgery"
+ ],
+ "projects": [
+  "Beginner: explore animal diagnosis & treatment with a small self-chosen project",
+  "Intermediate: build or run something real using Veterinary equipment"
+ ],
+ "internships": [
+  "Hospital internships/rotations",
+  "NGO health programme internships",
+  "Pharma & CRO internships"
+ ],
+ "certifications": [
+  "BLS/ACLS certifications",
+  "Specialty certifications in your field"
+ ],
+ "scholarships": [
+  "Central Sector Scheme scholarships",
+  "State medical education scholarships",
+  "AIIMS/JIPMER fee structures (low)"
+ ],
+ "universities": [
+  "AIIMS",
+  "CMC Vellore",
+  "JIPMER",
+  "State medical & nursing colleges"
+ ],
+ "books": [
+  "Anatomy & physiology foundations",
+  "Where There Is No Doctor (community health)"
+ ],
+ "courses": [
+  "NEET preparation",
+  "SWAYAM health sciences courses",
+  "WHO OpenLearn modules"
+ ],
+ "youtube": [
+  "Osmosis",
+  "Ninja Nerd",
+  "Lecturio"
+ ],
+ "communities": [
+  "Medical student associations",
+  "IMA student wings",
+  "Public health networks"
+ ],
+ "major_hiring_cities": [
+  "All states",
+  "Rural demand high"
+ ],
+ "relocation_cities": [
+  "All states",
+  "Rural demand high"
+ ],
+ "smaller_city_scope": "Viable in smaller cities — demand exists well beyond the metros.",
+ "rural_scope": "Real rural relevance — this field serves or operates in rural India directly.",
+ "home_state_note": "Ask the AI coach about your state — regional demand, cities and relocation advice are generated live from retrieved data, never hardcoded.",
+ "top_countries": [
+  "United Kingdom (NHS)",
+  "United Arab Emirates",
+  "Australia",
+  "Germany"
+ ],
+ "language_requirements": [
+  "English",
+  "Local language for client/patient-facing roles"
+ ],
+ "visa_difficulty": "moderate",
+ "transition_paths": [
+  "Toward Dairy & Animal Husbandry: build the shared skills and take a bridging project or course",
+  "Toward Wildlife Conservation: build the shared skills and take a bridging project or course",
+  "Toward Medicine (Doctor): build the shared skills and take a bridging project or course"
+ ],
+ "related_careers": [
+  "Dairy & Animal Husbandry",
+  "Wildlife Conservation",
+  "Medicine (Doctor)"
+ ],
+ "faqs": [
+  [
+   "What does Veterinary Science pay in India?",
+   "Entry roles typically start around ₹4 LPA and senior professionals reach ₹20 LPA or more. Live, region-specific salary data is retrieved by the platform when you ask."
+  ],
+  [
+   "What should I study after Class 12?",
+   "Focus on Biology, Chemistry. Typical degrees: B.V.Sc & AH (via NEET). Alternatives exist: allied-health diplomas with lateral growth."
+  ],
+  [
+   "Will AI take over this career?",
+   "AI impact is minimal — deeply human/physical work. Broad paths like Veterinary Science evolve rather than disappear — the students who pair domain skill with AI tools benefit most."
+  ],
+  [
+   "Is this a broad path or a specific job?",
+   "Veterinary Science is a career direction. Once inside it you can specialize further — the platform will map specializations in future versions."
+  ]
+ ],
+ "confidence": 0.75,
+ "sources": [
+  "detective-monkey:career-catalog:v1",
+  "detective-monkey:generator:v1"
+ ],
+ "schema_version": 1,
+ "version": 1
+}

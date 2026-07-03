@@ -1,0 +1,225 @@
+{
+ "id": "bim-construction-technology",
+ "name": "BIM & Construction Technology",
+ "industry": "construction-urban",
+ "career_family": "Construction Delivery",
+ "tags": [
+  "digital",
+  "modelling",
+  "construction",
+  "technology",
+  "detail"
+ ],
+ "student_summary": "Digitize construction — 3D building models the whole industry now runs on.",
+ "overview": "Digitize construction — 3D building models the whole industry now runs on. BIM & Construction Technology sits in the Construction Delivery family of Construction, Architecture & Urban Development. It is a broad career direction — you can enter it through several routes and specialize later without restarting.",
+ "who_is_this_for": [
+  "You notice the small things others miss"
+ ],
+ "who_should_avoid": [
+  "You strongly prefer solitary desk work over this field's day-to-day reality"
+ ],
+ "daily_responsibilities": [
+  "Apply bim modelling to real problems",
+  "Collaborate with your team using clash detection",
+  "Keep improving at 4d/5d simulation — the field keeps moving",
+  "Communicate progress, results and decisions to the people who depend on them"
+ ],
+ "work_environment": "Project sites and offices — boots and drawings in the same week",
+ "problem_solving_style": "Adaptive — mix analysis, action and people skills as the situation demands",
+ "school_subjects": [
+  "Mathematics",
+  "Computer Science",
+  "Physics"
+ ],
+ "college_degrees": [
+  "B.Tech Civil/B.Arch + BIM certification"
+ ],
+ "alternative_paths": [
+  "Diploma + site experience ladder",
+  "Draftsperson → BIM modeller ladder"
+ ],
+ "core_skills": [
+  "BIM modelling",
+  "Clash detection",
+  "4D/5D simulation",
+  "Digital workflows"
+ ],
+ "soft_skills": [
+  "Attention to detail"
+ ],
+ "technical_skills": [
+  "Revit",
+  "Navisworks",
+  "BIM 360"
+ ],
+ "future_skills": [
+  "BIM & digital construction",
+  "Green building",
+  "Modular & prefab methods"
+ ],
+ "tools": [
+  "Revit",
+  "Navisworks",
+  "BIM 360"
+ ],
+ "technologies": [
+  "Revit",
+  "Navisworks",
+  "BIM 360"
+ ],
+ "personality_traits": [
+  "Detail-oriented"
+ ],
+ "learning_style": "reflective",
+ "difficulty": 3,
+ "competition_level": 2,
+ "career_progression": [
+  [
+   "Student / trainee",
+   "years 0-2"
+  ],
+  [
+   "Working professional in construction delivery",
+   "years 2-5"
+  ],
+  [
+   "Senior professional / specialist",
+   "years 5-10"
+  ],
+  [
+   "Leader, expert or independent practice",
+   "years 10+"
+  ]
+ ],
+ "typical_employers": [
+  "Construction majors (L&T, Tata Projects)",
+  "Architecture & design consultancies",
+  "Real-estate developers",
+  "Smart-city SPVs & ULBs"
+ ],
+ "entrepreneurship": 0.45,
+ "government_opportunities": 0.4,
+ "remote_work": 0.6,
+ "freelancing": 0.47,
+ "salary_currency": "₹",
+ "salary_entry_lpa": 5,
+ "salary_senior_lpa": 18,
+ "scope": "Demand outlook in India is booming; see FAQs for how the platform keeps this current.",
+ "future_demand": 0.85,
+ "growth": 0.82,
+ "ai_impact": "low — AI assists rather than replaces",
+ "automation_risk": 0.3,
+ "advantages": [
+  "Demand is booming: opportunities across India and beyond",
+  "A broad Construction Delivery foundation that opens multiple specializations later"
+ ],
+ "challenges": [
+  "Early years demand patience before the rewards compound"
+ ],
+ "misconceptions": [
+  "“You must pick your exact job title now.” BIM & Construction Technology is a direction — specialization comes later.",
+  "“Only toppers make it.” Consistent skill-building beats one exam rank in the long run."
+ ],
+ "portfolio_ideas": [
+  "A project demonstrating bim modelling",
+  "A documented case study of clash detection"
+ ],
+ "projects": [
+  "Beginner: explore bim modelling with a small self-chosen project",
+  "Intermediate: build or run something real using Revit"
+ ],
+ "internships": [
+  "Site internships",
+  "Architecture firm internships",
+  "Urban local body internships"
+ ],
+ "certifications": [
+  "RICS pathways",
+  "LEED/IGBC green building",
+  "Primavera/MS Project"
+ ],
+ "scholarships": [
+  "AICTE scholarships",
+  "CoA/ITPI merit awards"
+ ],
+ "universities": [
+  "SPA Delhi",
+  "IITs (Civil/Planning)",
+  "CEPT Ahmedabad",
+  "NICMAR (construction management)"
+ ],
+ "books": [
+  "101 Things I Learned in Architecture School",
+  "The Death and Life of Great American Cities"
+ ],
+ "courses": [
+  "NPTEL civil & planning courses",
+  "BIM tool courses",
+  "NATA/JEE B.Arch prep"
+ ],
+ "youtube": [
+  "The B1M",
+  "Dami Lee (architecture)",
+  "NPTEL"
+ ],
+ "communities": [
+  "Student chapters (ASCE, NASA India - architecture)",
+  "Urbanist forums"
+ ],
+ "major_hiring_cities": [
+  "All metros",
+  "Global remote BIM services"
+ ],
+ "relocation_cities": [
+  "All metros",
+  "Global remote BIM services"
+ ],
+ "smaller_city_scope": "Remote-friendly: smaller-city living with metro-level work is realistic.",
+ "rural_scope": "Limited rural presence; expect to base yourself in a town or city.",
+ "home_state_note": "Ask the AI coach about your state — regional demand, cities and relocation advice are generated live from retrieved data, never hardcoded.",
+ "top_countries": [
+  "United Arab Emirates",
+  "Saudi Arabia",
+  "Singapore",
+  "Australia"
+ ],
+ "language_requirements": [
+  "English"
+ ],
+ "visa_difficulty": "low",
+ "transition_paths": [
+  "Toward Structural & Infrastructure Planning: build the shared skills and take a bridging project or course",
+  "Toward Architecture: build the shared skills and take a bridging project or course",
+  "Toward Software Engineering: build the shared skills and take a bridging project or course"
+ ],
+ "related_careers": [
+  "Structural & Infrastructure Planning",
+  "Architecture",
+  "Software Engineering"
+ ],
+ "faqs": [
+  [
+   "What does BIM & Construction Technology pay in India?",
+   "Entry roles typically start around ₹5 LPA and senior professionals reach ₹18 LPA or more. Live, region-specific salary data is retrieved by the platform when you ask."
+  ],
+  [
+   "What should I study after Class 12?",
+   "Focus on Mathematics, Computer Science. Typical degrees: B.Tech Civil/B.Arch + BIM certification. Alternatives exist: diploma + site experience ladder."
+  ],
+  [
+   "Will AI take over this career?",
+   "AI impact is low — AI assists rather than replaces. Broad paths like BIM & Construction Technology evolve rather than disappear — the students who pair domain skill with AI tools benefit most."
+  ],
+  [
+   "Is this a broad path or a specific job?",
+   "BIM & Construction Technology is a career direction. Once inside it you can specialize further — the platform will map specializations in future versions."
+  ]
+ ],
+ "confidence": 0.75,
+ "sources": [
+  "detective-monkey:career-catalog:v1",
+  "detective-monkey:generator:v1"
+ ],
+ "schema_version": 1,
+ "version": 1
+}

@@ -1,0 +1,233 @@
+{
+ "id": "astronomy-astrophysics",
+ "name": "Astronomy & Astrophysics",
+ "industry": "science-research",
+ "career_family": "Physical Sciences",
+ "tags": [
+  "space",
+  "physics",
+  "curious",
+  "mathematics",
+  "wonder"
+ ],
+ "student_summary": "Study stars, galaxies and the cosmos.",
+ "overview": "Study stars, galaxies and the cosmos. Astronomy & Astrophysics sits in the Physical Sciences family of Science & Research. It is a broad career direction — you can enter it through several routes and specialize later without restarting.",
+ "who_is_this_for": [
+  "Numbers and patterns make sense to you",
+  "You keep asking why until you reach the bottom of things"
+ ],
+ "who_should_avoid": [
+  "You want a short, easy study path — this one demands years of serious preparation"
+ ],
+ "daily_responsibilities": [
+  "Apply observation & data analysis to real problems",
+  "Collaborate with your team using modelling",
+  "Keep improving at scientific computing — the field keeps moving",
+  "Communicate progress, results and decisions to the people who depend on them"
+ ],
+ "work_environment": "Office-based with meaningful remote flexibility",
+ "problem_solving_style": "Analytical — decompose, measure, model, verify",
+ "school_subjects": [
+  "Physics",
+  "Mathematics"
+ ],
+ "college_degrees": [
+  "B.Sc Physics + M.Sc Astronomy + PhD"
+ ],
+ "alternative_paths": [
+  "Integrated BS-MS at IISERs",
+  "Research assistantships after B.Sc"
+ ],
+ "core_skills": [
+  "Observation & data analysis",
+  "Modelling",
+  "Scientific computing",
+  "Instrumentation"
+ ],
+ "soft_skills": [
+  "Communication",
+  "Teamwork"
+ ],
+ "technical_skills": [
+  "Python",
+  "Telescopes",
+  "Astropy"
+ ],
+ "future_skills": [
+  "Scientific computing & data analysis",
+  "Interdisciplinary research methods",
+  "Science communication"
+ ],
+ "tools": [
+  "Python",
+  "Telescopes",
+  "Astropy"
+ ],
+ "technologies": [
+  "Python",
+  "Telescopes",
+  "Astropy"
+ ],
+ "personality_traits": [
+  "Mathematically minded",
+  "Curious"
+ ],
+ "learning_style": "analytical",
+ "difficulty": 5,
+ "competition_level": 3,
+ "career_progression": [
+  [
+   "Student / trainee",
+   "years 0-2"
+  ],
+  [
+   "Working professional in physical sciences",
+   "years 2-5"
+  ],
+  [
+   "Senior professional / specialist",
+   "years 5-10"
+  ],
+  [
+   "Leader, expert or independent practice",
+   "years 10+"
+  ]
+ ],
+ "typical_employers": [
+  "Research institutes (CSIR, TIFR, IISc)",
+  "ISRO/DRDO/BARC",
+  "Universities",
+  "Corporate R&D labs"
+ ],
+ "entrepreneurship": 0.45,
+ "government_opportunities": 0.4,
+ "remote_work": 0.6,
+ "freelancing": 0.47,
+ "salary_currency": "₹",
+ "salary_entry_lpa": 6,
+ "salary_senior_lpa": 25,
+ "scope": "Demand outlook in India is strong; see FAQs for how the platform keeps this current.",
+ "future_demand": 0.6,
+ "growth": 0.59,
+ "ai_impact": "minimal — deeply human/physical work",
+ "automation_risk": 0.1,
+ "advantages": [
+  "Highly resilient to AI automation",
+  "A broad Physical Sciences foundation that opens multiple specializations later"
+ ],
+ "challenges": [
+  "A long, demanding preparation and learning curve",
+  "Early years demand patience before the rewards compound"
+ ],
+ "misconceptions": [
+  "“You must pick your exact job title now.” Astronomy & Astrophysics is a direction — specialization comes later.",
+  "“Only toppers make it.” Consistent skill-building beats one exam rank in the long run."
+ ],
+ "portfolio_ideas": [
+  "A project demonstrating observation & data analysis",
+  "A documented case study of modelling"
+ ],
+ "projects": [
+  "Beginner: explore observation & data analysis with a small self-chosen project",
+  "Intermediate: build or run something real using Python"
+ ],
+ "internships": [
+  "IAS-SRFP summer fellowships",
+  "Institute summer research programmes",
+  "Lab internships via professors"
+ ],
+ "certifications": [
+  "CSIR-NET/GATE (for research entry)",
+  "Domain lab-skill certifications"
+ ],
+ "scholarships": [
+  "INSPIRE & KVPY-legacy fellowships",
+  "NTSE",
+  "Institute PhD fellowships (stipended)"
+ ],
+ "universities": [
+  "IISc Bengaluru",
+  "IISERs",
+  "TIFR/NISER",
+  "Central universities"
+ ],
+ "books": [
+  "A Brief History of Time (inspiration)",
+  "Discipline-standard textbooks",
+  "The Structure of Scientific Revolutions"
+ ],
+ "courses": [
+  "NPTEL/SWAYAM science courses",
+  "MIT OpenCourseWare",
+  "Summer schools in your field"
+ ],
+ "youtube": [
+  "Veritasium",
+  "3Blue1Brown",
+  "SciShow"
+ ],
+ "communities": [
+  "Science olympiad networks",
+  "Institute journal clubs",
+  "ResearchGate"
+ ],
+ "major_hiring_cities": [
+  "Pune",
+  "Bengaluru",
+  "Nainital",
+  "Ooty"
+ ],
+ "relocation_cities": [
+  "Pune",
+  "Bengaluru",
+  "Nainital"
+ ],
+ "smaller_city_scope": "Remote-friendly: smaller-city living with metro-level work is realistic.",
+ "rural_scope": "Limited rural presence; expect to base yourself in a town or city.",
+ "home_state_note": "Ask the AI coach about your state — regional demand, cities and relocation advice are generated live from retrieved data, never hardcoded.",
+ "top_countries": [
+  "United States",
+  "Germany",
+  "Switzerland",
+  "Japan"
+ ],
+ "language_requirements": [
+  "English"
+ ],
+ "visa_difficulty": "moderate",
+ "transition_paths": [
+  "Toward Physics Research: build the shared skills and take a bridging project or course",
+  "Toward Space Science & Careers: build the shared skills and take a bridging project or course",
+  "Toward Data & Artificial Intelligence: build the shared skills and take a bridging project or course"
+ ],
+ "related_careers": [
+  "Physics Research",
+  "Space Science & Careers",
+  "Data & Artificial Intelligence"
+ ],
+ "faqs": [
+  [
+   "What does Astronomy & Astrophysics pay in India?",
+   "Entry roles typically start around ₹6 LPA and senior professionals reach ₹25 LPA or more. Live, region-specific salary data is retrieved by the platform when you ask."
+  ],
+  [
+   "What should I study after Class 12?",
+   "Focus on Physics, Mathematics. Typical degrees: B.Sc Physics + M.Sc Astronomy + PhD. Alternatives exist: integrated bs-ms at iisers."
+  ],
+  [
+   "Will AI take over this career?",
+   "AI impact is minimal — deeply human/physical work. Broad paths like Astronomy & Astrophysics evolve rather than disappear — the students who pair domain skill with AI tools benefit most."
+  ],
+  [
+   "Is this a broad path or a specific job?",
+   "Astronomy & Astrophysics is a career direction. Once inside it you can specialize further — the platform will map specializations in future versions."
+  ]
+ ],
+ "confidence": 0.75,
+ "sources": [
+  "detective-monkey:career-catalog:v1",
+  "detective-monkey:generator:v1"
+ ],
+ "schema_version": 1,
+ "version": 1
+}

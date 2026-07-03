@@ -165,6 +165,7 @@ function premiumCard(c) {
     </details>
     <div class="action-bar">
       <button class="btn" data-route="detail" data-cid="${c.career_id}">Explore career</button>
+      <button class="btn secondary" data-route="career" data-cid="${c.career_id}">Full profile</button>
       <button class="btn secondary" data-route="roadmap" data-cid="${c.career_id}">Roadmap</button>
       <button class="btn secondary" data-route="skillgap" data-cid="${c.career_id}">Skill gap</button>
     </div></div>`);
@@ -206,7 +207,8 @@ async function renderDetail(cid) {
     <div class="grid grid-2">
       <div class="card"><h2>Education</h2>${list(d.required_education)}</div>
       <div class="card"><h2>Recommended certifications</h2>${list(d.certifications)}</div></div>
-    <div class="card"><h2>Related careers</h2><div class="row">${d.related_careers.map((r) => pill(r)).join("")}</div></div>
+    <div class="card"><h2>Related careers</h2><div class="row">${d.related_careers.map((r) =>
+      `<button class="chip" type="button" data-route="career" data-cid="${escapeHtml(r)}">${escapeHtml(r)}</button>`).join("")}</div></div>
     ${roadmapCard(d.roadmap)}
     <div class="action-bar"><button class="btn secondary" data-route="skillgap" data-cid="${cid}">See skill gap</button>
       <button class="btn secondary" data-route="recommendations">← Back to matches</button></div>`;
@@ -307,13 +309,152 @@ async function renderCoach() {
   view.querySelector("#chat").addEventListener("submit", (e) => { e.preventDefault(); const i = view.querySelector("#msg"); const m = i.value; i.value = ""; i.focus(); send(m); });
 }
 
+// ---- Explore Careers (38/39: the Career Knowledge Base) -------------------
+// Independent from recommendations: browse 16 industries and ~300 broad
+// career paths, all served from the single knowledge layer.
+
+function careerCard(c) {
+  return `<div class="card" style="cursor:pointer" data-route="career" data-cid="${c.id}">
+    <div class="rec"><div><h3 style="margin:0 0 4px">${escapeHtml(c.name)}</h3>
+      <p class="muted" style="margin:0 0 8px">${escapeHtml(c.student_summary)}</p>
+      <div class="row">${c.tags.map((t) => pill(t)).join("")}</div></div></div>
+    ${metaGrid([["Salary", `₹${c.salary_entry_lpa}–${c.salary_senior_lpa} LPA`],
+                ["Demand", Math.round(c.future_demand * 100) + "%"],
+                ["Remote", Math.round(c.remote_work * 100) + "%"],
+                ["Difficulty", "★".repeat(c.difficulty)]])}
+  </div>`;
+}
+
+async function renderExplore() {
+  skeleton(6);
+  const env = await apiGet("/careers/industries");
+  if (!env.success) return void (view.innerHTML = errorCard(envError(env)));
+  const industries = env.data.map((i) => `
+    <div class="card" style="cursor:pointer" data-route="industry" data-cid="${i.id}">
+      <h2 style="margin:0">${i.icon} ${escapeHtml(i.name)}</h2>
+      <p class="muted">${escapeHtml(i.description)}</p>
+      <div class="row">${pill(`${i.career_count} careers`)}${pill("tap to explore", "tag-strength")}</div>
+    </div>`).join("");
+  view.innerHTML = `
+    <div class="card hero stack"><h1>Explore Careers</h1>
+      <p>An interactive career encyclopedia — ${env.data.reduce((n, i) => n + i.career_count, 0)} broad
+      career paths across ${env.data.length} industries, every one AI-ready and explorable.</p>
+      <form id="explore-search" class="chat-form"><input id="explore-q" type="text"
+        placeholder="Search by name, interest, skill, subject…" aria-label="Search careers" />
+        <button class="btn" type="submit">Search</button></form>
+      <div class="row" id="quick-filters">
+        ${["remote", "ai_safe", "government", "entrepreneurship", "creativity", "no_programming", "outdoor", "people"]
+          .map((f) => `<button class="chip" type="button" data-filter="${f}">${prettify(f)}</button>`).join("")}
+      </div></div>
+    <div class="grid grid-2">${industries}</div>`;
+  view.querySelector("#explore-search").addEventListener("submit", (e) => {
+    e.preventDefault(); renderCareerSearch(view.querySelector("#explore-q").value, {});
+  });
+  view.querySelectorAll("[data-filter]").forEach((b) =>
+    b.addEventListener("click", () => renderCareerSearch("", { [b.dataset.filter]: true })));
+}
+
+async function renderCareerSearch(q, filters) {
+  skeleton(5);
+  const params = new URLSearchParams({ q, ...Object.fromEntries(Object.entries(filters).map(([k, v]) => [k, String(v)])) });
+  const env = await apiGet(`/careers/search?${params}`);
+  if (!env.success) return void (view.innerHTML = errorCard(envError(env)));
+  const label = q ? `results for “${escapeHtml(q)}”` : `filter: ${Object.keys(filters).map(prettify).join(", ") || "all"}`;
+  view.innerHTML = `<div class="card stack"><h1>Career search</h1>
+    <p class="muted">${env.data.length} ${label}</p>
+    <div><button class="btn secondary" data-route="explore">← All industries</button></div></div>
+    <div class="grid grid-2">${env.data.map(careerCard).join("") || "<div class='card muted'>No careers match — try fewer filters.</div>"}</div>`;
+}
+
+async function renderIndustry(iid) {
+  skeleton(6);
+  const env = await apiGet(`/careers/industries/${iid}`);
+  if (!env.success) return void (view.innerHTML = errorCard(envError(env)));
+  const d = env.data;
+  view.innerHTML = `
+    <div class="card hero stack"><h1>${d.icon} ${escapeHtml(d.name)}</h1>
+      <p>${escapeHtml(d.description)}</p><p class="muted">${escapeHtml(d.future_note)}</p>
+      <div><button class="btn secondary" data-route="explore">← All industries</button></div></div>
+    <div class="grid grid-2">${d.careers.map(careerCard).join("")}</div>`;
+}
+
+async function renderCareerProfile(cid) {
+  skeleton(8);
+  const env = await apiGet(`/careers/${cid}`);
+  if (!env.success) return void (view.innerHTML = errorCard(envError(env)));
+  const p = env.data;
+  const section = (title, items) => `<div class="card"><h2>${title}</h2>${list(items)}</div>`;
+  const pills = (items, cls = "") => `<div class="row">${items.map((i) => pill(i, cls)).join("")}</div>`;
+  view.innerHTML = `
+    <div class="card hero stack"><h1>${escapeHtml(p.name)}</h1>
+      <p>${escapeHtml(p.overview)}</p>
+      <div class="row">${pill(p.industry_name)}${pill(p.career_family)}${p.tags.map((t) => pill(t)).join("")}</div></div>
+    ${metaCard("Snapshot", [["Salary (India)", p.salary_entry_lpa === 0 ? `Variable — up to ₹${p.salary_senior_lpa} LPA` : `₹${p.salary_entry_lpa}–${p.salary_senior_lpa} LPA`],
+      ["Future demand", Math.round(p.future_demand * 100) + "%"], ["Remote work", Math.round(p.remote_work * 100) + "%"],
+      ["Automation risk", Math.round(p.automation_risk * 100) + "%"], ["Difficulty", "★".repeat(p.difficulty)],
+      ["Competition", "★".repeat(p.competition_level)]])}
+    <div class="grid grid-2">
+      ${section("Who is this for", p.who_is_this_for)}
+      ${section("Who should think twice", p.who_should_avoid)}
+    </div>
+    ${section("What professionals actually do", p.daily_responsibilities)}
+    <div class="grid grid-2">
+      <div class="card"><h2>Work environment</h2><p class="muted">${escapeHtml(p.work_environment)}</p>
+        <h2 style="margin-top:12px">Problem-solving style</h2><p class="muted">${escapeHtml(p.problem_solving_style)}</p></div>
+      <div class="card"><h2>AI impact</h2><p class="muted">${escapeHtml(p.ai_impact)}</p>
+        <h2 style="margin-top:12px">Scope</h2><p class="muted">${escapeHtml(p.scope)}</p></div>
+    </div>
+    <div class="grid grid-2">
+      ${section("School subjects", p.school_subjects)}
+      ${section("College degrees", p.college_degrees.concat(p.alternative_paths))}
+    </div>
+    <div class="card"><h2>Skills</h2>
+      <p style="margin:.4rem 0"><strong>Core</strong></p>${pills(p.core_skills, "tag-strength")}
+      <p style="margin:.6rem 0 .2rem"><strong>Technical</strong></p>${pills(p.technical_skills)}
+      <p style="margin:.6rem 0 .2rem"><strong>Soft</strong></p>${pills(p.soft_skills)}
+      <p style="margin:.6rem 0 .2rem"><strong>Future</strong></p>${pills(p.future_skills)}</div>
+    <div class="card"><h2>Career progression</h2>${list(p.career_progression.map(([t, y]) => `${t} (${y})`))}</div>
+    <div class="grid grid-2">
+      ${section("Advantages", p.advantages)}
+      ${section("Challenges", p.challenges)}
+    </div>
+    ${section("Common misconceptions", p.misconceptions)}
+    <div class="grid grid-2">
+      ${section("Portfolio & projects", p.portfolio_ideas.concat(p.projects))}
+      ${section("Certifications & internships", p.certifications.concat(p.internships))}
+    </div>
+    <div class="grid grid-2">
+      ${section("Universities", p.universities)}
+      ${section("Scholarships", p.scholarships)}
+    </div>
+    <div class="card"><h2>India opportunities</h2>
+      <p><strong>Hiring cities:</strong> ${p.major_hiring_cities.map((c) => pill(c)).join("")}</p>
+      <p class="muted">${escapeHtml(p.smaller_city_scope)} ${escapeHtml(p.rural_scope)}</p>
+      <p class="muted">${escapeHtml(p.home_state_note)}</p></div>
+    <div class="card"><h2>Global opportunities</h2>
+      <p><strong>Top countries:</strong> ${p.top_countries.map((c) => pill(c)).join("")}</p>
+      <p class="muted">Languages: ${p.language_requirements.join("; ")} · Visa difficulty: ${p.visa_difficulty}</p></div>
+    ${section("Learning resources", p.books.concat(p.courses, p.youtube, p.communities))}
+    <div class="card"><h2>FAQs</h2>${p.faqs.map(([q, a]) =>
+      `<details class="expand"><summary>${escapeHtml(q)}</summary><p class="muted">${escapeHtml(a)}</p></details>`).join("")}</div>
+    <div class="card"><h2>Explore similar careers</h2>
+      <div class="grid grid-2">${p.related_profiles.map(careerCard).join("")}</div>
+      ${section("Transition paths", p.transition_paths)}</div>
+    <div class="action-bar">
+      ${sid() ? `<button class="btn" data-route="detail" data-cid="${p.id}">My personal fit for this career</button>` : ""}
+      <button class="btn secondary" data-route="industry" data-cid="${p.industry}">← ${escapeHtml(p.industry_name)}</button>
+      <button class="btn secondary" data-route="explore">All industries</button>
+    </div>`;
+}
+
 // ---- router -------------------------------------------------------------
 const ROUTES = {
   dashboard: renderDashboard, assessment: renderAssessment, recommendations: renderRecommendations,
   coach: renderCoach, compare: renderCompare,
   detail: (p) => renderDetail(p.cid), roadmap: (p) => renderRoadmap(p.cid), skillgap: (p) => renderSkillGap(p.cid),
+  explore: renderExplore, industry: (p) => renderIndustry(p.cid), career: (p) => renderCareerProfile(p.cid),
 };
-const NAV = ["dashboard", "assessment", "recommendations", "coach"];
+const NAV = ["dashboard", "assessment", "recommendations", "explore", "coach"];
 function setRoute(name, params = {}) {
   const render = ROUTES[name] || renderDashboard;
   document.querySelectorAll(".nav-btn").forEach((b) => b.setAttribute("aria-current", b.dataset.route === name ? "page" : "false"));

@@ -1,0 +1,238 @@
+{
+ "id": "mechanical-engineering",
+ "name": "Mechanical Engineering",
+ "industry": "engineering-manufacturing",
+ "career_family": "Core Engineering",
+ "tags": [
+  "machines",
+  "mathematics",
+  "building",
+  "analytical",
+  "hands-on"
+ ],
+ "student_summary": "Design machines and mechanical systems — engineering's broadest foundation.",
+ "overview": "Design machines and mechanical systems — engineering's broadest foundation. Mechanical Engineering sits in the Core Engineering family of Engineering & Manufacturing. It is a broad career direction — you can enter it through several routes and specialize later without restarting.",
+ "who_is_this_for": [
+  "You enjoy breaking problems into parts and reasoning them through",
+  "You like building and fixing things with your hands",
+  "Numbers and patterns make sense to you"
+ ],
+ "who_should_avoid": [
+  "Intense competition drains you — entry here is a contest",
+  "You want a laptop-anywhere lifestyle — this work happens in person"
+ ],
+ "daily_responsibilities": [
+  "Apply cad & design to real problems",
+  "Collaborate with your team using thermodynamics",
+  "Keep improving at manufacturing processes — the field keeps moving",
+  "Communicate progress, results and decisions to the people who depend on them"
+ ],
+ "work_environment": "Primarily on-site — offices, facilities or the field depending on the role",
+ "problem_solving_style": "Analytical — decompose, measure, model, verify",
+ "school_subjects": [
+  "Physics",
+  "Mathematics",
+  "Chemistry"
+ ],
+ "college_degrees": [
+  "B.Tech/B.E. Mechanical"
+ ],
+ "alternative_paths": [
+  "Diploma + lateral entry to B.Tech",
+  "ITI + apprenticeship + B.Voc ladder"
+ ],
+ "core_skills": [
+  "CAD & design",
+  "Thermodynamics",
+  "Manufacturing processes",
+  "Problem solving"
+ ],
+ "soft_skills": [
+  "Critical thinking"
+ ],
+ "technical_skills": [
+  "AutoCAD",
+  "SolidWorks",
+  "ANSYS",
+  "CNC"
+ ],
+ "future_skills": [
+  "Industry 4.0 & smart manufacturing",
+  "Sustainability engineering",
+  "Simulation-driven design"
+ ],
+ "tools": [
+  "AutoCAD",
+  "SolidWorks",
+  "ANSYS"
+ ],
+ "technologies": [
+  "AutoCAD",
+  "SolidWorks",
+  "ANSYS",
+  "CNC"
+ ],
+ "personality_traits": [
+  "Analytical",
+  "Mathematically minded",
+  "Hands-on"
+ ],
+ "learning_style": "analytical",
+ "difficulty": 3,
+ "competition_level": 4,
+ "career_progression": [
+  [
+   "Student / trainee",
+   "years 0-2"
+  ],
+  [
+   "Working professional in core engineering",
+   "years 2-5"
+  ],
+  [
+   "Senior professional / specialist",
+   "years 5-10"
+  ],
+  [
+   "Leader, expert or independent practice",
+   "years 10+"
+  ]
+ ],
+ "typical_employers": [
+  "PSUs (BHEL, NTPC, ISRO, DRDO)",
+  "Automotive & manufacturing majors (Tata, Mahindra, L&T)",
+  "Core engineering consultancies",
+  "Global R&D centres"
+ ],
+ "entrepreneurship": 0.45,
+ "government_opportunities": 0.4,
+ "remote_work": 0.2,
+ "freelancing": 0.19,
+ "salary_currency": "₹",
+ "salary_entry_lpa": 4,
+ "salary_senior_lpa": 25,
+ "scope": "Demand outlook in India is booming; see FAQs for how the platform keeps this current.",
+ "future_demand": 0.75,
+ "growth": 0.73,
+ "ai_impact": "low — AI assists rather than replaces",
+ "automation_risk": 0.35,
+ "advantages": [
+  "A broad Core Engineering foundation that opens multiple specializations later"
+ ],
+ "challenges": [
+  "Fierce competition for the best seats and roles",
+  "Location-bound work; postings and relocation are part of the deal",
+  "Early years demand patience before the rewards compound"
+ ],
+ "misconceptions": [
+  "“You must pick your exact job title now.” Mechanical Engineering is a direction — specialization comes later.",
+  "“Only toppers make it.” Consistent skill-building beats one exam rank in the long run."
+ ],
+ "portfolio_ideas": [
+  "A project demonstrating cad & design",
+  "A documented case study of thermodynamics"
+ ],
+ "projects": [
+  "Beginner: explore cad & design with a small self-chosen project",
+  "Intermediate: build or run something real using AutoCAD"
+ ],
+ "internships": [
+  "PSU summer internships",
+  "Plant/shop-floor internships",
+  "R&D centre internships"
+ ],
+ "certifications": [
+  "GATE (gateway to PSUs/M.Tech)",
+  "Six Sigma / Lean certifications",
+  "Software tools certifications (CAD/CAE)"
+ ],
+ "scholarships": [
+  "AICTE Pragati & Saksham",
+  "State technical education scholarships",
+  "Institute merit awards"
+ ],
+ "universities": [
+  "IITs & NITs",
+  "BITS Pilani",
+  "State engineering colleges",
+  "IIITs (for electronics)"
+ ],
+ "books": [
+  "Engineering fundamentals texts",
+  "The Goal (operations thinking)"
+ ],
+ "courses": [
+  "NPTEL engineering courses",
+  "GATE preparation",
+  "Tool-specific courses (CAD/CAE/PLC)"
+ ],
+ "youtube": [
+  "NPTEL official",
+  "Learn Engineering",
+  "Real Engineering"
+ ],
+ "communities": [
+  "SAE/IEEE/ASME student chapters",
+  "Maker spaces & robotics clubs",
+  "GATE prep communities"
+ ],
+ "major_hiring_cities": [
+  "Pune",
+  "Chennai",
+  "Bengaluru",
+  "Coimbatore"
+ ],
+ "relocation_cities": [
+  "Pune",
+  "Chennai",
+  "Bengaluru"
+ ],
+ "smaller_city_scope": "Viable in smaller cities — demand exists well beyond the metros.",
+ "rural_scope": "Limited rural presence; expect to base yourself in a town or city.",
+ "home_state_note": "Ask the AI coach about your state — regional demand, cities and relocation advice are generated live from retrieved data, never hardcoded.",
+ "top_countries": [
+  "Germany",
+  "Japan",
+  "United States",
+  "South Korea"
+ ],
+ "language_requirements": [
+  "English"
+ ],
+ "visa_difficulty": "moderate",
+ "transition_paths": [
+  "Toward Automotive Engineering: build the shared skills and take a bridging project or course",
+  "Toward Industrial & Production Engineering: build the shared skills and take a bridging project or course",
+  "Toward Mechatronics Engineering: build the shared skills and take a bridging project or course"
+ ],
+ "related_careers": [
+  "Automotive Engineering",
+  "Industrial & Production Engineering",
+  "Mechatronics Engineering"
+ ],
+ "faqs": [
+  [
+   "What does Mechanical Engineering pay in India?",
+   "Entry roles typically start around ₹4 LPA and senior professionals reach ₹25 LPA or more. Live, region-specific salary data is retrieved by the platform when you ask."
+  ],
+  [
+   "What should I study after Class 12?",
+   "Focus on Physics, Mathematics. Typical degrees: B.Tech/B.E. Mechanical. Alternatives exist: diploma + lateral entry to b.tech."
+  ],
+  [
+   "Will AI take over this career?",
+   "AI impact is low — AI assists rather than replaces. Broad paths like Mechanical Engineering evolve rather than disappear — the students who pair domain skill with AI tools benefit most."
+  ],
+  [
+   "Is this a broad path or a specific job?",
+   "Mechanical Engineering is a career direction. Once inside it you can specialize further — the platform will map specializations in future versions."
+  ]
+ ],
+ "confidence": 0.75,
+ "sources": [
+  "detective-monkey:career-catalog:v1",
+  "detective-monkey:generator:v1"
+ ],
+ "schema_version": 1,
+ "version": 1
+}

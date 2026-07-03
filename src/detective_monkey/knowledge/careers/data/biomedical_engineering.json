@@ -1,0 +1,233 @@
+{
+ "id": "biomedical-engineering",
+ "name": "Biomedical Engineering",
+ "industry": "engineering-manufacturing",
+ "career_family": "Advanced Engineering",
+ "tags": [
+  "health",
+  "technology",
+  "innovation",
+  "science",
+  "building"
+ ],
+ "student_summary": "Engineer medical devices — where healthcare meets hardware.",
+ "overview": "Engineer medical devices — where healthcare meets hardware. Biomedical Engineering sits in the Advanced Engineering family of Engineering & Manufacturing. It is a broad career direction — you can enter it through several routes and specialize later without restarting.",
+ "who_is_this_for": [
+  "You are drawn to advanced engineering and want a broad path you can shape"
+ ],
+ "who_should_avoid": [
+  "You want a short, easy study path — this one demands years of serious preparation"
+ ],
+ "daily_responsibilities": [
+  "Apply medical device design to real problems",
+  "Collaborate with your team using biomaterials",
+  "Keep improving at regulatory basics — the field keeps moving",
+  "Communicate progress, results and decisions to the people who depend on them"
+ ],
+ "work_environment": "Laboratories and research facilities with focused desk analysis",
+ "problem_solving_style": "Practical — diagnose, build, fix and improve on the ground",
+ "school_subjects": [
+  "Physics",
+  "Biology",
+  "Mathematics"
+ ],
+ "college_degrees": [
+  "B.Tech Biomedical"
+ ],
+ "alternative_paths": [
+  "Diploma + lateral entry to B.Tech",
+  "ITI + apprenticeship + B.Voc ladder"
+ ],
+ "core_skills": [
+  "Medical device design",
+  "Biomaterials",
+  "Regulatory basics",
+  "Testing"
+ ],
+ "soft_skills": [
+  "Communication",
+  "Teamwork"
+ ],
+ "technical_skills": [
+  "CAD",
+  "LabVIEW",
+  "Embedded tools"
+ ],
+ "future_skills": [
+  "Industry 4.0 & smart manufacturing",
+  "Sustainability engineering",
+  "Simulation-driven design"
+ ],
+ "tools": [
+  "CAD",
+  "LabVIEW",
+  "Embedded tools"
+ ],
+ "technologies": [
+  "CAD",
+  "LabVIEW",
+  "Embedded tools"
+ ],
+ "personality_traits": [
+  "Motivated",
+  "Adaptable"
+ ],
+ "learning_style": "practical",
+ "difficulty": 4,
+ "competition_level": 3,
+ "career_progression": [
+  [
+   "Student / trainee",
+   "years 0-2"
+  ],
+  [
+   "Working professional in advanced engineering",
+   "years 2-5"
+  ],
+  [
+   "Senior professional / specialist",
+   "years 5-10"
+  ],
+  [
+   "Leader, expert or independent practice",
+   "years 10+"
+  ]
+ ],
+ "typical_employers": [
+  "PSUs (BHEL, NTPC, ISRO, DRDO)",
+  "Automotive & manufacturing majors (Tata, Mahindra, L&T)",
+  "Core engineering consultancies",
+  "Global R&D centres"
+ ],
+ "entrepreneurship": 0.45,
+ "government_opportunities": 0.4,
+ "remote_work": 0.3,
+ "freelancing": 0.26,
+ "salary_currency": "₹",
+ "salary_entry_lpa": 4,
+ "salary_senior_lpa": 18,
+ "scope": "Demand outlook in India is booming; see FAQs for how the platform keeps this current.",
+ "future_demand": 0.75,
+ "growth": 0.73,
+ "ai_impact": "minimal — deeply human/physical work",
+ "automation_risk": 0.2,
+ "advantages": [
+  "Highly resilient to AI automation",
+  "A broad Advanced Engineering foundation that opens multiple specializations later"
+ ],
+ "challenges": [
+  "A long, demanding preparation and learning curve",
+  "Early years demand patience before the rewards compound"
+ ],
+ "misconceptions": [
+  "“You must pick your exact job title now.” Biomedical Engineering is a direction — specialization comes later.",
+  "“Only toppers make it.” Consistent skill-building beats one exam rank in the long run."
+ ],
+ "portfolio_ideas": [
+  "A project demonstrating medical device design",
+  "A documented case study of biomaterials"
+ ],
+ "projects": [
+  "Beginner: explore medical device design with a small self-chosen project",
+  "Intermediate: build or run something real using CAD"
+ ],
+ "internships": [
+  "PSU summer internships",
+  "Plant/shop-floor internships",
+  "R&D centre internships"
+ ],
+ "certifications": [
+  "GATE (gateway to PSUs/M.Tech)",
+  "Six Sigma / Lean certifications",
+  "Software tools certifications (CAD/CAE)"
+ ],
+ "scholarships": [
+  "AICTE Pragati & Saksham",
+  "State technical education scholarships",
+  "Institute merit awards"
+ ],
+ "universities": [
+  "IITs & NITs",
+  "BITS Pilani",
+  "State engineering colleges",
+  "IIITs (for electronics)"
+ ],
+ "books": [
+  "Engineering fundamentals texts",
+  "The Goal (operations thinking)"
+ ],
+ "courses": [
+  "NPTEL engineering courses",
+  "GATE preparation",
+  "Tool-specific courses (CAD/CAE/PLC)"
+ ],
+ "youtube": [
+  "NPTEL official",
+  "Learn Engineering",
+  "Real Engineering"
+ ],
+ "communities": [
+  "SAE/IEEE/ASME student chapters",
+  "Maker spaces & robotics clubs",
+  "GATE prep communities"
+ ],
+ "major_hiring_cities": [
+  "Bengaluru",
+  "Chennai",
+  "Mumbai",
+  "Hyderabad"
+ ],
+ "relocation_cities": [
+  "Bengaluru",
+  "Chennai",
+  "Mumbai"
+ ],
+ "smaller_city_scope": "Viable in smaller cities — demand exists well beyond the metros.",
+ "rural_scope": "Limited rural presence; expect to base yourself in a town or city.",
+ "home_state_note": "Ask the AI coach about your state — regional demand, cities and relocation advice are generated live from retrieved data, never hardcoded.",
+ "top_countries": [
+  "Germany",
+  "Japan",
+  "United States",
+  "South Korea"
+ ],
+ "language_requirements": [
+  "English"
+ ],
+ "visa_difficulty": "moderate",
+ "transition_paths": [
+  "Toward Radiology & Medical Imaging: build the shared skills and take a bridging project or course",
+  "Toward Embedded Systems & IoT: build the shared skills and take a bridging project or course",
+  "Toward Epidemiology & Medical Research: build the shared skills and take a bridging project or course"
+ ],
+ "related_careers": [
+  "Radiology & Medical Imaging",
+  "Embedded Systems & IoT",
+  "Epidemiology & Medical Research"
+ ],
+ "faqs": [
+  [
+   "What does Biomedical Engineering pay in India?",
+   "Entry roles typically start around ₹4 LPA and senior professionals reach ₹18 LPA or more. Live, region-specific salary data is retrieved by the platform when you ask."
+  ],
+  [
+   "What should I study after Class 12?",
+   "Focus on Physics, Biology. Typical degrees: B.Tech Biomedical. Alternatives exist: diploma + lateral entry to b.tech."
+  ],
+  [
+   "Will AI take over this career?",
+   "AI impact is minimal — deeply human/physical work. Broad paths like Biomedical Engineering evolve rather than disappear — the students who pair domain skill with AI tools benefit most."
+  ],
+  [
+   "Is this a broad path or a specific job?",
+   "Biomedical Engineering is a career direction. Once inside it you can specialize further — the platform will map specializations in future versions."
+  ]
+ ],
+ "confidence": 0.75,
+ "sources": [
+  "detective-monkey:career-catalog:v1",
+  "detective-monkey:generator:v1"
+ ],
+ "schema_version": 1,
+ "version": 1
+}

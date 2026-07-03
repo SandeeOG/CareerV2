@@ -51,6 +51,15 @@ _LEARNING_STYLE_WHY = {
 }
 
 
+def _salary_range(insight) -> str:
+    """Human salary band. Knowledge-base insights store LPA (₹ lakhs/year,
+    values < 1000); an entry of 0 marks venture paths with variable income."""
+    lpa = " LPA" if insight.salary_senior < 1000 else ""
+    if insight.salary_entry == 0:
+        return f"Variable — up to {insight.currency}{insight.salary_senior:,}{lpa} (own venture)"
+    return f"{insight.currency}{insight.salary_entry:,}–{insight.salary_senior:,}{lpa}"
+
+
 def _band(value: float, labels=("Low", "Moderate", "High", "Very High")) -> str:
     idx = min(len(labels) - 1, int(value * len(labels)))
     return labels[idx]
@@ -189,7 +198,7 @@ class IntelligenceApplicationService:
             overview=insight.summary, personal_note=note,
             daily_work=insight.daily_work, responsibilities=insight.responsibilities,
             progression=insight.progression,
-            salary_range=f"{insight.currency}{insight.salary_entry:,}–{insight.salary_senior:,}",
+            salary_range=_salary_range(insight),
             required_education=insight.required_education, certifications=insight.certifications,
             demand=_band(insight.demand), future_outlook=_band(insight.growth),
             automation_risk=_risk_band(insight.automation_risk),
@@ -292,8 +301,7 @@ class IntelligenceApplicationService:
             strengths_used=match.top_strengths,
             challenges=tuple(challenges),
             required_education=insight.required_education if insight else (),
-            salary_range=(f"{insight.currency}{insight.salary_entry:,}–{insight.salary_senior:,}"
-                          if insight else "—"),
+            salary_range=_salary_range(insight) if insight else "—",
             future_demand=_band(insight.demand) if insight else "—",
             automation_risk=_risk_band(insight.automation_risk) if insight else "—",
             remote_compatibility=_band(insight.remote_compatibility) if insight else "—",

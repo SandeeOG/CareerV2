@@ -1,0 +1,236 @@
+{
+ "id": "quality-assurance-testing",
+ "name": "Quality Assurance & Testing",
+ "industry": "technology-computing",
+ "career_family": "Software & Applications",
+ "tags": [
+  "detail",
+  "analytical",
+  "patience",
+  "systematic"
+ ],
+ "student_summary": "Make sure software actually works before the world uses it.",
+ "overview": "Make sure software actually works before the world uses it. Quality Assurance & Testing sits in the Software & Applications family of Technology & Computing. It is a broad career direction — you can enter it through several routes and specialize later without restarting.",
+ "who_is_this_for": [
+  "You enjoy breaking problems into parts and reasoning them through",
+  "You notice the small things others miss"
+ ],
+ "who_should_avoid": [
+  "You want to avoid routine tasks — parts of this role are being automated, so you must keep climbing the skill ladder"
+ ],
+ "daily_responsibilities": [
+  "Apply test design to real problems",
+  "Collaborate with your team using automation scripting",
+  "Keep improving at bug reporting — the field keeps moving",
+  "Communicate progress, results and decisions to the people who depend on them"
+ ],
+ "work_environment": "Office or fully remote — laptop work with flexible location",
+ "problem_solving_style": "Analytical — decompose, measure, model, verify",
+ "school_subjects": [
+  "Computer Science",
+  "Mathematics"
+ ],
+ "college_degrees": [
+  "B.Tech/BCA",
+  "B.Sc + testing certifications"
+ ],
+ "alternative_paths": [
+  "Bootcamps + a strong project portfolio",
+  "Open-source contributions as your CV"
+ ],
+ "core_skills": [
+  "Test design",
+  "Automation scripting",
+  "Bug reporting",
+  "Regression analysis"
+ ],
+ "soft_skills": [
+  "Attention to detail",
+  "Patience",
+  "Critical thinking"
+ ],
+ "technical_skills": [
+  "Selenium",
+  "Postman",
+  "JIRA",
+  "Python"
+ ],
+ "future_skills": [
+  "AI-assisted development",
+  "Prompt engineering",
+  "Cloud-native architecture"
+ ],
+ "tools": [
+  "Selenium",
+  "Postman",
+  "JIRA"
+ ],
+ "technologies": [
+  "Selenium",
+  "Postman",
+  "JIRA",
+  "Python"
+ ],
+ "personality_traits": [
+  "Analytical",
+  "Detail-oriented",
+  "Patient"
+ ],
+ "learning_style": "analytical",
+ "difficulty": 2,
+ "competition_level": 3,
+ "career_progression": [
+  [
+   "Student / trainee",
+   "years 0-2"
+  ],
+  [
+   "Working professional in software & applications",
+   "years 2-5"
+  ],
+  [
+   "Senior professional / specialist",
+   "years 5-10"
+  ],
+  [
+   "Leader, expert or independent practice",
+   "years 10+"
+  ]
+ ],
+ "typical_employers": [
+  "Product companies (Google, Microsoft, Zoho)",
+  "IT services (TCS, Infosys, Wipro)",
+  "Startups",
+  "Global capability centres"
+ ],
+ "entrepreneurship": 0.7,
+ "government_opportunities": 0.4,
+ "remote_work": 0.85,
+ "freelancing": 0.65,
+ "salary_currency": "₹",
+ "salary_entry_lpa": 4,
+ "salary_senior_lpa": 30,
+ "scope": "Demand outlook in India is booming; see FAQs for how the platform keeps this current.",
+ "future_demand": 0.75,
+ "growth": 0.73,
+ "ai_impact": "moderate — routine parts will be automated; the judgement stays human",
+ "automation_risk": 0.55,
+ "advantages": [
+  "High remote and location flexibility",
+  "A broad Software & Applications foundation that opens multiple specializations later"
+ ],
+ "challenges": [
+  "Routine tasks are being automated — you must keep moving up the value chain",
+  "Early years demand patience before the rewards compound"
+ ],
+ "misconceptions": [
+  "“You must pick your exact job title now.” Quality Assurance & Testing is a direction — specialization comes later.",
+  "“Only toppers make it.” Consistent skill-building beats one exam rank in the long run."
+ ],
+ "portfolio_ideas": [
+  "A project demonstrating test design",
+  "A documented case study of automation scripting"
+ ],
+ "projects": [
+  "Beginner: explore test design with a small self-chosen project",
+  "Intermediate: build or run something real using Selenium"
+ ],
+ "internships": [
+  "Summer internships at tech companies",
+  "Google Summer of Code",
+  "Startup internships via Internshala"
+ ],
+ "certifications": [
+  "Cloud certifications (AWS/Azure/GCP)",
+  "Vendor certifications in your stack"
+ ],
+ "scholarships": [
+  "Reliance Foundation Scholarships",
+  "Google generation scholarships",
+  "State merit scholarships"
+ ],
+ "universities": [
+  "IITs & NITs",
+  "IIITs",
+  "BITS Pilani",
+  "State technical universities"
+ ],
+ "books": [
+  "Clean Code",
+  "The Pragmatic Programmer",
+  "Grokking Algorithms"
+ ],
+ "courses": [
+  "NPTEL computer science courses",
+  "CS50 (Harvard, free)",
+  "Coursera specializations in your stack"
+ ],
+ "youtube": [
+  "freeCodeCamp",
+  "Fireship",
+  "NPTEL official"
+ ],
+ "communities": [
+  "Stack Overflow",
+  "GitHub open source",
+  "Local tech meetups & hackathons"
+ ],
+ "major_hiring_cities": [
+  "Pune",
+  "Bengaluru",
+  "Chennai",
+  "Noida"
+ ],
+ "relocation_cities": [
+  "Pune",
+  "Bengaluru",
+  "Chennai"
+ ],
+ "smaller_city_scope": "Remote-friendly: smaller-city living with metro-level work is realistic.",
+ "rural_scope": "Limited rural presence; expect to base yourself in a town or city.",
+ "home_state_note": "Ask the AI coach about your state — regional demand, cities and relocation advice are generated live from retrieved data, never hardcoded.",
+ "top_countries": [
+  "United States",
+  "Germany",
+  "Canada",
+  "Singapore",
+  "Netherlands"
+ ],
+ "language_requirements": [
+  "English"
+ ],
+ "visa_difficulty": "moderate",
+ "transition_paths": [
+  "Toward Software Engineering: build the shared skills and take a bridging project or course",
+  "Toward DevOps & Automation: build the shared skills and take a bridging project or course"
+ ],
+ "related_careers": [
+  "Software Engineering",
+  "DevOps & Automation"
+ ],
+ "faqs": [
+  [
+   "What does Quality Assurance & Testing pay in India?",
+   "Entry roles typically start around ₹4 LPA and senior professionals reach ₹30 LPA or more. Live, region-specific salary data is retrieved by the platform when you ask."
+  ],
+  [
+   "What should I study after Class 12?",
+   "Focus on Computer Science, Mathematics. Typical degrees: B.Tech/BCA, B.Sc + testing certifications. Alternatives exist: bootcamps + a strong project portfolio."
+  ],
+  [
+   "Will AI take over this career?",
+   "AI impact is moderate — routine parts will be automated; the judgement stays human. Broad paths like Quality Assurance & Testing evolve rather than disappear — the students who pair domain skill with AI tools benefit most."
+  ],
+  [
+   "Is this a broad path or a specific job?",
+   "Quality Assurance & Testing is a career direction. Once inside it you can specialize further — the platform will map specializations in future versions."
+  ]
+ ],
+ "confidence": 0.75,
+ "sources": [
+  "detective-monkey:career-catalog:v1",
+  "detective-monkey:generator:v1"
+ ],
+ "schema_version": 1,
+ "version": 1
+}

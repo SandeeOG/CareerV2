@@ -65,9 +65,15 @@ def test_full_mentor_journey():
     gap = client.get(f"/api/v1/students/{sid}/careers/{cid}/skill-gap").json()["data"]
     assert gap["projected_compatibility"] >= gap["current_compatibility"]
 
-    # Epic 8 — comparison
-    cmp = client.get(f"/api/v1/students/{sid}/compare", params={"a": "c_ds", "b": "c_ux"}).json()["data"]
+    # Epic 8 — comparison (any two recommended knowledge careers)
+    cmp = client.get(f"/api/v1/students/{sid}/compare",
+                     params={"a": cid, "b": cards[1]["career_id"]}).json()["data"]
     assert cmp["rows"] and cmp["recommendation"]
+
+    # 38/39 — every recommendation links to its full Career Profile page
+    profile = client.get(f"/api/v1/careers/{cid}").json()
+    assert profile["success"] and profile["data"]["id"] == cid
+    assert profile["data"]["related_profiles"]
 
     # Epic 9 — downloadable report (HTML)
     report = client.get(f"/api/v1/students/{sid}/report")

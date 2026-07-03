@@ -1,0 +1,241 @@
+{
+ "id": "technical-writing",
+ "name": "Technical Writing",
+ "industry": "technology-computing",
+ "career_family": "Product & Design",
+ "tags": [
+  "writing",
+  "communication",
+  "detail",
+  "teaching",
+  "clarity"
+ ],
+ "student_summary": "Explain complex technology so clearly that anyone can use it.",
+ "overview": "Explain complex technology so clearly that anyone can use it. Technical Writing sits in the Product & Design family of Technology & Computing. It is a broad career direction — you can enter it through several routes and specialize later without restarting.",
+ "who_is_this_for": [
+  "You express yourself best in writing",
+  "Explaining things so others finally get it satisfies you",
+  "You notice the small things others miss"
+ ],
+ "who_should_avoid": [
+  "You want to avoid routine tasks — parts of this role are being automated, so you must keep climbing the skill ladder"
+ ],
+ "daily_responsibilities": [
+  "Apply clear writing to real problems",
+  "Collaborate with your team using information architecture",
+  "Keep improving at api documentation — the field keeps moving",
+  "Communicate progress, results and decisions to the people who depend on them"
+ ],
+ "work_environment": "Classrooms and learning spaces",
+ "problem_solving_style": "People-centred — listen, mediate, guide and align humans",
+ "school_subjects": [
+  "English",
+  "Computer Science"
+ ],
+ "college_degrees": [
+  "Any bachelor's degree",
+  "B.A. English/Communication + tech skills"
+ ],
+ "alternative_paths": [
+  "Bootcamps + a strong project portfolio",
+  "Open-source contributions as your CV"
+ ],
+ "core_skills": [
+  "Clear writing",
+  "Information architecture",
+  "API documentation",
+  "Editing"
+ ],
+ "soft_skills": [
+  "Communication",
+  "Attention to detail",
+  "Mentoring"
+ ],
+ "technical_skills": [
+  "Markdown",
+  "Git",
+  "Docs-as-code",
+  "Screen capture tools"
+ ],
+ "future_skills": [
+  "AI-assisted development",
+  "Prompt engineering",
+  "Cloud-native architecture"
+ ],
+ "tools": [
+  "Markdown",
+  "Git",
+  "Docs-as-code"
+ ],
+ "technologies": [
+  "Markdown",
+  "Git",
+  "Docs-as-code",
+  "Screen capture tools"
+ ],
+ "personality_traits": [
+  "Detail-oriented",
+  "Expressive communicator",
+  "Strong writer",
+  "Enjoys teaching"
+ ],
+ "learning_style": "collaborative",
+ "difficulty": 2,
+ "competition_level": 2,
+ "career_progression": [
+  [
+   "Student / trainee",
+   "years 0-2"
+  ],
+  [
+   "Working professional in product & design",
+   "years 2-5"
+  ],
+  [
+   "Senior professional / specialist",
+   "years 5-10"
+  ],
+  [
+   "Leader, expert or independent practice",
+   "years 10+"
+  ]
+ ],
+ "typical_employers": [
+  "Product companies (Google, Microsoft, Zoho)",
+  "IT services (TCS, Infosys, Wipro)",
+  "Startups",
+  "Global capability centres"
+ ],
+ "entrepreneurship": 0.7,
+ "government_opportunities": 0.4,
+ "remote_work": 0.95,
+ "freelancing": 0.91,
+ "salary_currency": "₹",
+ "salary_entry_lpa": 4,
+ "salary_senior_lpa": 25,
+ "scope": "Demand outlook in India is strong; see FAQs for how the platform keeps this current.",
+ "future_demand": 0.65,
+ "growth": 0.64,
+ "ai_impact": "low — AI assists rather than replaces",
+ "automation_risk": 0.45,
+ "advantages": [
+  "High remote and location flexibility",
+  "A broad Product & Design foundation that opens multiple specializations later"
+ ],
+ "challenges": [
+  "Routine tasks are being automated — you must keep moving up the value chain",
+  "Early years demand patience before the rewards compound"
+ ],
+ "misconceptions": [
+  "“You must pick your exact job title now.” Technical Writing is a direction — specialization comes later.",
+  "“Only toppers make it.” Consistent skill-building beats one exam rank in the long run."
+ ],
+ "portfolio_ideas": [
+  "A project demonstrating clear writing",
+  "A documented case study of information architecture"
+ ],
+ "projects": [
+  "Beginner: explore clear writing with a small self-chosen project",
+  "Intermediate: build or run something real using Markdown"
+ ],
+ "internships": [
+  "Summer internships at tech companies",
+  "Google Summer of Code",
+  "Startup internships via Internshala"
+ ],
+ "certifications": [
+  "Cloud certifications (AWS/Azure/GCP)",
+  "Vendor certifications in your stack"
+ ],
+ "scholarships": [
+  "Reliance Foundation Scholarships",
+  "Google generation scholarships",
+  "State merit scholarships"
+ ],
+ "universities": [
+  "IITs & NITs",
+  "IIITs",
+  "BITS Pilani",
+  "State technical universities"
+ ],
+ "books": [
+  "Clean Code",
+  "The Pragmatic Programmer",
+  "Grokking Algorithms"
+ ],
+ "courses": [
+  "NPTEL computer science courses",
+  "CS50 (Harvard, free)",
+  "Coursera specializations in your stack"
+ ],
+ "youtube": [
+  "freeCodeCamp",
+  "Fireship",
+  "NPTEL official"
+ ],
+ "communities": [
+  "Stack Overflow",
+  "GitHub open source",
+  "Local tech meetups & hackathons"
+ ],
+ "major_hiring_cities": [
+  "Bengaluru",
+  "Pune",
+  "Hyderabad",
+  "Remote"
+ ],
+ "relocation_cities": [
+  "Bengaluru",
+  "Pune",
+  "Hyderabad"
+ ],
+ "smaller_city_scope": "Remote-friendly: smaller-city living with metro-level work is realistic.",
+ "rural_scope": "Limited rural presence; expect to base yourself in a town or city.",
+ "home_state_note": "Ask the AI coach about your state — regional demand, cities and relocation advice are generated live from retrieved data, never hardcoded.",
+ "top_countries": [
+  "United States",
+  "Germany",
+  "Canada",
+  "Singapore",
+  "Netherlands"
+ ],
+ "language_requirements": [
+  "English"
+ ],
+ "visa_difficulty": "moderate",
+ "transition_paths": [
+  "Toward Software Engineering: build the shared skills and take a bridging project or course",
+  "Toward Content Marketing & Copywriting: build the shared skills and take a bridging project or course",
+  "Toward Curriculum & Instructional Design: build the shared skills and take a bridging project or course"
+ ],
+ "related_careers": [
+  "Software Engineering",
+  "Content Marketing & Copywriting",
+  "Curriculum & Instructional Design"
+ ],
+ "faqs": [
+  [
+   "What does Technical Writing pay in India?",
+   "Entry roles typically start around ₹4 LPA and senior professionals reach ₹25 LPA or more. Live, region-specific salary data is retrieved by the platform when you ask."
+  ],
+  [
+   "What should I study after Class 12?",
+   "Focus on English, Computer Science. Typical degrees: Any bachelor's degree, B.A. English/Communication + tech skills. Alternatives exist: bootcamps + a strong project portfolio."
+  ],
+  [
+   "Will AI take over this career?",
+   "AI impact is low — AI assists rather than replaces. Broad paths like Technical Writing evolve rather than disappear — the students who pair domain skill with AI tools benefit most."
+  ],
+  [
+   "Is this a broad path or a specific job?",
+   "Technical Writing is a career direction. Once inside it you can specialize further — the platform will map specializations in future versions."
+  ]
+ ],
+ "confidence": 0.75,
+ "sources": [
+  "detective-monkey:career-catalog:v1",
+  "detective-monkey:generator:v1"
+ ],
+ "schema_version": 1,
+ "version": 1
+}

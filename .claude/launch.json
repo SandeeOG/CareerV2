@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "detective-monkey",
+      "runtimeExecutable": ".venv/Scripts/python.exe",
+      "runtimeArgs": ["-m", "uvicorn", "detective_monkey.interfaces.rest.asgi:app", "--port", "8642"],
+      "port": 8642
+    }
+  ]
+}
